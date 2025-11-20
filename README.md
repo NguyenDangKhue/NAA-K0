@@ -59,6 +59,31 @@ python app.py
 4. **Truy cập ứng dụng:**
 Mở trình duyệt và truy cập: `http://localhost:5000`
 
+## Triển khai trên Render
+
+Từ commit này dự án đã sẵn sàng để deploy trực tiếp lên Render thông qua file `render.yaml`.
+
+### 1. Chuẩn bị trước khi deploy
+- Tài khoản Render với quyền tạo dịch vụ web.
+- Repository đã push lên GitHub/GitLab với các file mới: `render.yaml`, `Procfile`, `requirements.txt` (có `gunicorn`).
+- Nếu muốn giữ lại dữ liệu JSON lâu dài, hãy sử dụng Render Disk (đã cấu hình trong `render.yaml`).
+
+### 2. Các bước triển khai
+1. Đăng nhập Render và chọn **New + > Blueprint**.
+2. Chọn repo chứa dự án này, nhánh mặc định (ví dụ `main`), sau đó Render sẽ đọc file `render.yaml`.
+3. Kiểm tra lại cấu hình dịch vụ:
+   - Runtime: `Python`
+   - Build command: `pip install -r requirements.txt`
+   - Start command: `gunicorn app:app`
+   - Biến môi trường `PYTHON_VERSION` đã đặt mặc định là `3.11.6`, có thể đổi nếu cần.
+   - Disk `naa-k0-data` 1GB mount tại `/opt/render/project/src/data` dùng để lưu các file JSON.
+4. Nhấn **Apply** để Render tạo dịch vụ. Sau khi build thành công, hệ thống có thể truy cập tại URL mà Render cung cấp.
+
+### 3. Ghi chú khi vận hành trên Render
+- Thư mục `data/` mặc định nằm trong disk gắn ngoài, bảo đảm dữ liệu không bị mất khi container khởi động lại.
+- Nếu cần tùy chỉnh dung lượng hoặc region, chỉnh sửa trực tiếp trong `render.yaml`.
+- Bạn có thể mở tab **Logs** trên Render để theo dõi quá trình build & runtime logs của `gunicorn`.
+
 ## Cấu trúc dự án
 
 ```

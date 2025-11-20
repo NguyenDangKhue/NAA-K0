@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: naa-k0
+    env: python
+    plan: free
+    region: singapore
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.6
+    disk:
+      name: naa-k0-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1
+
