@@ -1,0 +1,1962 @@
+[
+  {
+    "id": 0,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Li",
+    "concentration": 71.7,
+    "uncertainty": null
+  },
+  {
+    "id": 2,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Na",
+    "concentration": 1304.0,
+    "uncertainty": null
+  },
+  {
+    "id": 4,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Mg",
+    "concentration": 7552.0,
+    "uncertainty": null
+  },
+  {
+    "id": 6,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Al",
+    "concentration": 110000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 8,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Si",
+    "concentration": 243400.0,
+    "uncertainty": null
+  },
+  {
+    "id": 10,
+    "sample_name": "Bick clay material BC-679",
+    "element": "P",
+    "concentration": 750.0,
+    "uncertainty": null
+  },
+  {
+    "id": 12,
+    "sample_name": "Bick clay material BC-679",
+    "element": "K",
+    "concentration": 24330.0,
+    "uncertainty": null
+  },
+  {
+    "id": 14,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Ca",
+    "concentration": 1628.0,
+    "uncertainty": null
+  },
+  {
+    "id": 16,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Ti",
+    "concentration": 5770.0,
+    "uncertainty": null
+  },
+  {
+    "id": 18,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Cr",
+    "concentration": 109.7,
+    "uncertainty": null
+  },
+  {
+    "id": 20,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Mn",
+    "concentration": 1730.0,
+    "uncertainty": null
+  },
+  {
+    "id": 22,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Fe",
+    "concentration": 90500.0,
+    "uncertainty": null
+  },
+  {
+    "id": 24,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Co",
+    "concentration": 26.0,
+    "uncertainty": null
+  },
+  {
+    "id": 26,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Zn",
+    "concentration": 150.0,
+    "uncertainty": null
+  },
+  {
+    "id": 28,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Rb",
+    "concentration": 190.0,
+    "uncertainty": null
+  },
+  {
+    "id": 30,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Sr",
+    "concentration": 73.4,
+    "uncertainty": null
+  },
+  {
+    "id": 32,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Cs",
+    "concentration": 9.6,
+    "uncertainty": null
+  },
+  {
+    "id": 34,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Ba",
+    "concentration": 432.2,
+    "uncertainty": null
+  },
+  {
+    "id": 36,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Ce",
+    "concentration": 105.0,
+    "uncertainty": null
+  },
+  {
+    "id": 38,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Eu",
+    "concentration": 1.9,
+    "uncertainty": null
+  },
+  {
+    "id": 40,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Hf",
+    "concentration": 4.6,
+    "uncertainty": null
+  },
+  {
+    "id": 42,
+    "sample_name": "Bick clay material BC-679",
+    "element": "Th",
+    "concentration": 14.0,
+    "uncertainty": null
+  },
+  {
+    "id": 44,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Na",
+    "concentration": 2010.0,
+    "uncertainty": null
+  },
+  {
+    "id": 46,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Mg",
+    "concentration": 4820.0,
+    "uncertainty": null
+  },
+  {
+    "id": 48,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Al",
+    "concentration": 150500.0,
+    "uncertainty": null
+  },
+  {
+    "id": 50,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Si",
+    "concentration": 23.02,
+    "uncertainty": null
+  },
+  {
+    "id": 52,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "P",
+    "concentration": 2300.0,
+    "uncertainty": null
+  },
+  {
+    "id": 54,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "S",
+    "concentration": 2075.0,
+    "uncertainty": null
+  },
+  {
+    "id": 56,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "K",
+    "concentration": 19500.0,
+    "uncertainty": null
+  },
+  {
+    "id": 58,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ca",
+    "concentration": 15100.0,
+    "uncertainty": null
+  },
+  {
+    "id": 60,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Sc",
+    "concentration": 41.0,
+    "uncertainty": null
+  },
+  {
+    "id": 62,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ti",
+    "concentration": 7910.0,
+    "uncertainty": null
+  },
+  {
+    "id": 64,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "V",
+    "concentration": 295.7,
+    "uncertainty": null
+  },
+  {
+    "id": 66,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Cr",
+    "concentration": 198.2,
+    "uncertainty": null
+  },
+  {
+    "id": 68,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Mn",
+    "concentration": 131.8,
+    "uncertainty": null
+  },
+  {
+    "id": 70,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Fe",
+    "concentration": 77800.0,
+    "uncertainty": null
+  },
+  {
+    "id": 72,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Co",
+    "concentration": 50.0,
+    "uncertainty": null
+  },
+  {
+    "id": 74,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ni",
+    "concentration": 120.6,
+    "uncertainty": null
+  },
+  {
+    "id": 76,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Cu",
+    "concentration": 112.8,
+    "uncertainty": null
+  },
+  {
+    "id": 78,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Zn",
+    "concentration": 210.0,
+    "uncertainty": null
+  },
+  {
+    "id": 80,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "As",
+    "concentration": 136.2,
+    "uncertainty": null
+  },
+  {
+    "id": 82,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Se",
+    "concentration": 10.26,
+    "uncertainty": null
+  },
+  {
+    "id": 84,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Br",
+    "concentration": 2.9,
+    "uncertainty": null
+  },
+  {
+    "id": 86,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Rb",
+    "concentration": 140.0,
+    "uncertainty": null
+  },
+  {
+    "id": 88,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Sr",
+    "concentration": 1041.0,
+    "uncertainty": null
+  },
+  {
+    "id": 90,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Cd",
+    "concentration": 0.784,
+    "uncertainty": null
+  },
+  {
+    "id": 92,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Sb",
+    "concentration": 6.0,
+    "uncertainty": null
+  },
+  {
+    "id": 94,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Cs",
+    "concentration": 11.0,
+    "uncertainty": null
+  },
+  {
+    "id": 96,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ba",
+    "concentration": 709.0,
+    "uncertainty": null
+  },
+  {
+    "id": 98,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "La",
+    "concentration": 94.0,
+    "uncertainty": null
+  },
+  {
+    "id": 100,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ce",
+    "concentration": 190.0,
+    "uncertainty": null
+  },
+  {
+    "id": 102,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Nd",
+    "concentration": 85.0,
+    "uncertainty": null
+  },
+  {
+    "id": 104,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Sm",
+    "concentration": 20.0,
+    "uncertainty": null
+  },
+  {
+    "id": 106,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Eu",
+    "concentration": 4.1,
+    "uncertainty": null
+  },
+  {
+    "id": 108,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Gd",
+    "concentration": 13.0,
+    "uncertainty": null
+  },
+  {
+    "id": 110,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Tb",
+    "concentration": 2.6,
+    "uncertainty": null
+  },
+  {
+    "id": 112,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Dy",
+    "concentration": 17.0,
+    "uncertainty": null
+  },
+  {
+    "id": 114,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ho",
+    "concentration": 3.5,
+    "uncertainty": null
+  },
+  {
+    "id": 116,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Tm",
+    "concentration": 2.1,
+    "uncertainty": null
+  },
+  {
+    "id": 118,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Yb",
+    "concentration": 7.6,
+    "uncertainty": null
+  },
+  {
+    "id": 120,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Lu",
+    "concentration": 1.2,
+    "uncertainty": null
+  },
+  {
+    "id": 122,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Hf",
+    "concentration": 6.8,
+    "uncertainty": null
+  },
+  {
+    "id": 124,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ta",
+    "concentration": 1.8,
+    "uncertainty": null
+  },
+  {
+    "id": 126,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "W",
+    "concentration": 5.6,
+    "uncertainty": null
+  },
+  {
+    "id": 128,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Hg",
+    "concentration": 0.1431,
+    "uncertainty": null
+  },
+  {
+    "id": 130,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Ti",
+    "concentration": 5.9,
+    "uncertainty": null
+  },
+  {
+    "id": 132,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Pb",
+    "concentration": 68.2,
+    "uncertainty": null
+  },
+  {
+    "id": 134,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "Th",
+    "concentration": 25.7,
+    "uncertainty": null
+  },
+  {
+    "id": 136,
+    "sample_name": "Coal Fly Ash 1633b",
+    "element": "U",
+    "concentration": 8.79,
+    "uncertainty": null
+  },
+  {
+    "id": 138,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "B",
+    "concentration": 50.5,
+    "uncertainty": null
+  },
+  {
+    "id": 140,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Na",
+    "concentration": 12000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 142,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Mg",
+    "concentration": 10700.0,
+    "uncertainty": null
+  },
+  {
+    "id": 144,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Al",
+    "concentration": 67200.0,
+    "uncertainty": null
+  },
+  {
+    "id": 146,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Si",
+    "concentration": 314000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 148,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "P",
+    "concentration": 842.0,
+    "uncertainty": null
+  },
+  {
+    "id": 150,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "K",
+    "concentration": 25300.0,
+    "uncertainty": null
+  },
+  {
+    "id": 152,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ca",
+    "concentration": 24200.0,
+    "uncertainty": null
+  },
+  {
+    "id": 154,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Sc",
+    "concentration": 8.5,
+    "uncertainty": null
+  },
+  {
+    "id": 156,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ti",
+    "concentration": 3170.0,
+    "uncertainty": null
+  },
+  {
+    "id": 158,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "V",
+    "concentration": 80.7,
+    "uncertainty": null
+  },
+  {
+    "id": 160,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Cr",
+    "concentration": 52.3,
+    "uncertainty": null
+  },
+  {
+    "id": 162,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Mn",
+    "concentration": 675.0,
+    "uncertainty": null
+  },
+  {
+    "id": 164,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Fe",
+    "concentration": 28200.0,
+    "uncertainty": null
+  },
+  {
+    "id": 166,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Co",
+    "concentration": 9.89,
+    "uncertainty": null
+  },
+  {
+    "id": 168,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ni",
+    "concentration": 21.7,
+    "uncertainty": null
+  },
+  {
+    "id": 170,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Cu",
+    "concentration": 140.0,
+    "uncertainty": null
+  },
+  {
+    "id": 172,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Zn",
+    "concentration": 414.0,
+    "uncertainty": null
+  },
+  {
+    "id": 174,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "As",
+    "concentration": 107.0,
+    "uncertainty": null
+  },
+  {
+    "id": 176,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Se",
+    "concentration": 2.0,
+    "uncertainty": null
+  },
+  {
+    "id": 178,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Rb",
+    "concentration": 120.0,
+    "uncertainty": null
+  },
+  {
+    "id": 180,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Sr",
+    "concentration": 242.0,
+    "uncertainty": null
+  },
+  {
+    "id": 182,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ag",
+    "concentration": 6.1,
+    "uncertainty": null
+  },
+  {
+    "id": 184,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Cd",
+    "concentration": 54.1,
+    "uncertainty": null
+  },
+  {
+    "id": 186,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "In",
+    "concentration": 1.25,
+    "uncertainty": null
+  },
+  {
+    "id": 188,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Sb",
+    "concentration": 23.8,
+    "uncertainty": null
+  },
+  {
+    "id": 190,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Cs",
+    "concentration": 6.7,
+    "uncertainty": null
+  },
+  {
+    "id": 192,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ba",
+    "concentration": 730.0,
+    "uncertainty": null
+  },
+  {
+    "id": 194,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "La",
+    "concentration": 38.0,
+    "uncertainty": null
+  },
+  {
+    "id": 196,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ce",
+    "concentration": 74.0,
+    "uncertainty": null
+  },
+  {
+    "id": 198,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Nd",
+    "concentration": 29.0,
+    "uncertainty": null
+  },
+  {
+    "id": 200,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Sm",
+    "concentration": 5.93,
+    "uncertainty": null
+  },
+  {
+    "id": 202,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Eu",
+    "concentration": 1.1,
+    "uncertainty": null
+  },
+  {
+    "id": 204,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Gd",
+    "concentration": 5.1,
+    "uncertainty": null
+  },
+  {
+    "id": 206,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Tb",
+    "concentration": 0.83,
+    "uncertainty": null
+  },
+  {
+    "id": 208,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Dy",
+    "concentration": 5.0,
+    "uncertainty": null
+  },
+  {
+    "id": 210,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Yb",
+    "concentration": 3.2,
+    "uncertainty": null
+  },
+  {
+    "id": 212,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Lu",
+    "concentration": 0.52,
+    "uncertainty": null
+  },
+  {
+    "id": 214,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Hf",
+    "concentration": 9.2,
+    "uncertainty": null
+  },
+  {
+    "id": 216,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ta",
+    "concentration": 1.42,
+    "uncertainty": null
+  },
+  {
+    "id": 218,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Hg",
+    "concentration": 7.42,
+    "uncertainty": null
+  },
+  {
+    "id": 220,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Ti",
+    "concentration": 2.93,
+    "uncertainty": null
+  },
+  {
+    "id": 222,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Pb",
+    "concentration": 1400.0,
+    "uncertainty": null
+  },
+  {
+    "id": 224,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "Th",
+    "concentration": 15.0,
+    "uncertainty": null
+  },
+  {
+    "id": 226,
+    "sample_name": "NIST 2711a Montana II Soil ( Moisture: 3.37%)",
+    "element": "U",
+    "concentration": 3.01,
+    "uncertainty": null
+  },
+  {
+    "id": 228,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Na",
+    "concentration": 7410.0,
+    "uncertainty": null
+  },
+  {
+    "id": 230,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Mg",
+    "concentration": 234.5,
+    "uncertainty": null
+  },
+  {
+    "id": 232,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Al",
+    "concentration": 22970.0,
+    "uncertainty": null
+  },
+  {
+    "id": 234,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Si",
+    "concentration": 400000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 236,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "P",
+    "concentration": 270.0,
+    "uncertainty": null
+  },
+  {
+    "id": 238,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "S",
+    "concentration": 3520.0,
+    "uncertainty": null
+  },
+  {
+    "id": 240,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "K",
+    "concentration": 8640.0,
+    "uncertainty": null
+  },
+  {
+    "id": 242,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Ca",
+    "concentration": 5190.0,
+    "uncertainty": null
+  },
+  {
+    "id": 244,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Ti",
+    "concentration": 4560.0,
+    "uncertainty": null
+  },
+  {
+    "id": 246,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "V",
+    "concentration": 44.84,
+    "uncertainty": null
+  },
+  {
+    "id": 248,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Cr",
+    "concentration": 40.9,
+    "uncertainty": null
+  },
+  {
+    "id": 250,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Fe",
+    "concentration": 20080.0,
+    "uncertainty": null
+  },
+  {
+    "id": 252,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Cu",
+    "concentration": 10.01,
+    "uncertainty": null
+  },
+  {
+    "id": 254,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Zn",
+    "concentration": 48.9,
+    "uncertainty": null
+  },
+  {
+    "id": 256,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "As",
+    "concentration": 6.23,
+    "uncertainty": null
+  },
+  {
+    "id": 258,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Se",
+    "concentration": 0.193,
+    "uncertainty": null
+  },
+  {
+    "id": 260,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Cd",
+    "concentration": 0.148,
+    "uncertainty": null
+  },
+  {
+    "id": 262,
+    "sample_name": "NIST 1646a Sediment",
+    "element": "Pb",
+    "concentration": 11.7,
+    "uncertainty": null
+  },
+  {
+    "id": 264,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Na",
+    "concentration": 2010.0,
+    "uncertainty": null
+  },
+  {
+    "id": 266,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Mg",
+    "concentration": 4820.0,
+    "uncertainty": null
+  },
+  {
+    "id": 268,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Al",
+    "concentration": 150500.0,
+    "uncertainty": null
+  },
+  {
+    "id": 270,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Si",
+    "concentration": 23.02,
+    "uncertainty": null
+  },
+  {
+    "id": 272,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "P",
+    "concentration": 2300.0,
+    "uncertainty": null
+  },
+  {
+    "id": 274,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "S",
+    "concentration": 2075.0,
+    "uncertainty": null
+  },
+  {
+    "id": 276,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "K",
+    "concentration": 19500.0,
+    "uncertainty": null
+  },
+  {
+    "id": 278,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ca",
+    "concentration": 15100.0,
+    "uncertainty": null
+  },
+  {
+    "id": 280,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Sc",
+    "concentration": 41.0,
+    "uncertainty": null
+  },
+  {
+    "id": 282,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ti",
+    "concentration": 7910.0,
+    "uncertainty": null
+  },
+  {
+    "id": 284,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "V",
+    "concentration": 295.7,
+    "uncertainty": null
+  },
+  {
+    "id": 286,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Cr",
+    "concentration": 198.2,
+    "uncertainty": null
+  },
+  {
+    "id": 288,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Mn",
+    "concentration": 131.8,
+    "uncertainty": null
+  },
+  {
+    "id": 290,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Fe",
+    "concentration": 77800.0,
+    "uncertainty": null
+  },
+  {
+    "id": 292,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Co",
+    "concentration": 50.0,
+    "uncertainty": null
+  },
+  {
+    "id": 294,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ni",
+    "concentration": 120.6,
+    "uncertainty": null
+  },
+  {
+    "id": 296,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Cu",
+    "concentration": 112.8,
+    "uncertainty": null
+  },
+  {
+    "id": 298,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Zn",
+    "concentration": 210.0,
+    "uncertainty": null
+  },
+  {
+    "id": 300,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "As",
+    "concentration": 136.2,
+    "uncertainty": null
+  },
+  {
+    "id": 302,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Se",
+    "concentration": 10.26,
+    "uncertainty": null
+  },
+  {
+    "id": 304,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Br",
+    "concentration": 2.9,
+    "uncertainty": null
+  },
+  {
+    "id": 306,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Rb",
+    "concentration": 140.0,
+    "uncertainty": null
+  },
+  {
+    "id": 308,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Sr",
+    "concentration": 1041.0,
+    "uncertainty": null
+  },
+  {
+    "id": 310,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Cd",
+    "concentration": 0.784,
+    "uncertainty": null
+  },
+  {
+    "id": 312,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Sb",
+    "concentration": 6.0,
+    "uncertainty": null
+  },
+  {
+    "id": 314,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Cs",
+    "concentration": 11.0,
+    "uncertainty": null
+  },
+  {
+    "id": 316,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ba",
+    "concentration": 709.0,
+    "uncertainty": null
+  },
+  {
+    "id": 318,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "La",
+    "concentration": 94.0,
+    "uncertainty": null
+  },
+  {
+    "id": 320,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ce",
+    "concentration": 190.0,
+    "uncertainty": null
+  },
+  {
+    "id": 322,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Nd",
+    "concentration": 85.0,
+    "uncertainty": null
+  },
+  {
+    "id": 324,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Sm",
+    "concentration": 20.0,
+    "uncertainty": null
+  },
+  {
+    "id": 326,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Eu",
+    "concentration": 4.1,
+    "uncertainty": null
+  },
+  {
+    "id": 328,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Gd",
+    "concentration": 13.0,
+    "uncertainty": null
+  },
+  {
+    "id": 330,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Tb",
+    "concentration": 2.6,
+    "uncertainty": null
+  },
+  {
+    "id": 332,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Dy",
+    "concentration": 17.0,
+    "uncertainty": null
+  },
+  {
+    "id": 334,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ho",
+    "concentration": 3.5,
+    "uncertainty": null
+  },
+  {
+    "id": 336,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Tm",
+    "concentration": 2.1,
+    "uncertainty": null
+  },
+  {
+    "id": 338,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Yb",
+    "concentration": 7.6,
+    "uncertainty": null
+  },
+  {
+    "id": 340,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Lu",
+    "concentration": 1.2,
+    "uncertainty": null
+  },
+  {
+    "id": 342,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Hf",
+    "concentration": 6.8,
+    "uncertainty": null
+  },
+  {
+    "id": 344,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ta",
+    "concentration": 1.8,
+    "uncertainty": null
+  },
+  {
+    "id": 346,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "W",
+    "concentration": 5.6,
+    "uncertainty": null
+  },
+  {
+    "id": 348,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Hg",
+    "concentration": 0.1431,
+    "uncertainty": null
+  },
+  {
+    "id": 350,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Ti",
+    "concentration": 5.9,
+    "uncertainty": null
+  },
+  {
+    "id": 352,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Pb",
+    "concentration": 68.2,
+    "uncertainty": null
+  },
+  {
+    "id": 354,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "Th",
+    "concentration": 25.7,
+    "uncertainty": null
+  },
+  {
+    "id": 356,
+    "sample_name": "CFA-1633b Coal Fly Ash",
+    "element": "U",
+    "concentration": 8.79,
+    "uncertainty": null
+  },
+  {
+    "id": 358,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "B",
+    "concentration": 29.0,
+    "uncertainty": null
+  },
+  {
+    "id": 360,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "N",
+    "concentration": 29400.0,
+    "uncertainty": null
+  },
+  {
+    "id": 362,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Na",
+    "concentration": 24.0,
+    "uncertainty": null
+  },
+  {
+    "id": 364,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Mg",
+    "concentration": 4320.0,
+    "uncertainty": null
+  },
+  {
+    "id": 366,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Al",
+    "concentration": 249.0,
+    "uncertainty": null
+  },
+  {
+    "id": 368,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "P",
+    "concentration": 1370.0,
+    "uncertainty": null
+  },
+  {
+    "id": 370,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "S",
+    "concentration": 2000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 372,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Cl",
+    "concentration": 360.0,
+    "uncertainty": null
+  },
+  {
+    "id": 374,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "K",
+    "concentration": 24300.0,
+    "uncertainty": null
+  },
+  {
+    "id": 376,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Ca",
+    "concentration": 15600.0,
+    "uncertainty": null
+  },
+  {
+    "id": 378,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Sc",
+    "concentration": 0.04,
+    "uncertainty": null
+  },
+  {
+    "id": 380,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "V",
+    "concentration": 0.37,
+    "uncertainty": null
+  },
+  {
+    "id": 382,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Cr",
+    "concentration": 1.0,
+    "uncertainty": null
+  },
+  {
+    "id": 384,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Mn",
+    "concentration": 98.0,
+    "uncertainty": null
+  },
+  {
+    "id": 386,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Fe",
+    "concentration": 218.0,
+    "uncertainty": null
+  },
+  {
+    "id": 388,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Co",
+    "concentration": 0.07,
+    "uncertainty": null
+  },
+  {
+    "id": 390,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Ni",
+    "concentration": 0.69,
+    "uncertainty": null
+  },
+  {
+    "id": 392,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Cu",
+    "concentration": 3.7,
+    "uncertainty": null
+  },
+  {
+    "id": 394,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Zn",
+    "concentration": 17.9,
+    "uncertainty": null
+  },
+  {
+    "id": 396,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "As",
+    "concentration": 0.06,
+    "uncertainty": null
+  },
+  {
+    "id": 398,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Se",
+    "concentration": 0.12,
+    "uncertainty": null
+  },
+  {
+    "id": 400,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Br",
+    "concentration": 11.0,
+    "uncertainty": null
+  },
+  {
+    "id": 402,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Rb",
+    "concentration": 19.7,
+    "uncertainty": null
+  },
+  {
+    "id": 404,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Sr",
+    "concentration": 53.0,
+    "uncertainty": null
+  },
+  {
+    "id": 406,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Mo",
+    "concentration": 0.06,
+    "uncertainty": null
+  },
+  {
+    "id": 408,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Cd",
+    "concentration": 0.026,
+    "uncertainty": null
+  },
+  {
+    "id": 410,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Sb",
+    "concentration": 0.02,
+    "uncertainty": null
+  },
+  {
+    "id": 412,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "I",
+    "concentration": 0.3,
+    "uncertainty": null
+  },
+  {
+    "id": 414,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Ba",
+    "concentration": 124.0,
+    "uncertainty": null
+  },
+  {
+    "id": 416,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "La",
+    "concentration": 9.0,
+    "uncertainty": null
+  },
+  {
+    "id": 418,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Ce",
+    "concentration": 10.0,
+    "uncertainty": null
+  },
+  {
+    "id": 420,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Nd",
+    "concentration": 7.0,
+    "uncertainty": null
+  },
+  {
+    "id": 422,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Sm",
+    "concentration": 1.0,
+    "uncertainty": null
+  },
+  {
+    "id": 424,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Eu",
+    "concentration": 0.17,
+    "uncertainty": null
+  },
+  {
+    "id": 426,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Gd",
+    "concentration": 1.0,
+    "uncertainty": null
+  },
+  {
+    "id": 428,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Tb",
+    "concentration": 0.1,
+    "uncertainty": null
+  },
+  {
+    "id": 430,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Yb",
+    "concentration": 0.2,
+    "uncertainty": null
+  },
+  {
+    "id": 432,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Hg",
+    "concentration": 0.031,
+    "uncertainty": null
+  },
+  {
+    "id": 434,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Pb",
+    "concentration": 0.87,
+    "uncertainty": null
+  },
+  {
+    "id": 436,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "Th",
+    "concentration": 0.05,
+    "uncertainty": null
+  },
+  {
+    "id": 438,
+    "sample_name": "NIST-1547 Peach Leaves",
+    "element": "U",
+    "concentration": 0.015,
+    "uncertainty": null
+  },
+  {
+    "id": 440,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "B",
+    "concentration": 37.7,
+    "uncertainty": null
+  },
+  {
+    "id": 442,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Na",
+    "concentration": 18210.0,
+    "uncertainty": null
+  },
+  {
+    "id": 444,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Mg",
+    "concentration": 9000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 446,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Al",
+    "concentration": 310.0,
+    "uncertainty": null
+  },
+  {
+    "id": 448,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "P",
+    "concentration": 5187.0,
+    "uncertainty": null
+  },
+  {
+    "id": 450,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "S",
+    "concentration": 5000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 452,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "K",
+    "concentration": 29000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 454,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Ca",
+    "concentration": 15260.0,
+    "uncertainty": null
+  },
+  {
+    "id": 456,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Sc",
+    "concentration": 0.0055,
+    "uncertainty": null
+  },
+  {
+    "id": 458,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "V",
+    "concentration": 0.568,
+    "uncertainty": null
+  },
+  {
+    "id": 460,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Mn",
+    "concentration": 76.0,
+    "uncertainty": null
+  },
+  {
+    "id": 462,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Co",
+    "concentration": 0.393,
+    "uncertainty": null
+  },
+  {
+    "id": 464,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Ni",
+    "concentration": 2.142,
+    "uncertainty": null
+  },
+  {
+    "id": 466,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Cu",
+    "concentration": 12.22,
+    "uncertainty": null
+  },
+  {
+    "id": 468,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Zn",
+    "concentration": 82.3,
+    "uncertainty": null
+  },
+  {
+    "id": 470,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "As",
+    "concentration": 0.068,
+    "uncertainty": null
+  },
+  {
+    "id": 472,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Se",
+    "concentration": 0.1152,
+    "uncertainty": null
+  },
+  {
+    "id": 474,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Rb",
+    "concentration": 12.7,
+    "uncertainty": null
+  },
+  {
+    "id": 476,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Sr",
+    "concentration": 55.54,
+    "uncertainty": null
+  },
+  {
+    "id": 478,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Cd",
+    "concentration": 2.876,
+    "uncertainty": null
+  },
+  {
+    "id": 480,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Eu",
+    "concentration": 0.0055,
+    "uncertainty": null
+  },
+  {
+    "id": 482,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Hg",
+    "concentration": 0.0297,
+    "uncertainty": null
+  },
+  {
+    "id": 484,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Pb",
+    "concentration": 0.2,
+    "uncertainty": null
+  },
+  {
+    "id": 486,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "Th",
+    "concentration": 0.048,
+    "uncertainty": null
+  },
+  {
+    "id": 488,
+    "sample_name": "NIST-1570a Spinach leaves",
+    "element": "U",
+    "concentration": 0.155,
+    "uncertainty": null
+  },
+  {
+    "id": 490,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Na",
+    "concentration": 11600.0,
+    "uncertainty": null
+  },
+  {
+    "id": 492,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Mg",
+    "concentration": 15100.0,
+    "uncertainty": null
+  },
+  {
+    "id": 494,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Al",
+    "concentration": 75000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 496,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "P",
+    "concentration": 620.0,
+    "uncertainty": null
+  },
+  {
+    "id": 498,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "S",
+    "concentration": 890.0,
+    "uncertainty": null
+  },
+  {
+    "id": 500,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "K",
+    "concentration": 2030.0,
+    "uncertainty": null
+  },
+  {
+    "id": 502,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Ca",
+    "concentration": 18900.0,
+    "uncertainty": null
+  },
+  {
+    "id": 504,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Ti",
+    "concentration": 3420.0,
+    "uncertainty": null
+  },
+  {
+    "id": 506,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "V",
+    "concentration": 112.0,
+    "uncertainty": null
+  },
+  {
+    "id": 508,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Cr",
+    "concentration": 130.0,
+    "uncertainty": null
+  },
+  {
+    "id": 510,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Mn",
+    "concentration": 538.0,
+    "uncertainty": null
+  },
+  {
+    "id": 512,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Fe",
+    "concentration": 35000.0,
+    "uncertainty": null
+  },
+  {
+    "id": 514,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Co",
+    "concentration": 13.4,
+    "uncertainty": null
+  },
+  {
+    "id": 516,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Ni",
+    "concentration": 88.0,
+    "uncertainty": null
+  },
+  {
+    "id": 518,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Cu",
+    "concentration": 34.6,
+    "uncertainty": null
+  },
+  {
+    "id": 520,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Zn",
+    "concentration": 106.0,
+    "uncertainty": null
+  },
+  {
+    "id": 522,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "As",
+    "concentration": 17.7,
+    "uncertainty": null
+  },
+  {
+    "id": 524,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Se",
+    "concentration": 1.57,
+    "uncertainty": null
+  },
+  {
+    "id": 526,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Sr",
+    "concentration": 231.0,
+    "uncertainty": null
+  },
+  {
+    "id": 528,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Ag",
+    "concentration": 0.41,
+    "uncertainty": null
+  },
+  {
+    "id": 530,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Cd",
+    "concentration": 0.38,
+    "uncertainty": null
+  },
+  {
+    "id": 532,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Sb",
+    "concentration": 7.9,
+    "uncertainty": null
+  },
+  {
+    "id": 534,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Ba",
+    "concentration": 968.0,
+    "uncertainty": null
+  },
+  {
+    "id": 536,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Hg",
+    "concentration": 1.4,
+    "uncertainty": null
+  },
+  {
+    "id": 538,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Tl",
+    "concentration": 0.74,
+    "uncertainty": null
+  },
+  {
+    "id": 540,
+    "sample_name": "Nist SRM 2709 San Jaquin soil. 4,55%",
+    "element": "Pb",
+    "concentration": 18.9,
+    "uncertainty": null
+  },
+  {
+    "id": 542,
+    "sample_name": "SARM 7",
+    "element": "Au",
+    "concentration": 0.31,
+    "uncertainty": null
+  },
+  {
+    "id": 544,
+    "sample_name": "1646",
+    "element": "Al",
+    "concentration": 62500.0,
+    "uncertainty": null
+  },
+  {
+    "id": 546,
+    "sample_name": "No.14 (JSO-1)",
+    "element": "Mg",
+    "concentration": 12700.0,
+    "uncertainty": null
+  },
+  {
+    "id": 548,
+    "sample_name": "No.13 (JSd-4)",
+    "element": "Mg",
+    "concentration": 24400.0,
+    "uncertainty": null
+  },
+  {
+    "id": 550,
+    "sample_name": "No.12 (JA-1a)",
+    "element": "Mg",
+    "concentration": 9350.0,
+    "uncertainty": null
+  },
+  {
+    "id": 552,
+    "sample_name": "No.11 (JB-1b)",
+    "element": "Mg",
+    "concentration": 49100.0,
+    "uncertainty": null
+  },
+  {
+    "id": 554,
+    "sample_name": "No.3 (JSd-3)",
+    "element": "Mg",
+    "concentration": 7060.0,
+    "uncertainty": null
+  },
+  {
+    "id": 556,
+    "sample_name": "No.2 (JSd-2)",
+    "element": "Mg",
+    "concentration": 16400.0,
+    "uncertainty": null
+  },
+  {
+    "id": 558,
+    "sample_name": "No.1 (JSd-1)",
+    "element": "Mg",
+    "concentration": 10930.0,
+    "uncertainty": null
+  }
+]

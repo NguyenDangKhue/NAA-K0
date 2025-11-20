@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAA K0 - Quản lý Thông số Lò và Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-atom"></i> NAA K0 - Phân tích Kích hoạt Neutron</h1>
+            <p class="subtitle">Quản lý Thông số Lò phản ứng và Detector</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('system-data', event)">
+                <i class="fas fa-cog"></i> Dữ liệu hệ thống
+            </button>
+            <button class="tab-btn" onclick="switchTab('calculation-sample', event)">
+                <i class="fas fa-calculator"></i> Dữ liệu mẫu tính toán
+            </button>
+        </div>
+
+        <!-- System Data Tab (Main) -->
+        <div id="system-data-tab" class="tab-content active">
+            <div class="sub-tabs">
+                <button class="sub-tab-btn active" onclick="switchSubTab('reactor', event)">
+                    <i class="fas fa-reactor"></i> Thông số Lò phản ứng
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('detector', event)">
+                    <i class="fas fa-microchip"></i> Thông số Detector
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('nuclear', event)">
+                    <i class="fas fa-database"></i> Dữ liệu Hạt nhân
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('standard-sample', event)">
+                    <i class="fas fa-flask"></i> Dữ liệu Mẫu chuẩn
+                </button>
+            </div>
+
+            <!-- Reactor Parameters Sub-Tab -->
+            <div id="reactor-subtab" class="sub-tab-content active">
+            <div class="section-header">
+                <h2><i class="fas fa-cog"></i> Quản lý Thông số Lò phản ứng</h2>
+                <button class="btn btn-primary" onclick="showReactorModal()">
+                    <i class="fas fa-plus"></i> Thêm mới
+                </button>
+            </div>
+
+            <div class="filter-bar">
+                <input type="text" id="reactor-position-filter" placeholder="Lọc theo vị trí chiếu..." 
+                       onkeyup="filterReactorParams()">
+            </div>
+
+            <div class="table-container">
+                <table id="reactor-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Vị trí đo</th>
+                            <th>Hệ số f</th>
+                            <th>Sai số f</th>
+                            <th>Hệ số α</th>
+                            <th>Sai số α</th>
+                            <th>Ghi chú</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reactor-tbody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            <!-- Detector Parameters Sub-Tab -->
+            <div id="detector-subtab" class="sub-tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-microchip"></i> Quản lý Thông số Detector</h2>
+                <button class="btn btn-primary" onclick="showDetectorModal()">
+                    <i class="fas fa-plus"></i> Thêm mới
+                </button>
+            </div>
+
+            <div class="filter-bar">
+                <input type="text" id="detector-name-filter" placeholder="Lọc theo tên detector..." 
+                       onkeyup="filterDetectorParams()">
+                <input type="text" id="detector-position-filter" placeholder="Lọc theo vị trí đo..." 
+                       onkeyup="filterDetectorParams()">
+            </div>
+
+            <div class="table-container">
+                <table id="detector-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên Detector</th>
+                            <th>Vị trí đo</th>
+                            <th>Loại đường</th>
+                            <th>Hệ số hiệu suất</th>
+                            <th>Ghi chú</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detector-tbody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            <!-- Nuclear Data Sub-Tab -->
+            <div id="nuclear-subtab" class="sub-tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-database"></i> Quản lý Dữ liệu Hạt nhân</h2>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="showNuclearDataModal()">
+                        <i class="fas fa-plus"></i> Thêm mới
+                    </button>
+                    <button class="btn btn-success" onclick="downloadTemplate()">
+                        <i class="fas fa-download"></i> Tải file mẫu CSV
+                    </button>
+                    <button class="btn btn-primary" onclick="downloadNuclearData()">
+                        <i class="fas fa-file-download"></i> Tải dữ liệu CSV
+                    </button>
+                </div>
+            </div>
+
+            <!-- Warning Box -->
+            <div class="warning-box">
+                <i class="fas fa-exclamation-triangle"></i>
+                <div>
+                    <strong>CẢNH BÁO QUAN TRỌNG:</strong>
+                    <p>Khi bạn import file CSV mới, <strong>TOÀN BỘ dữ liệu hạt nhân cũ sẽ bị XÓA</strong> và được thay thế bằng dữ liệu mới từ file CSV. 
+                    Vui lòng đảm bảo bạn đã sao lưu dữ liệu cũ trước khi import.</p>
+                </div>
+            </div>
+
+            <!-- CSV Format Instructions -->
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <strong>HƯỚNG DẪN ĐỊNH DẠNG FILE CSV:</strong>
+                    <ul>
+                        <li>File CSV phải có các cột: <strong>Code, El, Emitter, A, E (keV), k0, Q0, T1/2, Er</strong></li>
+                        <li><strong>Cho phép để trống:</strong> Các trường số (A, E, k0, Q0, T1/2, Er) có thể để trống nếu không có dữ liệu. Để trống bằng cách không điền gì hoặc để ô trống trong Excel.</li>
+                        <li>Nếu dùng Excel: Sau khi điền dữ liệu, chọn <strong>"Lưu dưới dạng" → "CSV UTF-8 (dấu phẩy phân tách) (*.csv)"</strong></li>
+                        <li>Hoặc: <strong>"Lưu dưới dạng" → "CSV (dấu phẩy phân tách) (*.csv)"</strong> và chọn encoding UTF-8</li>
+                        <li>Không nên mở và lưu lại file CSV bằng Excel nhiều lần vì có thể làm thay đổi định dạng</li>
+                        <li>Nếu các cột bị dính vào nhau, hãy kiểm tra delimiter (phải là dấu phẩy ",")</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <h3><i class="fas fa-upload"></i> Import dữ liệu từ file CSV</h3>
+                <form id="nuclear-upload-form" enctype="multipart/form-data">
+                    <div class="file-upload-area" id="file-upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Kéo thả file CSV vào đây hoặc <span class="file-link">chọn file</span></p>
+                        <input type="file" id="nuclear-csv-file" name="file" accept=".csv" style="display: none;" onchange="handleFileSelect(event)">
+                        <p class="file-info" id="file-info"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-upload">
+                        <i class="fas fa-upload"></i> Import dữ liệu
+                    </button>
+                </form>
+            </div>
+
+            <!-- Data Display -->
+            <div class="data-info">
+                <p><strong>Tổng số bản ghi:</strong> <span id="nuclear-data-count">0</span></p>
+            </div>
+
+            <div class="filter-bar">
+                <input type="text" id="nuclear-code-filter" placeholder="Lọc theo Code..." 
+                       onkeyup="filterNuclearData()">
+                <input type="text" id="nuclear-element-filter" placeholder="Lọc theo Nguyên tố..." 
+                       onkeyup="filterNuclearData()">
+                <input type="text" id="nuclear-emitter-filter" placeholder="Lọc theo Emitter..." 
+                       onkeyup="filterNuclearData()">
+            </div>
+
+            <div class="table-container">
+                <table id="nuclear-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Code</th>
+                            <th>El</th>
+                            <th>Emitter</th>
+                            <th>A</th>
+                            <th>E (keV)</th>
+                            <th>k0</th>
+                            <th>Q0</th>
+                            <th>T1/2</th>
+                            <th>Er</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="nuclear-tbody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            <!-- Standard Sample Data Sub-Tab -->
+            <div id="standard-sample-subtab" class="sub-tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-flask"></i> Quản lý Dữ liệu Mẫu chuẩn</h2>
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="showStandardSampleModal()">
+                        <i class="fas fa-plus"></i> Thêm mới
+                    </button>
+                    <button class="btn btn-success" onclick="downloadStandardSampleTemplate()">
+                        <i class="fas fa-download"></i> Tải file mẫu CSV
+                    </button>
+                    <button class="btn btn-primary" onclick="downloadStandardSampleData()">
+                        <i class="fas fa-file-download"></i> Tải dữ liệu CSV
+                    </button>
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    <strong>THÔNG TIN:</strong>
+                    <ul>
+                        <li>Dữ liệu import từ CSV sẽ được <strong>THÊM VÀO</strong> dữ liệu hiện có, không xóa dữ liệu cũ</li>
+                        <li>Một mẫu chuẩn có thể có nhiều nguyên tố (mỗi nguyên tố là một dòng riêng)</li>
+                        <li>File CSV phải có các cột: <strong>Tên mẫu chuẩn, Tên nguyên tố, Hàm lượng, Sai số</strong></li>
+                        <li><strong>Đơn vị:</strong> Hàm lượng và Sai số tính bằng <strong>ppm</strong> (parts per million), hiển thị 2 chữ số thập phân</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <h3><i class="fas fa-upload"></i> Import dữ liệu từ file CSV</h3>
+                <form id="standard-sample-upload-form" enctype="multipart/form-data">
+                    <div class="file-upload-area" id="standard-sample-upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Kéo thả file CSV vào đây hoặc <span class="file-link">chọn file</span></p>
+                        <input type="file" id="standard-sample-csv-file" name="file" accept=".csv" style="display: none;" onchange="handleStandardSampleFileSelect(event)">
+                        <p class="file-info" id="standard-sample-file-info"></p>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-upload">
+                        <i class="fas fa-upload"></i> Import dữ liệu
+                    </button>
+                </form>
+            </div>
+
+            <!-- Data Display -->
+            <div class="data-info">
+                <p><strong>Tổng số bản ghi:</strong> <span id="standard-sample-data-count">0</span></p>
+            </div>
+
+            <div class="filter-bar">
+                <input type="text" id="standard-sample-name-filter" placeholder="Lọc theo tên mẫu chuẩn..." 
+                       onkeyup="filterStandardSampleData()">
+                <input type="text" id="standard-sample-element-filter" placeholder="Lọc theo nguyên tố..." 
+                       onkeyup="filterStandardSampleData()">
+            </div>
+
+            <div class="table-container">
+                <table id="standard-sample-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 60px;">ID</th>
+                            <th>Tên mẫu chuẩn / Nguyên tố</th>
+                            <th>Hàm lượng (ppm)</th>
+                            <th>Sai số (ppm)</th>
+                            <th>Thao tác</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="standard-sample-tbody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+
+        <!-- Calculation Sample Data Tab -->
+        <div id="calculation-sample-tab" class="tab-content">
+            <div class="sub-tabs">
+                <button class="sub-tab-btn active" onclick="switchSubTab('irradiated-sample', event)">
+                    <i class="fas fa-flask"></i> Dữ liệu mẫu đã chiếu
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('peak-area', event)">
+                    <i class="fas fa-chart-line"></i> Xử lý diện tích đỉnh
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('calculation-result', event)">
+                    <i class="fas fa-calculator"></i> Tính toán kết quả
+                </button>
+            </div>
+
+            <!-- Irradiated Sample Data Sub-Tab -->
+            <div id="irradiated-sample-subtab" class="sub-tab-content active">
+                <div class="section-header">
+                    <h2><i class="fas fa-flask"></i> Dữ liệu Mẫu đã chiếu</h2>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="showIrradiatedContainerModal()">
+                            <i class="fas fa-plus"></i> Thêm Container
+                        </button>
+                        <button class="btn btn-success" onclick="downloadIrradiatedTemplate()">
+                            <i class="fas fa-download"></i> Tải file mẫu CSV
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Process .Spe Files Section -->
+                <div class="upload-section" style="margin-bottom: 25px; background: linear-gradient(135deg, rgba(198, 40, 40, 0.05) 0%, rgba(198, 40, 40, 0.02) 100%); border: 2px solid rgba(198, 40, 40, 0.2);">
+                    <h3><i class="fas fa-file-code"></i> Xử lý file .Spe để tạo CSV tự động</h3>
+                    <div class="info-box" style="margin-bottom: 15px; background: rgba(198, 40, 40, 0.05);">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <strong>HƯỚNG DẪN:</strong>
+                            <ul>
+                                <li>Chọn một hoặc nhiều file .Spe để trích xuất thông tin "Tên phổ", "Thời gian bắt đầu đo", "Thời gian đo"</li>
+                                <li>Hệ thống sẽ tự động tạo file CSV với các thông tin đã điền sẵn</li>
+                                <li>Bạn chỉ cần điền thêm các thông tin khác (Tên cont chiếu, Tên mẫu, Khối lượng mẫu, ...) và import vào hệ thống</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form id="spe-process-form" enctype="multipart/form-data">
+                        <div class="file-upload-area" id="spe-upload-area">
+                            <i class="fas fa-file-code"></i>
+                            <p>Kéo thả file .Spe vào đây hoặc <span class="file-link">chọn file</span></p>
+                            <input type="file" id="spe-files" name="files" accept=".spe" multiple style="display: none;" onchange="handleSpeFileSelect(event)">
+                            <p class="file-info" id="spe-file-info"></p>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-upload">
+                            <i class="fas fa-magic"></i> Xử lý file .Spe và tải CSV
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Upload Section -->
+                <div class="upload-section">
+                    <h3><i class="fas fa-upload"></i> Import dữ liệu từ file CSV</h3>
+                    <form id="irradiated-upload-form" enctype="multipart/form-data">
+                        <div class="file-upload-area" id="irradiated-upload-area">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Kéo thả file CSV vào đây hoặc <span class="file-link">chọn file</span></p>
+                            <input type="file" id="irradiated-csv-file" name="file" accept=".csv" style="display: none;" onchange="handleIrradiatedFileSelect(event)">
+                            <p class="file-info" id="irradiated-file-info"></p>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-upload">
+                            <i class="fas fa-upload"></i> Import dữ liệu
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Data Display -->
+                <div class="data-info">
+                    <p><strong>Tổng số container:</strong> <span id="irradiated-container-count">0</span> | 
+                       <strong>Tổng số mẫu:</strong> <span id="irradiated-sample-count">0</span></p>
+                </div>
+
+                <div class="filter-bar">
+                    <input type="text" id="irradiated-container-filter" placeholder="Lọc theo tên container..." 
+                           onkeyup="filterIrradiatedData()">
+                </div>
+
+                <div class="table-container">
+                    <table id="irradiated-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 60px;">ID</th>
+                                <th>Tên Container / Mẫu</th>
+                                <th>Vị trí đo</th>
+                                <th>Thời gian chiếu</th>
+                                <th>Thao tác</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="irradiated-tbody">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Peak Area Processing Sub-Tab -->
+            <div id="peak-area-subtab" class="sub-tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> Xử lý Diện tích đỉnh</h2>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="showPeakAreaModal()">
+                            <i class="fas fa-plus"></i> Thêm mới
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Data Display -->
+                <div class="data-info">
+                    <p><strong>Tổng số bản ghi:</strong> <span id="peak-area-count">0</span></p>
+                </div>
+
+                <div class="filter-bar">
+                    <input type="text" id="peak-area-container-filter" placeholder="Lọc theo tên container..." 
+                           onkeyup="filterPeakAreaData()" style="margin-right: 10px;">
+                    <input type="text" id="peak-area-spectrum-filter" placeholder="Lọc theo tên phổ..." 
+                           onkeyup="filterPeakAreaData()">
+                </div>
+
+                <div class="table-container">
+                    <table id="peak-area-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 60px;">ID</th>
+                                <th>Tên Container</th>
+                                <th>Tên phổ</th>
+                                <th>Nguyên tố</th>
+                                <th>Năng lượng (keV)</th>
+                                <th>Diện tích đỉnh</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="peak-area-tbody">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Calculation Result Sub-Tab -->
+            <div id="calculation-result-subtab" class="sub-tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-calculator"></i> Tính toán Kết quả</h2>
+                </div>
+                
+                <!-- Container Selection -->
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label for="calc-container-select" style="font-weight: 600; margin-bottom: 8px; display: block;">
+                        <i class="fas fa-box"></i> Chọn Container cần tính toán <span class="required">*</span>
+                    </label>
+                    <select id="calc-container-select" class="form-control" style="max-width: 400px;" onchange="loadCalculationParameters()">
+                        <option value="">-- Chọn container --</option>
+                    </select>
+                </div>
+
+                <!-- Calculation Parameters Display -->
+                <div id="calc-parameters-section" style="display: none;">
+                    <div class="calc-params-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px;">
+                        <!-- Kênh chiếu -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">Kênh chiếu</label>
+                            <div id="calc-irradiation-position" style="font-size: 1.1rem; font-weight: 600; color: var(--primary-color);">-</div>
+                        </div>
+
+                        <!-- Gth,(m) -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">G<sub>th,(m)</sub></label>
+                            <input type="number" id="calc-gth-m" value="1" step="0.0001" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem;">
+                        </div>
+
+                        <!-- Gth,(a) -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">G<sub>th,(a)</sub></label>
+                            <input type="number" id="calc-gth-a" value="1" step="0.0001" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem;">
+                        </div>
+
+                        <!-- Ge,(m) -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">G<sub>e,(m)</sub></label>
+                            <input type="number" id="calc-ge-m" value="1" step="0.0001" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem;">
+                        </div>
+
+                        <!-- Ge,(a) -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">G<sub>e,(a)</sub></label>
+                            <input type="number" id="calc-ge-a" value="1" step="0.0001" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem;">
+                        </div>
+
+                        <!-- Giá trị f -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">Giá trị f</label>
+                            <div id="calc-f-value" style="font-size: 1.1rem; font-weight: 600; color: var(--text-color);">-</div>
+                        </div>
+
+                        <!-- Giá trị alpha -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">Giá trị α</label>
+                            <div id="calc-alpha-value" style="font-size: 1.1rem; font-weight: 600; color: var(--text-color);">-</div>
+                        </div>
+
+                        <!-- Ecd(a) -->
+                        <div class="calc-param-item" style="background: var(--bg-color); padding: 15px; border-radius: 8px; border: 1px solid var(--border-color);">
+                            <label style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; display: block;">E<sub>cd</sub>(a)</label>
+                            <input type="number" id="calc-ecd-a" value="0.55" step="0.0001" style="width: 100%; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 1rem;" onchange="recalculateMonitorSpectraQoA()" oninput="recalculateMonitorSpectraQoA()">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitor Spectra Display -->
+                <div id="calc-monitor-spectra-section" style="display: none; margin-top: 30px;">
+                    <h3 style="margin-bottom: 15px; color: var(--text-color);">
+                        <i class="fas fa-vial"></i> Danh sách Phổ Lá dò
+                    </h3>
+                    <div class="table-container">
+                        <style>
+                            .monitor-spectrum-summary {
+                                background-color: #ffffff;
+                                transition: all 0.3s ease;
+                            }
+                            .monitor-spectrum-summary:hover {
+                                background-color: #f8f9fa !important;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                                transform: translateY(-1px);
+                            }
+                            .monitor-spectrum-summary td {
+                                transition: all 0.3s ease;
+                            }
+                            .monitor-spectrum-summary td:first-child {
+                                font-weight: 600;
+                                font-size: 1.05em;
+                                color: #2c3e50;
+                            }
+                            .monitor-spectrum-summary td:last-child {
+                                font-weight: 700;
+                                font-size: 1.1em;
+                                color: #27ae60;
+                            }
+                            #calc-monitor-spectra-table {
+                                box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                                border-radius: 8px;
+                                overflow: hidden;
+                            }
+                            #calc-monitor-spectra-table thead th {
+                                font-weight: 600;
+                                letter-spacing: 0.5px;
+                            }
+                            #calc-monitor-spectra-table thead th:last-child {
+                                text-align: center;
+                            }
+                        </style>
+                        <table id="calc-monitor-spectra-table" style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white;">
+                                    <th style="padding: 16px 20px; text-align: left; border: 1px solid rgba(255,255,255,0.2); width: 40%; font-size: 1.05em;">Tên phổ</th>
+                                    <th style="padding: 16px 20px; text-align: center; border: 1px solid rgba(255,255,255,0.2); width: 60%; font-size: 1.05em;">Thông lượng Neutron</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calc-monitor-spectra-tbody">
+                                <tr>
+                                    <td colspan="2" style="text-align: center; padding: 40px; color: var(--text-secondary);">
+                                        Chưa có dữ liệu
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Linear Regression Chart -->
+                    <div id="calc-regression-chart-section" style="display: none; margin-top: 40px;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-color);">
+                            <i class="fas fa-chart-line"></i> Đồ thị Phân bố Thông lượng Neutron
+                        </h3>
+                        <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                            <div style="margin-bottom: 20px;">
+                                <canvas id="neutron-flux-chart" style="max-height: 400px;"></canvas>
+                            </div>
+                            <div id="regression-equation" style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
+                                <h4 style="margin: 0 0 10px 0; color: var(--text-color); font-size: 1.1em;">
+                                    <i class="fas fa-calculator"></i> Phương trình Đường tuyến tính (Asp)
+                                </h4>
+                                <div id="regression-formula" style="font-size: 1.1em; font-weight: 600; color: #2c3e50; margin-bottom: 10px;">
+                                    <!-- Phương trình sẽ được hiển thị ở đây -->
+                                </div>
+                                <div id="regression-coefficients" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
+                                    <!-- Các hệ số sẽ được hiển thị ở đây -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Non-Monitor Spectra Display -->
+                    <div id="calc-non-monitor-spectra-section" style="display: none; margin-top: 40px;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-color);">
+                            <i class="fas fa-flask"></i> Danh sách Phổ Mẫu (Không phải lá dò)
+                        </h3>
+                        <div id="calc-non-monitor-spectra-container">
+                            <!-- Data will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuclear Data Modal -->
+    <div id="nuclear-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="nuclear-modal-title">Thêm Dữ liệu Hạt nhân</h3>
+                <span class="close" onclick="closeNuclearDataModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="nuclear-form">
+                    <input type="hidden" id="nuclear-id">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nuclear-code">Code <span class="required">*</span></label>
+                            <input type="text" id="nuclear-code" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nuclear-element">El (Nguyên tố) <span class="required">*</span></label>
+                            <input type="text" id="nuclear-element" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nuclear-emitter">Emitter <span class="required">*</span></label>
+                        <input type="text" id="nuclear-emitter" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nuclear-A">A</label>
+                            <input type="number" id="nuclear-A" step="0.0001">
+                        </div>
+                        <div class="form-group">
+                            <label for="nuclear-E">E (keV)</label>
+                            <input type="number" id="nuclear-E" step="0.0001">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nuclear-k0">k0</label>
+                            <input type="number" id="nuclear-k0" step="0.0000001">
+                        </div>
+                        <div class="form-group">
+                            <label for="nuclear-Q0">Q0</label>
+                            <input type="number" id="nuclear-Q0" step="0.0000001">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nuclear-T-half">T1/2</label>
+                            <input type="number" id="nuclear-T-half" step="0.0001">
+                        </div>
+                        <div class="form-group">
+                            <label for="nuclear-Er">Er</label>
+                            <input type="number" id="nuclear-Er" step="0.0001">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeNuclearDataModal()">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reactor Parameter Modal -->
+    <div id="reactor-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="reactor-modal-title">Thêm Thông số Lò phản ứng</h3>
+                <span class="close" onclick="closeReactorModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="reactor-form">
+                    <input type="hidden" id="reactor-id">
+                    <div class="form-group">
+                        <label for="reactor-position">Vị trí chiếu <span class="required">*</span></label>
+                        <input type="text" id="reactor-position" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reactor-f-factor">Hệ số f <span class="required">*</span></label>
+                            <input type="number" id="reactor-f-factor" step="0.0001" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reactor-f-uncertainty">Sai số f <span class="required">*</span></label>
+                            <input type="number" id="reactor-f-uncertainty" step="0.0001" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reactor-alpha-factor">Hệ số α <span class="required">*</span></label>
+                            <input type="number" id="reactor-alpha-factor" step="0.0001" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reactor-alpha-uncertainty">Sai số α <span class="required">*</span></label>
+                            <input type="number" id="reactor-alpha-uncertainty" step="0.0001" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reactor-note">Ghi chú</label>
+                        <textarea id="reactor-note" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeReactorModal()">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detector Parameter Modal -->
+    <div id="detector-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="detector-modal-title">Thêm Thông số Detector</h3>
+                <span class="close" onclick="closeDetectorModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="detector-form">
+                    <input type="hidden" id="detector-id">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="detector-name">Tên Detector <span class="required">*</span></label>
+                            <input type="text" id="detector-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="detector-position">Vị trí đo <span class="required">*</span></label>
+                            <input type="text" id="detector-position" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="detector-efficiency-type">Loại đường hiệu suất <span class="required">*</span></label>
+                        <select id="detector-efficiency-type" onchange="updateEfficiencyCoefficients()" required>
+                            <option value="">-- Chọn loại đường --</option>
+                            <option value="degree_4">Bậc 4 (5 hệ số)</option>
+                            <option value="degree_5">Bậc 5 (6 hệ số)</option>
+                        </select>
+                    </div>
+                    <div id="efficiency-formula" class="formula-box"></div>
+                    <div id="efficiency-coefficients-container" class="coefficients-container">
+                        <!-- Coefficients will be generated here -->
+                    </div>
+                    <div class="form-group">
+                        <label for="detector-note">Ghi chú</label>
+                        <textarea id="detector-note" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeDetectorModal()">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standard Sample Data Modal -->
+    <div id="standard-sample-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="standard-sample-modal-title">Thêm Dữ liệu Mẫu chuẩn</h3>
+                <span class="close" onclick="closeStandardSampleModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="standard-sample-form">
+                    <input type="hidden" id="standard-sample-id">
+                    <div class="form-group">
+                        <label for="standard-sample-name">Tên mẫu chuẩn <span class="required">*</span></label>
+                        <div style="position: relative;">
+                            <input type="text" id="standard-sample-name" list="sample-names-list" autocomplete="off" required>
+                            <datalist id="sample-names-list">
+                                <!-- Options will be populated by JavaScript -->
+                            </datalist>
+                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 5px;">
+                                Gõ để tìm hoặc chọn từ danh sách mẫu chuẩn hiện có
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="standard-sample-element">Tên nguyên tố <span class="required">*</span></label>
+                        <input type="text" id="standard-sample-element" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="standard-sample-concentration">Hàm lượng (ppm)</label>
+                            <input type="number" id="standard-sample-concentration" step="0.01" placeholder="Đơn vị: ppm">
+                        </div>
+                        <div class="form-group">
+                            <label for="standard-sample-uncertainty">Sai số (ppm)</label>
+                            <input type="number" id="standard-sample-uncertainty" step="0.01" placeholder="Đơn vị: ppm">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeStandardSampleModal()">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Irradiated Container Modal -->
+    <div id="irradiated-container-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="irradiated-container-modal-title">Thêm Container Chiếu</h3>
+                <span class="close" onclick="closeIrradiatedContainerModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="irradiated-container-form">
+                    <input type="hidden" id="irradiated-container-id">
+                    <div class="form-group">
+                        <label for="irradiated-container-name">Tên cont chiếu <span class="required">*</span></label>
+                        <input type="text" id="irradiated-container-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="irradiated-irradiation-position">Vị trí chiếu trong lò</label>
+                        <select id="irradiated-irradiation-position" class="form-control">
+                            <option value="">-- Chọn vị trí chiếu --</option>
+                        </select>
+                        <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 5px;">
+                            <i class="fas fa-info-circle"></i> Vui lòng chọn từ danh sách vị trí chiếu đã được khai báo trong "Thông số Lò phản ứng"
+                        </small>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="irradiated-start-time">Thời gian bắt đầu chiếu</label>
+                            <input type="datetime-local" id="irradiated-start-time">
+                        </div>
+                        <div class="form-group">
+                            <label for="irradiated-end-time">Thời gian kết thúc chiếu</label>
+                            <input type="datetime-local" id="irradiated-end-time">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="irradiated-container-note">Ghi chú</label>
+                        <textarea id="irradiated-container-note" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeIrradiatedContainerModal()">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Irradiated Sample Modal -->
+    <div id="irradiated-sample-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="irradiated-sample-modal-title">Thêm Mẫu đã chiếu</h3>
+                <span class="close" onclick="closeIrradiatedSampleModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="irradiated-sample-form">
+                    <input type="hidden" id="irradiated-sample-id">
+                    <div class="form-group">
+                        <label for="irradiated-sample-container-name">Tên cont chiếu <span class="required">*</span></label>
+                        <div style="position: relative;">
+                            <input type="text" id="irradiated-sample-container-name" list="container-names-list" autocomplete="off" required>
+                            <datalist id="container-names-list">
+                                <!-- Options will be populated by JavaScript -->
+                            </datalist>
+                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 5px;">
+                                Gõ để tìm hoặc chọn từ danh sách container hiện có
+                            </small>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="irradiated-sample-name">Tên mẫu <span class="required">*</span></label>
+                            <input type="text" id="irradiated-sample-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="irradiated-spectrum-name">Tên phổ <span class="required">*</span></label>
+                            <input type="text" id="irradiated-spectrum-name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="irradiated-position-in-container">Vị trí trong container</label>
+                        <input type="text" id="irradiated-position-in-container">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="irradiated-measurement-start-time">Thời gian bắt đầu đo</label>
+                            <input type="datetime-local" id="irradiated-measurement-start-time">
+                        </div>
+                        <div class="form-group">
+                            <label for="irradiated-measurement-duration">Thời gian đo (giây)</label>
+                            <input type="number" id="irradiated-measurement-duration" step="0.01">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="irradiated-sample-mass">Khối lượng mẫu (g)</label>
+                        <input type="number" id="irradiated-sample-mass" step="0.0001">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="irradiated-sample-is-monitor" style="width: auto; margin-right: 8px;">
+                            Đây là lá dò
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="irradiated-sample-is-standard-sample" style="width: auto; margin-right: 8px;" onchange="toggleIrradiatedStandardSampleDropdown()">
+                            Đây là mẫu chuẩn
+                        </label>
+                    </div>
+                    <div class="form-group" id="irradiated-sample-standard-sample-group" style="display: none;">
+                        <label for="irradiated-sample-standard-sample-name">Tên mẫu chuẩn <span class="required">*</span></label>
+                        <select id="irradiated-sample-standard-sample-name">
+                            <option value="">-- Chọn tên mẫu chuẩn --</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeIrradiatedSampleModal()">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Irradiated Container Modal -->
+    <div id="irradiated-container-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="irradiated-container-modal-title">Thêm Container Chiếu</h3>
+                <span class="close" onclick="closeIrradiatedContainerModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="irradiated-container-form">
+                    <input type="hidden" id="irradiated-container-id">
+                    <div class="form-group">
+                        <label for="irradiated-container-name">Tên cont chiếu <span class="required">*</span></label>
+                        <input type="text" id="irradiated-container-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="irradiated-irradiation-position">Vị trí chiếu trong lò</label>
+                        <select id="irradiated-irradiation-position" class="form-control">
+                            <option value="">-- Chọn vị trí chiếu --</option>
+                        </select>
+                        <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 5px;">
+                            <i class="fas fa-info-circle"></i> Vui lòng chọn từ danh sách vị trí chiếu đã được khai báo trong "Thông số Lò phản ứng"
+                        </small>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="irradiated-start-time">Thời gian bắt đầu chiếu</label>
+                            <input type="datetime-local" id="irradiated-start-time">
+                        </div>
+                        <div class="form-group">
+                            <label for="irradiated-end-time">Thời gian kết thúc chiếu</label>
+                            <input type="datetime-local" id="irradiated-end-time">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="irradiated-container-note">Ghi chú</label>
+                        <textarea id="irradiated-container-note" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeIrradiatedContainerModal()">Hủy</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Peak Area Data Modal -->
+    <div id="peak-area-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="peak-area-modal-title">Thêm Dữ liệu Diện tích đỉnh</h3>
+                <span class="close" onclick="closePeakAreaModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="peak-area-form">
+                    <input type="hidden" id="peak-area-id">
+                    <div class="form-group">
+                        <label for="peak-area-container-name">Tên container <span class="required">*</span></label>
+                        <select id="peak-area-container-name" required onchange="loadSpectrumNames()">
+                            <option value="">-- Chọn container --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="peak-area-spectrum-name">Tên phổ <span class="required">*</span></label>
+                        <select id="peak-area-spectrum-name" required>
+                            <option value="">-- Chọn tên phổ --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="peak-area-element-name">Tên nguyên tố <span class="required">*</span></label>
+                        <select id="peak-area-element-name" required onchange="loadEnergies()">
+                            <option value="">-- Chọn nguyên tố --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="peak-area-energy">Năng lượng (keV) <span class="required">*</span></label>
+                        <select id="peak-area-energy" required>
+                            <option value="">-- Chọn năng lượng --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="peak-area-peak-area">Diện tích đỉnh <span class="required">*</span></label>
+                        <input type="number" id="peak-area-peak-area" step="0.0001" required>
+                    </div>
+                    <div class="form-group" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                        <small style="color: var(--text-secondary); display: block; margin-bottom: 8px;">
+                            <i class="fas fa-info-circle"></i> Các giá trị đã chọn (Container, Phổ, Nguyên tố) sẽ được lưu để tự động điền cho lần nhập tiếp theo. Sau khi lưu, form sẽ giữ lại các giá trị đã chọn để nhập tiếp.
+                        </small>
+                        <button type="button" class="btn btn-secondary" onclick="clearLastPeakAreaValues(); showToast('Đã xóa các giá trị đã lưu');" style="font-size: 0.85rem; padding: 6px 12px;">
+                            <i class="fas fa-eraser"></i> Xóa giá trị đã lưu
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closePeakAreaModal()">Đóng</button>
+                        <button type="submit" class="btn btn-primary">Lưu và tiếp tục</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+

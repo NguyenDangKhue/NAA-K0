@@ -1,0 +1,237 @@
+[
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "A759-8a",
+    "is_monitor": true,
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 36579.9,
+    "id": 0
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "A760-8a",
+    "is_monitor": false,
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 60937.2,
+    "id": 1
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "A761-8a",
+    "is_monitor": false,
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 31396.1,
+    "id": 2
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "A762-8a",
+    "is_monitor": true,
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 72614.1,
+    "id": 3
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "BC73g-8a",
+    "is_monitor": false,
+    "element_name": "Ce",
+    "energy": 293.3,
+    "peak_area": 63450.0,
+    "id": 4
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "BC73g-8a",
+    "is_monitor": false,
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 269160.0,
+    "id": 5
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "BC73g-8a",
+    "is_monitor": false,
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 223058.0,
+    "id": 6
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "BC73g-8a",
+    "is_monitor": false,
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 1670090.0,
+    "id": 7
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "BC73g-8a",
+    "is_monitor": false,
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 860582.0,
+    "id": 8
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-3b",
+    "is_monitor": false,
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 7777.5,
+    "id": 9
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-3b",
+    "is_monitor": false,
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 7324.0,
+    "id": 10
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-3b",
+    "is_monitor": false,
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 46554.9,
+    "id": 11
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-3b",
+    "is_monitor": false,
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 30747.7,
+    "id": 12
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-8a",
+    "is_monitor": false,
+    "element_name": "As",
+    "energy": 559.1,
+    "peak_area": 10070.0,
+    "id": 13
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-8a",
+    "is_monitor": false,
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 1664.0,
+    "id": 14
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-8a",
+    "is_monitor": false,
+    "element_name": "Ce",
+    "energy": 293.3,
+    "peak_area": 1210.0,
+    "id": 15
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-8a",
+    "is_monitor": false,
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 12409.0,
+    "id": 16
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-8a",
+    "is_monitor": false,
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 296555.0,
+    "id": 17
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "PT214g-8a",
+    "is_monitor": false,
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 152456.0,
+    "id": 18
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-3c",
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 28777.3,
+    "id": 19
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-3c",
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 26468.1,
+    "id": 20
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-3c",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 161130.3,
+    "id": 21
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-3c",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 105481.9,
+    "id": 22
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "As",
+    "energy": 559.1,
+    "peak_area": 4796.0,
+    "id": 23
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 638.0,
+    "id": 24
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 999.1,
+    "id": 25
+  },
+  {
+    "container_name": "10-10-MQ",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 4886.0,
+    "id": 26
+  }
+]

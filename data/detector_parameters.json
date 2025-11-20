@@ -1,0 +1,46 @@
+[
+  {
+    "detector_name": "GMX30190",
+    "position": "3",
+    "efficiency_type": "degree_4",
+    "efficiency_coefficients": [
+      -22.915868,
+      32.777603,
+      -18.003051,
+      4.226636,
+      -0.368448
+    ],
+    "coefficient_uncertainties": [
+      1e-07,
+      1e-07,
+      1e-07,
+      1e-07,
+      1e-07
+    ],
+    "note": "",
+    "created_at": "2025-11-16T14:47:15.666894",
+    "id": 0
+  },
+  {
+    "detector_name": "GMX30190",
+    "position": "8",
+    "efficiency_type": "degree_4",
+    "efficiency_coefficients": [
+      -20.95465,
+      28.428099,
+      -15.434965,
+      3.578841,
+      -0.308679
+    ],
+    "coefficient_uncertainties": [
+      1e-07,
+      1e-07,
+      1e-07,
+      1e-07,
+      1e-07
+    ],
+    "note": "",
+    "created_at": "2025-11-16T14:46:52.295567",
+    "id": 1
+  }
+]
