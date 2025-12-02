@@ -100,6 +100,7 @@ header h1 {
     z-index: 1;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     letter-spacing: -0.5px;
+    white-space: nowrap;
 }
 
 header h1 i {
@@ -353,8 +354,6 @@ tbody tr {
 
 tbody tr:hover {
     background: rgba(198, 40, 40, 0.05);
-    transform: scale(1.01);
-    box-shadow: 0 2px 8px rgba(198, 40, 40, 0.1);
 }
 
 .action-buttons {
@@ -481,6 +480,7 @@ label {
 
 input[type="text"],
 input[type="number"],
+input[type="datetime-local"],
 select,
 textarea {
     width: 100%;
@@ -503,6 +503,53 @@ textarea:focus {
 
 textarea {
     resize: vertical;
+}
+
+input[type="datetime-local"] {
+    appearance: none;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(198, 40, 40, 0.03) 100%);
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-right: 42px;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    color: var(--primary-color);
+    opacity: 0.8;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+    background: rgba(198, 40, 40, 0.08);
+    transform: scale(1.05);
+}
+
+input[type="datetime-local"]::-webkit-datetime-edit {
+    padding: 0;
+}
+
+input[type="datetime-local"]::-webkit-datetime-edit-fields-wrapper {
+    background: transparent;
+}
+
+input[type="datetime-local"]::-webkit-datetime-edit-text {
+    color: var(--text-secondary);
+    padding: 0 4px;
+}
+
+input[type="datetime-local"]::-webkit-datetime-edit-ampm-field {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    input[type="datetime-local"] {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
 }
 
 .modal-footer {
@@ -565,6 +612,22 @@ textarea {
 
 .toast.show {
     display: block;
+}
+
+/* Link-style button for saved calculation container names */
+.link-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: underline;
+    font: inherit;
+}
+
+.link-button:hover {
+    color: var(--primary-dark);
 }
 
 .toast.error {
@@ -884,3 +947,192 @@ textarea {
     background: #f1f5f9;
 }
 
+/* CSV Import Element Buttons */
+.csv-element-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid;
+    font-weight: 500;
+}
+
+.csv-element-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.csv-element-button.selected {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color) !important;
+}
+
+.csv-element-button.suggested {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffc107;
+}
+
+/* Energy Tolerance Slider */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: #e0e0e0;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* CSV import layout enhancements */
+.csv-upload-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 25px;
+}
+
+.csv-upload-item {
+    flex: 1 1 320px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.csv-upload-item label {
+    font-weight: 600;
+}
+
+.field-hint {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 8px;
+}
+
+.csv-tolerance-item {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+.csv-tolerance-control {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.csv-tolerance-control input[type="range"] {
+    flex: 1;
+}
+
+.csv-tolerance-input {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    background: #fff;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.csv-tolerance-input input {
+    width: 80px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    text-align: right;
+}
+
+.csv-preview-wrapper {
+    margin-top: 25px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.csv-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 18px;
+}
+
+.csv-preview-header h4 {
+    font-size: 1.35rem;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+}
+
+.csv-preview-header p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.csv-preview-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.csv-preview-badge {
+    background: rgba(37, 99, 235, 0.12);
+    color: var(--primary-color);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.csv-table-large {
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+.csv-table-large table {
+    width: 100%;
+}

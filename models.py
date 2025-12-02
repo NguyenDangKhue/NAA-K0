@@ -114,6 +114,7 @@ class PeakAreaData:
     element_name: str  # Tên nguyên tố (El)
     energy: float  # Năng lượng (keV)
     peak_area: float  # Diện tích đỉnh
+    peak_area_error: Optional[float] = None  # Sai số diện tích đỉnh
 
 
 class DataManager:
@@ -128,6 +129,8 @@ class DataManager:
         self.irradiated_containers_file = os.path.join(data_dir, "irradiated_containers.json")
         self.irradiated_samples_file = os.path.join(data_dir, "irradiated_samples.json")
         self.peak_area_data_file = os.path.join(data_dir, "peak_area_data.json")
+        # File lưu kết quả tính toán theo container
+        self.calculation_results_file = os.path.join(data_dir, "calculation_results.json")
         
         # Tạo thư mục data nếu chưa có
         os.makedirs(data_dir, exist_ok=True)
@@ -140,6 +143,7 @@ class DataManager:
         self.irradiated_containers = self._load_irradiated_containers()
         self.irradiated_samples = self._load_irradiated_samples()
         self.peak_area_data = self._load_peak_area_data()
+        self.calculation_results = self._load_calculation_results()
     
     def _load_reactor_params(self) -> List[Dict]:
         """Load thông số lò từ file"""
@@ -669,6 +673,54 @@ class DataManager:
         """Lưu dữ liệu diện tích đỉnh vào file"""
         with open(self.peak_area_data_file, 'w', encoding='utf-8') as f:
             json.dump(self.peak_area_data, f, ensure_ascii=False, indent=2)
+
+    # ========== Calculation Result Methods ==========
+
+    def _load_calculation_results(self) -> List[Dict]:
+        """Load danh sách kết quả tính toán đã lưu từ file"""
+        if os.path.exists(self.calculation_results_file):
+            with open(self.calculation_results_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        return []
+
+    def _save_calculation_results(self):
+        """Lưu danh sách kết quả tính toán vào file"""
+        with open(self.calculation_results_file, 'w', encoding='utf-8') as f:
+            json.dump(self.calculation_results, f, ensure_ascii=False, indent=2)
+
+    def get_calculation_results(self) -> List[Dict]:
+        """
+        Lấy tất cả kết quả tính toán đã lưu.
+        Mỗi bản ghi bao gồm: id, container_name, saved_at (ISO string)
+        """
+        return self.calculation_results
+
+    def add_calculation_result(self, container_name: str, saved_at: str, details: Optional[List[Dict]] = None) -> int:
+        """
+        Thêm bản ghi kết quả tính toán mới cho một container.
+        Nếu container đã được lưu nhiều lần thì vẫn cho phép (mỗi lần một timestamp khác nhau).
+        details: danh sách các dòng kết quả (tên mẫu, phổ, nguyên tố, năng lượng, K0, tương đối, tên mẫu chuẩn...)
+        """
+        record = {
+            "id": len(self.calculation_results),
+            "container_name": str(container_name or "").strip(),
+            "saved_at": str(saved_at),
+            "details": details or []
+        }
+        self.calculation_results.append(record)
+        self._save_calculation_results()
+        return record["id"]
+
+    def delete_calculation_result(self, result_id: int) -> bool:
+        """Xóa một kết quả tính toán đã lưu theo id"""
+        if 0 <= result_id < len(self.calculation_results):
+            del self.calculation_results[result_id]
+            # Re-index IDs
+            for i, item in enumerate(self.calculation_results):
+                item["id"] = i
+            self._save_calculation_results()
+            return True
+        return False
     
     def get_irradiated_containers(self) -> List[Dict]:
         """Lấy tất cả container chiếu"""
@@ -807,14 +859,23 @@ class DataManager:
             valid_positions = self.get_unique_irradiation_positions()
             
             # Nhóm theo container và tạo containers
-            container_names = df[column_mapping['Tên cont chiếu']].unique()
+            # Lưu ý: cột "Tên cont chiếu" có thể chứa giá trị NaN (do để trống),
+            # pandas sẽ trả về giá trị np.nan trong unique() và việc dùng iloc[0]
+            # trên nhóm rỗng sẽ gây lỗi "single positional indexer is out-of-bounds".
+            # Do đó cần loại bỏ NaN và chỉ giữ các giá trị không rỗng.
+            container_series = df[column_mapping['Tên cont chiếu']]
+            container_names = container_series.dropna().unique()
             container_count = 0
             sample_count = 0
             validation_errors = []
             
             for container_name in container_names:
+                # Bỏ qua giá trị NaN hoặc chuỗi rỗng
+                if pd.isna(container_name):
+                    continue
+                
                 container_name = str(container_name).strip()
-                if not container_name:
+                if not container_name or container_name.lower() == 'nan':
                     continue
                 
                 # Kiểm tra container đã tồn tại chưa
@@ -823,6 +884,9 @@ class DataManager:
                 if not existing_container:
                     # Lấy thông tin container từ dòng đầu tiên của container này
                     container_rows = df[df[column_mapping['Tên cont chiếu']] == container_name]
+                    if container_rows.empty:
+                        # Không có dòng nào tương ứng (có thể do vấn đề encoding/space), bỏ qua container này
+                        continue
                     first_row = container_rows.iloc[0]
                     
                     def normalize_datetime(dt_str):
@@ -1029,7 +1093,15 @@ class DataManager:
             print(f"Error reading .Spe file {spe_file_path}: {str(e)}")
             return None
     
-    def process_spe_files_to_csv(self, spe_file_paths: List[str], output_csv_path: str):
+    def process_spe_files_to_csv(
+        self,
+        spe_file_paths: List[str],
+        output_csv_path: str,
+        default_container_name: str = '',
+        default_position: str = '',
+        default_start_time: str = '',
+        default_end_time: str = ''
+    ):
         """
         Xử lý nhiều file .Spe và tạo file CSV với dữ liệu đã điền sẵn
         Args:
@@ -1071,9 +1143,17 @@ class DataManager:
             # Điền dữ liệu từ file .Spe vào các cột tương ứng
             for item in data:
                 new_row = {col: '' for col in template_df.columns}
+                if default_container_name:
+                    new_row['Tên cont chiếu'] = default_container_name
                 new_row['Tên phổ'] = item['Tên phổ']
                 new_row['Thời gian bắt đầu đo'] = item['Thời gian bắt đầu đo']
                 new_row['Thời gian đo'] = item['Thời gian đo']
+                if default_position:
+                    new_row['Vị trí chiếu trong lò'] = default_position
+                if default_start_time:
+                    new_row['Thời gian bắt đầu chiếu'] = default_start_time
+                if default_end_time:
+                    new_row['Thời gian kết thúc chiếu'] = default_end_time
                 result_df = pd.concat([result_df, pd.DataFrame([new_row])], ignore_index=True)
             
             # Ghi file CSV với encoding UTF-8-sig để Excel đọc được tiếng Việt
@@ -1173,6 +1253,18 @@ class DataManager:
             return True
         return False
     
+    def delete_peak_area_data_by_container(self, container_name: str) -> int:
+        """Xóa tất cả dữ liệu diện tích đỉnh theo tên container, trả về số lượng đã xóa"""
+        initial_count = len(self.peak_area_data)
+        self.peak_area_data = [item for item in self.peak_area_data if item.get('container_name') != container_name]
+        deleted_count = initial_count - len(self.peak_area_data)
+        if deleted_count > 0:
+            # Cập nhật lại ID cho các item còn lại
+            for i, item in enumerate(self.peak_area_data):
+                item['id'] = i
+            self._save_peak_area_data()
+        return deleted_count
+    
     def get_unique_elements(self) -> List[str]:
         """Lấy danh sách các nguyên tố duy nhất từ dữ liệu hạt nhân"""
         # Dữ liệu được lưu với key 'element' (chữ thường)
@@ -1204,6 +1296,23 @@ class DataManager:
                 if spectrum_name and spectrum_name not in spectrum_names:
                     spectrum_names.append(spectrum_name)
         return sorted(spectrum_names)
+
+    def get_sample_name_by_container_and_spectrum(self, container_name: str, spectrum_name: str) -> Optional[str]:
+        """Từ tên container và tên phổ, tìm tên mẫu tương ứng trong dữ liệu mẫu đã chiếu"""
+        if not container_name or not spectrum_name:
+            return None
+        for sample in self.irradiated_samples:
+            if sample.get('container_name') == container_name and sample.get('spectrum_name', '').strip() == spectrum_name.strip():
+                name = (sample.get('sample_name') or '').strip()
+                if name:
+                    return name
+        return None
+
+    def get_calculation_result_by_id(self, result_id: int) -> Optional[Dict]:
+        """Lấy một bản ghi kết quả tính toán đã lưu theo id"""
+        if 0 <= result_id < len(self.calculation_results):
+            return self.calculation_results[result_id]
+        return None
     
     def get_monitor_spectra_for_calculation(self, container_name: str) -> List[Dict]:
         """

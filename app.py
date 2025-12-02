@@ -7,12 +7,34 @@ from models import DataManager, ReactorParameter, DetectorParameter
 import traceback
 import os
 import tempfile
+from datetime import datetime
+import pandas as pd  # Dùng để tạo file CSV kết quả tính toán
 
 app = Flask(__name__)
 CORS(app)
 
 # Initialize data manager
 data_manager = DataManager()
+
+
+def convert_datetime_for_csv(raw_value: str) -> str:
+    """Convert HTML datetime-local value to dd/mm/yyyy HH:MM:SS for CSV."""
+    if not raw_value:
+        return ''
+    value = str(raw_value).strip()
+    if not value:
+        return ''
+    try:
+        dt = datetime.fromisoformat(value)
+        return dt.strftime('%d/%m/%Y %H:%M:%S')
+    except ValueError:
+        for fmt in ('%d/%m/%Y %H:%M:%S', '%d/%m/%Y %H:%M'):
+            try:
+                dt = datetime.strptime(value, fmt)
+                return dt.strftime('%d/%m/%Y %H:%M:%S')
+            except ValueError:
+                continue
+    return value
 
 
 @app.route('/')
@@ -218,9 +240,13 @@ def upload_nuclear_data():
             else:
                 return jsonify({'success': False, 'error': message}), 400
         finally:
-            # Xóa file tạm
+            # Xóa file tạm, bỏ qua lỗi nếu file đã bị xóa hoặc đang được sử dụng
             if os.path.exists(temp_path):
-                os.remove(temp_path)
+                try:
+                    os.remove(temp_path)
+                except OSError:
+                    # Không để lỗi xóa file tạm làm hỏng toàn bộ tiến trình import
+                    pass
                 
     except Exception as e:
         traceback.print_exc()
@@ -509,9 +535,12 @@ def upload_standard_sample_data():
             else:
                 return jsonify({'success': False, 'error': message}), 400
         finally:
-            # Xóa file tạm
+            # Xóa file tạm, bỏ qua lỗi nếu file đã bị xóa hoặc đang được sử dụng
             if os.path.exists(temp_path):
-                os.remove(temp_path)
+                try:
+                    os.remove(temp_path)
+                except OSError:
+                    pass
                 
     except Exception as e:
         traceback.print_exc()
@@ -751,8 +780,12 @@ def upload_irradiated_data():
             else:
                 return jsonify({'success': False, 'error': message}), 400
         finally:
+            # Xóa file tạm, bỏ qua lỗi nếu file đã bị xóa hoặc đang được sử dụng
             if os.path.exists(temp_path):
-                os.remove(temp_path)
+                try:
+                    os.remove(temp_path)
+                except OSError:
+                    pass
                 
     except Exception as e:
         traceback.print_exc()
@@ -781,6 +814,16 @@ def download_irradiated_template():
 def process_spe_files():
     """Xử lý các file .Spe và tạo file CSV với dữ liệu đã điền sẵn"""
     try:
+        container_name = (request.form.get('container_name') or '').strip()
+        irradiation_position = (request.form.get('irradiation_position') or '').strip()
+        irradiation_start_time = convert_datetime_for_csv(request.form.get('irradiation_start_time'))
+        irradiation_end_time = convert_datetime_for_csv(request.form.get('irradiation_end_time'))
+        
+        if irradiation_position:
+            valid_positions = data_manager.get_unique_irradiation_positions()
+            if irradiation_position not in valid_positions:
+                return jsonify({'success': False, 'error': 'Vị trí chiếu không hợp lệ'}), 400
+        
         if 'files' not in request.files:
             return jsonify({'success': False, 'error': 'Không có file được tải lên'}), 400
         
@@ -805,7 +848,14 @@ def process_spe_files():
             
             # Xử lý các file .Spe và tạo CSV
             output_csv_path = os.path.join(temp_dir, 'irradiated_data_from_spe.csv')
-            success, message, count = data_manager.process_spe_files_to_csv(spe_file_paths, output_csv_path)
+            success, message, count = data_manager.process_spe_files_to_csv(
+                spe_file_paths,
+                output_csv_path,
+                default_container_name=container_name,
+                default_position=irradiation_position,
+                default_start_time=irradiation_start_time,
+                default_end_time=irradiation_end_time
+            )
             
             if success:
                 # Trả về file CSV để download
@@ -851,12 +901,22 @@ def add_peak_area_data():
     """Thêm dữ liệu diện tích đỉnh mới"""
     try:
         data = request.json
+        
+        def safe_float_or_none(value):
+            if value is None or value == '':
+                return None
+            try:
+                return float(value)
+            except (ValueError, TypeError):
+                return None
+        
         peak_area_data = {
             'container_name': str(data.get('container_name', '')).strip(),
             'spectrum_name': str(data.get('spectrum_name', '')).strip(),
             'element_name': str(data.get('element_name', '')).strip(),
             'energy': float(data.get('energy', 0)),
-            'peak_area': float(data.get('peak_area', 0))
+            'peak_area': float(data.get('peak_area', 0)),
+            'peak_area_error': safe_float_or_none(data.get('peak_area_error'))
         }
         
         data_id = data_manager.add_peak_area_data(peak_area_data)
@@ -870,12 +930,22 @@ def update_peak_area_data(data_id):
     """Cập nhật dữ liệu diện tích đỉnh"""
     try:
         data = request.json
+        
+        def safe_float_or_none(value):
+            if value is None or value == '':
+                return None
+            try:
+                return float(value)
+            except (ValueError, TypeError):
+                return None
+        
         peak_area_data = {
             'container_name': str(data.get('container_name', '')).strip(),
             'spectrum_name': str(data.get('spectrum_name', '')).strip(),
             'element_name': str(data.get('element_name', '')).strip(),
             'energy': float(data.get('energy', 0)),
-            'peak_area': float(data.get('peak_area', 0))
+            'peak_area': float(data.get('peak_area', 0)),
+            'peak_area_error': safe_float_or_none(data.get('peak_area_error'))
         }
         
         success = data_manager.update_peak_area_data(data_id, peak_area_data)
@@ -896,6 +966,18 @@ def delete_peak_area_data(data_id):
             return jsonify({'success': True, 'message': 'Đã xóa dữ liệu diện tích đỉnh thành công'})
         else:
             return jsonify({'success': False, 'error': 'Không tìm thấy dữ liệu diện tích đỉnh'}), 404
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+@app.route('/api/peak-area/container/<container_name>', methods=['DELETE'])
+def delete_peak_area_container(container_name):
+    """Xóa tất cả dữ liệu diện tích đỉnh theo tên container"""
+    try:
+        deleted_count = data_manager.delete_peak_area_data_by_container(container_name)
+        if deleted_count > 0:
+            return jsonify({'success': True, 'message': f'Đã xóa {deleted_count} bản ghi của container "{container_name}" thành công'})
+        else:
+            return jsonify({'success': False, 'error': 'Không tìm thấy dữ liệu cho container này'}), 404
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
@@ -974,6 +1056,142 @@ def get_non_monitor_spectra():
     except Exception as e:
         traceback.print_exc()
         return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/calculation/results', methods=['GET'])
+def get_calculation_results():
+    """Lấy tất cả kết quả tính toán đã lưu theo container"""
+    try:
+        results = data_manager.get_calculation_results()
+        return jsonify({'success': True, 'data': results, 'count': len(results)})
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/calculation/results', methods=['POST'])
+def add_calculation_result():
+    """
+    Lưu một bản ghi kết quả tính toán cho container hiện tại.
+    Frontend gửi lên:
+        {
+            "container_name": "Tên container",
+            "details": [  # Tùy chọn
+                {
+                    "sample_name": "...",
+                    "spectrum_name": "...",
+                    "element_name": "...",
+                    "energy": 0.0,
+                    "k0_concentration": 0.0,
+                    "relative_concentration": 0.0,
+                    "relative_standard_name": "..."
+                },
+                ...
+            ]
+        }
+    Thời gian lưu (saved_at) sẽ được backend tự động thêm theo thời gian hiện tại.
+    """
+    try:
+        data = request.json or {}
+        container_name = (data.get('container_name') or '').strip()
+        if not container_name:
+            return jsonify({'success': False, 'error': 'Thiếu tên container'}), 400
+
+        details = data.get('details') or []
+        if not isinstance(details, list):
+            details = []
+
+        # Bổ sung tên mẫu dựa trên tên phổ và container từ dữ liệu "Mẫu đã chiếu"
+        enriched_details = []
+        for item in details:
+            if not isinstance(item, dict):
+                continue
+            spectrum_name = (item.get('spectrum_name') or '').strip()
+            sample_name = (item.get('sample_name') or '').strip()
+            if not sample_name and spectrum_name:
+                found_name = data_manager.get_sample_name_by_container_and_spectrum(container_name, spectrum_name)
+                if found_name:
+                    item['sample_name'] = found_name
+            enriched_details.append(item)
+
+        saved_at = datetime.now().isoformat()
+        result_id = data_manager.add_calculation_result(container_name, saved_at, enriched_details)
+        return jsonify({
+            'success': True,
+            'id': result_id,
+            'message': 'Đã lưu kết quả tính toán cho container thành công'
+        })
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/calculation/results/<int:result_id>', methods=['DELETE'])
+def delete_calculation_result(result_id):
+    """Xóa một bản ghi kết quả tính toán đã lưu"""
+    try:
+        success = data_manager.delete_calculation_result(result_id)
+        if success:
+            return jsonify({'success': True, 'message': 'Đã xóa kết quả tính toán thành công'})
+        return jsonify({'success': False, 'error': 'Không tìm thấy kết quả tính toán'}), 404
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/calculation/results/<int:result_id>/download', methods=['GET'])
+def download_calculation_result(result_id):
+    """Tải kết quả tính toán đã lưu của một container dưới dạng file CSV (mở được bằng Excel)"""
+    try:
+        record = data_manager.get_calculation_result_by_id(result_id)
+        if not record:
+            return jsonify({'success': False, 'error': 'Không tìm thấy kết quả tính toán'}), 404
+
+        details = record.get('details') or []
+        if not isinstance(details, list):
+            details = []
+
+        # Chuẩn bị dữ liệu cho DataFrame
+        rows = []
+        for item in details:
+            if not isinstance(item, dict):
+                continue
+            rows.append({
+                'Tên mẫu': (item.get('sample_name') or '').strip(),
+                'Tên phổ': (item.get('spectrum_name') or '').strip(),
+                'Nguyên tố': (item.get('element_name') or '').strip(),
+                'Năng lượng (keV)': item.get('energy'),
+                'Hàm lượng K0 (ppm)': item.get('k0_concentration'),
+                'Hàm lượng tương đối (ppm)': item.get('relative_concentration'),
+                'Tên mẫu chuẩn (tương đối)': (item.get('relative_standard_name') or '').strip()
+            })
+
+        df = pd.DataFrame(rows, columns=[
+            'Tên mẫu',
+            'Tên phổ',
+            'Nguyên tố',
+            'Năng lượng (keV)',
+            'Hàm lượng K0 (ppm)',
+            'Hàm lượng tương đối (ppm)',
+            'Tên mẫu chuẩn (tương đối)'
+        ])
+
+        # Tạo file tạm CSV
+        temp_dir = tempfile.gettempdir()
+        safe_container_name = (record.get('container_name') or 'container').replace('/', '_').replace('\\', '_')
+        filename = f'calculation_result_{safe_container_name}.csv'
+        temp_path = os.path.join(temp_dir, filename)
+        df.to_csv(temp_path, index=False, encoding='utf-8-sig')
+
+        return send_file(
+            temp_path,
+            mimetype='text/csv',
+            as_attachment=True,
+            download_name=filename
+        )
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({'success': False, 'error': f'Lỗi khi tạo file tải về: {str(e)}'}), 500
 
 
 if __name__ == '__main__':

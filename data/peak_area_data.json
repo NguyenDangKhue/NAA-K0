@@ -1,237 +1,6743 @@
 [
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "A759-8a",
-    "is_monitor": true,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "A761-8a",
     "element_name": "Au",
     "energy": 411.8,
-    "peak_area": 36579.9,
+    "peak_area": 32333.2,
+    "peak_area_error": 180.4,
     "id": 0
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "A760-8a",
-    "is_monitor": false,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "A762-8a",
     "element_name": "Au",
     "energy": 411.8,
-    "peak_area": 60937.2,
+    "peak_area": 74800.1,
+    "peak_area_error": 274.6,
     "id": 1
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "A761-8a",
-    "is_monitor": false,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "A760-8a",
     "element_name": "Au",
     "energy": 411.8,
-    "peak_area": 31396.1,
+    "peak_area": 61998.5,
+    "peak_area_error": 250.4,
     "id": 2
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "A762-8a",
-    "is_monitor": true,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "A759-8a",
     "element_name": "Au",
     "energy": 411.8,
-    "peak_area": 72614.1,
+    "peak_area": 37700.2,
+    "peak_area_error": 195.0,
     "id": 3
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "BC73g-8a",
-    "is_monitor": false,
-    "element_name": "Ce",
-    "energy": 293.3,
-    "peak_area": 63450.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 3496.7,
+    "peak_area_error": 471.2,
     "id": 4
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "BC73g-8a",
-    "is_monitor": false,
-    "element_name": "Ce",
-    "energy": 145.4,
-    "peak_area": 269160.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 3675.8,
+    "peak_area_error": 268.4,
     "id": 5
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "BC73g-8a",
-    "is_monitor": false,
-    "element_name": "K",
-    "energy": 1524.7,
-    "peak_area": 223058.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Hf",
+    "energy": 345.9,
+    "peak_area": 2844.9,
+    "peak_area_error": 210.1,
     "id": 6
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "BC73g-8a",
-    "is_monitor": false,
-    "element_name": "Na",
-    "energy": 1368.6,
-    "peak_area": 1670090.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 31470.5,
+    "peak_area_error": 230.1,
     "id": 7
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "BC73g-8a",
-    "is_monitor": false,
-    "element_name": "Na",
-    "energy": 2754.0,
-    "peak_area": 860582.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 17784.2,
+    "peak_area_error": 191.0,
     "id": 8
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-3b",
-    "is_monitor": false,
-    "element_name": "Co",
-    "energy": 1173.2,
-    "peak_area": 7777.5,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 10192.9,
+    "peak_area_error": 163.9,
     "id": 9
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-3b",
-    "is_monitor": false,
-    "element_name": "Co",
-    "energy": 1332.5,
-    "peak_area": 7324.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 28723.1,
+    "peak_area_error": 250.5,
     "id": 10
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-3b",
-    "is_monitor": false,
-    "element_name": "Fe",
-    "energy": 1099.3,
-    "peak_area": 46554.9,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 7916.6,
+    "peak_area_error": 155.7,
     "id": 11
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-3b",
-    "is_monitor": false,
-    "element_name": "Fe",
-    "energy": 1291.6,
-    "peak_area": 30747.7,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 6765.0,
+    "peak_area_error": 165.9,
     "id": 12
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-8a",
-    "is_monitor": false,
-    "element_name": "As",
-    "energy": 559.1,
-    "peak_area": 10070.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 749.7,
+    "peak_area_error": 119.6,
     "id": 13
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-8a",
-    "is_monitor": false,
-    "element_name": "As",
-    "energy": 657.1,
-    "peak_area": 1664.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 5823.9,
+    "peak_area_error": 116.8,
     "id": 14
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-8a",
-    "is_monitor": false,
-    "element_name": "Ce",
-    "energy": 293.3,
-    "peak_area": 1210.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 482369.4,
+    "peak_area_error": 705.4,
     "id": 15
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-8a",
-    "is_monitor": false,
-    "element_name": "K",
-    "energy": 1524.7,
-    "peak_area": 12409.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 3102.7,
+    "peak_area_error": 92.7,
     "id": 16
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-8a",
-    "is_monitor": false,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74h-8a",
     "element_name": "Na",
-    "energy": 1368.6,
-    "peak_area": 296555.0,
+    "energy": 2754.0,
+    "peak_area": 246835.0,
+    "peak_area_error": 501.5,
     "id": 17
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "PT214g-8a",
-    "is_monitor": false,
-    "element_name": "Na",
-    "energy": 2754.0,
-    "peak_area": 152456.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 1760.5,
+    "peak_area_error": 239.4,
     "id": 18
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "SJ27g-3c",
-    "element_name": "Co",
-    "energy": 1173.2,
-    "peak_area": 28777.3,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 2134.9,
+    "peak_area_error": 244.0,
     "id": 19
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "SJ27g-3c",
-    "element_name": "Co",
-    "energy": 1332.5,
-    "peak_area": 26468.1,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Hf",
+    "energy": 345.9,
+    "peak_area": 1575.7,
+    "peak_area_error": 205.3,
     "id": 20
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "SJ27g-3c",
-    "element_name": "Fe",
-    "energy": 1099.3,
-    "peak_area": 161130.3,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 21004.3,
+    "peak_area_error": 211.5,
     "id": 21
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "SJ27g-3c",
-    "element_name": "Fe",
-    "energy": 1291.6,
-    "peak_area": 105481.9,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 11415.6,
+    "peak_area_error": 176.8,
     "id": 22
   },
   {
-    "container_name": "10-10-MQ",
-    "spectrum_name": "SJ27g-8a",
-    "element_name": "As",
-    "energy": 559.1,
-    "peak_area": 4796.0,
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 6940.3,
+    "peak_area_error": 160.6,
     "id": 23
   },
   {
-    "container_name": "10-10-MQ",
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 19132.0,
+    "peak_area_error": 206.5,
+    "id": 24
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 5039.6,
+    "peak_area_error": 161.0,
+    "id": 25
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 4689.5,
+    "peak_area_error": 174.7,
+    "id": 26
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 335.8,
+    "peak_area_error": 62.2,
+    "id": 27
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 3926.6,
+    "peak_area_error": 110.6,
+    "id": 28
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 330580.8,
+    "peak_area_error": 583.9,
+    "id": 29
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 2162.3,
+    "peak_area_error": 89.2,
+    "id": 30
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SP74g-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 167974.2,
+    "peak_area_error": 413.7,
+    "id": 31
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Tb",
+    "energy": 86.8,
+    "peak_area": 1195.2,
+    "peak_area_error": 215.0,
+    "id": 32
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Ta",
+    "energy": 100.1,
+    "peak_area": 4022.5,
+    "peak_area_error": 214.3,
+    "id": 33
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 67317.8,
+    "peak_area_error": 435.2,
+    "id": 34
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Lu",
+    "energy": 112.9,
+    "peak_area": 4044.3,
+    "peak_area_error": 265.2,
+    "id": 35
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 5576.5,
+    "peak_area_error": 269.5,
+    "id": 36
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Hf",
+    "energy": 133.0,
+    "peak_area": 4058.0,
+    "peak_area_error": 256.4,
+    "id": 37
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 4121.8,
+    "peak_area_error": 162.8,
+    "id": 38
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 2437.0,
+    "peak_area_error": 175.1,
+    "id": 39
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Fe",
+    "energy": 192.3,
+    "peak_area": 1883.3,
+    "peak_area_error": 138.7,
+    "id": 40
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 1695.0,
+    "peak_area_error": 153.4,
+    "id": 41
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Ba",
+    "energy": 216.1,
+    "peak_area": 1231.4,
+    "peak_area_error": 152.4,
+    "id": 42
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 2088.4,
+    "peak_area_error": 198.0,
+    "id": 43
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Yb",
+    "energy": 282.5,
+    "peak_area": 1207.5,
+    "peak_area_error": 151.5,
+    "id": 44
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Th",
+    "energy": 300.1,
+    "peak_area": 863.4,
+    "peak_area_error": 116.3,
+    "id": 45
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Th",
+    "energy": 311.9,
+    "peak_area": 4886.9,
+    "peak_area_error": 144.3,
+    "id": 46
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 4670.1,
+    "peak_area_error": 135.8,
+    "id": 47
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 12488.1,
+    "peak_area_error": 161.7,
+    "id": 48
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Ba",
+    "energy": 373.2,
+    "peak_area": 542.6,
+    "peak_area_error": 81.9,
+    "id": 49
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 1988.3,
+    "peak_area_error": 100.8,
+    "id": 50
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 12359.3,
+    "peak_area_error": 149.3,
+    "id": 51
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 902.5,
+    "peak_area_error": 90.7,
+    "id": 52
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 19517.0,
+    "peak_area_error": 169.1,
+    "id": 53
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Ba",
+    "energy": 496.3,
+    "peak_area": 1659.8,
+    "peak_area_error": 116.9,
+    "id": 54
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 2548.8,
+    "peak_area_error": 186.4,
+    "id": 55
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 5644.1,
+    "peak_area_error": 166.6,
+    "id": 56
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 11321.7,
+    "peak_area_error": 162.0,
+    "id": 57
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Sb",
+    "energy": 602.7,
+    "peak_area": 2121.3,
+    "peak_area_error": 135.1,
+    "id": 58
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 715.2,
+    "peak_area_error": 129.5,
+    "id": 59
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 1329.4,
+    "peak_area_error": 88.7,
+    "id": 60
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
     "spectrum_name": "SJ27g-8a",
     "element_name": "As",
     "energy": 657.1,
     "peak_area": 638.0,
-    "id": 24
+    "peak_area_error": 88.7,
+    "id": 61
   },
   {
-    "container_name": "10-10-MQ",
+    "container_name": "PT2025-MQ-T10",
     "spectrum_name": "SJ27g-8a",
-    "element_name": "K",
-    "energy": 1524.7,
-    "peak_area": 999.1,
-    "id": 25
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 272.3,
+    "peak_area_error": 72.4,
+    "id": 62
   },
   {
-    "container_name": "10-10-MQ",
+    "container_name": "PT2025-MQ-T10",
     "spectrum_name": "SJ27g-8a",
+    "element_name": "Sb",
+    "energy": 692.7,
+    "peak_area": 427.7,
+    "peak_area_error": 76.0,
+    "id": 63
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 578.2,
+    "peak_area_error": 75.7,
+    "id": 64
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 1844.4,
+    "peak_area_error": 88.8,
+    "id": 65
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Cs",
+    "energy": 795.9,
+    "peak_area": 591.0,
+    "peak_area_error": 77.9,
+    "id": 66
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 6285.5,
+    "peak_area_error": 119.3,
+    "id": 67
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 440.7,
+    "peak_area_error": 77.5,
+    "id": 68
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 1474.2,
+    "peak_area_error": 86.8,
+    "id": 69
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 29810.6,
+    "peak_area_error": 221.0,
+    "id": 70
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 433.9,
+    "peak_area_error": 77.3,
+    "id": 71
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Rb",
+    "energy": 1077.0,
+    "peak_area": 535.7,
+    "peak_area_error": 85.0,
+    "id": 72
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 8163.9,
+    "peak_area_error": 128.6,
+    "id": 73
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 23721.3,
+    "peak_area_error": 184.8,
+    "id": 74
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 1295.8,
+    "peak_area_error": 80.7,
+    "id": 75
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 5597.9,
+    "peak_area_error": 166.0,
+    "id": 76
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 285.5,
+    "peak_area_error": 49.4,
+    "id": 77
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 1158.6,
+    "peak_area_error": 63.7,
+    "id": 78
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 112729.1,
+    "peak_area_error": 344.2,
+    "id": 79
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 208.6,
+    "peak_area_error": 38.1,
+    "id": 80
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 14654.9,
+    "peak_area_error": 129.6,
+    "id": 81
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Sb",
+    "energy": 1691.0,
+    "peak_area": 315.0,
+    "peak_area_error": 39.9,
+    "id": 82
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "SJ27g-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 57296.1,
+    "peak_area_error": 241.0,
+    "id": 83
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Nd",
+    "energy": 91.1,
+    "peak_area": 537.5,
+    "peak_area_error": 227.2,
+    "id": 84
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 1211.3,
+    "peak_area_error": 107.8,
+    "id": 85
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
     "element_name": "K",
     "energy": 312.7,
-    "peak_area": 4886.0,
-    "id": 26
+    "peak_area": 1512.0,
+    "peak_area_error": 86.8,
+    "id": 86
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 738.3,
+    "peak_area_error": 71.4,
+    "id": 87
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 5348.1,
+    "peak_area_error": 199.2,
+    "id": 88
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 13641.7,
+    "peak_area_error": 194.9,
+    "id": 89
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 3151.3,
+    "peak_area_error": 152.7,
+    "id": 90
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 7486.0,
+    "peak_area_error": 114.6,
+    "id": 91
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 441.9,
+    "peak_area_error": 56.8,
+    "id": 92
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 4274.5,
+    "peak_area_error": 86.6,
+    "id": 93
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 11979.6,
+    "peak_area_error": 135.7,
+    "id": 94
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 3024.0,
+    "peak_area_error": 77.8,
+    "id": 95
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 2853.1,
+    "peak_area_error": 77.7,
+    "id": 96
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 2436.2,
+    "peak_area_error": 68.6,
+    "id": 97
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 20603.2,
+    "peak_area_error": 163.8,
+    "id": 98
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 1321.8,
+    "peak_area_error": 48.4,
+    "id": 99
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 24230.2,
+    "peak_area_error": 162.4,
+    "id": 100
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 139.9,
+    "peak_area_error": 23.0,
+    "id": 101
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215i-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 10307.8,
+    "peak_area_error": 102.1,
+    "id": 102
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Nd",
+    "energy": 91.1,
+    "peak_area": 665.8,
+    "peak_area_error": 172.2,
+    "id": 103
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 1352.6,
+    "peak_area_error": 203.7,
+    "id": 104
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 3838.7,
+    "peak_area_error": 154.1,
+    "id": 105
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 559.1,
+    "peak_area_error": 114.6,
+    "id": 106
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 11864.1,
+    "peak_area_error": 251.8,
+    "id": 107
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 17572.0,
+    "peak_area_error": 243.0,
+    "id": 108
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 4553.2,
+    "peak_area_error": 195.2,
+    "id": 109
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 9836.6,
+    "peak_area_error": 162.8,
+    "id": 110
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 514.6,
+    "peak_area_error": 173.9,
+    "id": 111
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 5664.8,
+    "peak_area_error": 128.2,
+    "id": 112
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 15777.8,
+    "peak_area_error": 170.0,
+    "id": 113
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 4245.0,
+    "peak_area_error": 121.6,
+    "id": 114
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 4081.6,
+    "peak_area_error": 128.5,
+    "id": 115
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 3013.7,
+    "peak_area_error": 103.0,
+    "id": 116
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 42497.5,
+    "peak_area_error": 239.2,
+    "id": 117
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 1822.1,
+    "peak_area_error": 76.2,
+    "id": 118
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 57542.2,
+    "peak_area_error": 249.7,
+    "id": 119
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 127.0,
+    "peak_area_error": 45.8,
+    "id": 120
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215h-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 21793.2,
+    "peak_area_error": 149.3,
+    "id": 121
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Nd",
+    "energy": 91.1,
+    "peak_area": 787.2,
+    "peak_area_error": 262.6,
+    "id": 122
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 1311.5,
+    "peak_area_error": 192.6,
+    "id": 123
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 3814.1,
+    "peak_area_error": 155.7,
+    "id": 124
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 614.0,
+    "peak_area_error": 129.3,
+    "id": 125
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 11765.9,
+    "peak_area_error": 259.8,
+    "id": 126
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 18048.9,
+    "peak_area_error": 223.7,
+    "id": 127
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 4601.5,
+    "peak_area_error": 190.5,
+    "id": 128
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 9912.9,
+    "peak_area_error": 176.0,
+    "id": 129
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 670.7,
+    "peak_area_error": 102.9,
+    "id": 130
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 5612.6,
+    "peak_area_error": 129.7,
+    "id": 131
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 15280.2,
+    "peak_area_error": 169.3,
+    "id": 132
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 3950.1,
+    "peak_area_error": 122.4,
+    "id": 133
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 3909.3,
+    "peak_area_error": 124.8,
+    "id": 134
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 3109.2,
+    "peak_area_error": 108.3,
+    "id": 135
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 44012.7,
+    "peak_area_error": 237.8,
+    "id": 136
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 1799.4,
+    "peak_area_error": 74.3,
+    "id": 137
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 59083.1,
+    "peak_area_error": 253.9,
+    "id": 138
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 253.7,
+    "peak_area_error": 49.6,
+    "id": 139
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT215g-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 22522.5,
+    "peak_area_error": 151.1,
+    "id": 140
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Ta",
+    "energy": 100.1,
+    "peak_area": 4685.6,
+    "peak_area_error": 1489.9,
+    "id": 141
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 90810.9,
+    "peak_area_error": 524.5,
+    "id": 142
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Lu",
+    "energy": 112.9,
+    "peak_area": 1713.3,
+    "peak_area_error": 240.2,
+    "id": 143
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 2478.0,
+    "peak_area_error": 237.0,
+    "id": 144
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Hf",
+    "energy": 133.0,
+    "peak_area": 3928.7,
+    "peak_area_error": 235.3,
+    "id": 145
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 2478.8,
+    "peak_area_error": 180.7,
+    "id": 146
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 15064.3,
+    "peak_area_error": 229.1,
+    "id": 147
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 1031.2,
+    "peak_area_error": 156.1,
+    "id": 148
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 1742.3,
+    "peak_area_error": 198.7,
+    "id": 149
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 2556.9,
+    "peak_area_error": 139.6,
+    "id": 150
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 544.8,
+    "peak_area_error": 129.0,
+    "id": 151
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 19581.2,
+    "peak_area_error": 195.1,
+    "id": 152
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Eu",
+    "energy": 344.2,
+    "peak_area": 450.6,
+    "peak_area_error": 135.6,
+    "id": 153
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Hf",
+    "energy": 345.9,
+    "peak_area": 1108.9,
+    "peak_area_error": 130.7,
+    "id": 154
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 1580.1,
+    "peak_area_error": 120.5,
+    "id": 155
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 2424.1,
+    "peak_area_error": 514.6,
+    "id": 156
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 32662.7,
+    "peak_area_error": 258.6,
+    "id": 157
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 27597.4,
+    "peak_area_error": 212.9,
+    "id": 158
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 5186.6,
+    "peak_area_error": 164.8,
+    "id": 159
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 7473.3,
+    "peak_area_error": 148.7,
+    "id": 160
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 2298.3,
+    "peak_area_error": 158.7,
+    "id": 161
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 790.9,
+    "peak_area_error": 116.4,
+    "id": 162
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 3116.7,
+    "peak_area_error": 107.0,
+    "id": 163
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 1086.1,
+    "peak_area_error": 96.8,
+    "id": 164
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 503.4,
+    "peak_area_error": 79.5,
+    "id": 165
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 1893.7,
+    "peak_area_error": 108.5,
+    "id": 166
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 4821.2,
+    "peak_area_error": 117.8,
+    "id": 167
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 9989.3,
+    "peak_area_error": 134.0,
+    "id": 168
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 1136.1,
+    "peak_area_error": 83.3,
+    "id": 169
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Ga",
+    "energy": 834.0,
+    "peak_area": 636.8,
+    "peak_area_error": 82.0,
+    "id": 170
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 2385.7,
+    "peak_area_error": 140.4,
+    "id": 171
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 6377.6,
+    "peak_area_error": 143.0,
+    "id": 172
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 1217.5,
+    "peak_area_error": 167.6,
+    "id": 173
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 2616.3,
+    "peak_area_error": 384.4,
+    "id": 174
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 5341.6,
+    "peak_area_error": 225.8,
+    "id": 175
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 1457.0,
+    "peak_area_error": 136.2,
+    "id": 176
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 3091.0,
+    "peak_area_error": 107.7,
+    "id": 177
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 939.0,
+    "peak_area_error": 68.2,
+    "id": 178
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 141243.0,
+    "peak_area_error": 387.8,
+    "id": 179
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 604.9,
+    "peak_area_error": 61.0,
+    "id": 180
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 5062.9,
+    "peak_area_error": 87.0,
+    "id": 181
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 23255.6,
+    "peak_area_error": 159.6,
+    "id": 182
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 71914.5,
+    "peak_area_error": 270.1,
+    "id": 183
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Ta",
+    "energy": 100.1,
+    "peak_area": 9222.5,
+    "peak_area_error": 3324.5,
+    "id": 184
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 92033.1,
+    "peak_area_error": 749.3,
+    "id": 185
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Lu",
+    "energy": 112.9,
+    "peak_area": 2230.9,
+    "peak_area_error": 268.8,
+    "id": 186
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 2864.4,
+    "peak_area_error": 347.4,
+    "id": 187
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Hf",
+    "energy": 133.0,
+    "peak_area": 5461.3,
+    "peak_area_error": 417.6,
+    "id": 188
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 2655.1,
+    "peak_area_error": 249.2,
+    "id": 189
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 15595.8,
+    "peak_area_error": 274.8,
+    "id": 190
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 1858.6,
+    "peak_area_error": 213.7,
+    "id": 191
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 1874.2,
+    "peak_area_error": 348.2,
+    "id": 192
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 2797.5,
+    "peak_area_error": 181.1,
+    "id": 193
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 550.0,
+    "peak_area_error": 88.3,
+    "id": 194
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 19481.3,
+    "peak_area_error": 219.6,
+    "id": 195
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Eu",
+    "energy": 344.2,
+    "peak_area": 370.8,
+    "peak_area_error": 117.8,
+    "id": 196
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Hf",
+    "energy": 345.9,
+    "peak_area": 936.9,
+    "peak_area_error": 167.4,
+    "id": 197
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 1999.4,
+    "peak_area_error": 157.1,
+    "id": 198
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 1486.4,
+    "peak_area_error": 380.2,
+    "id": 199
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 31847.3,
+    "peak_area_error": 249.7,
+    "id": 200
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 26803.8,
+    "peak_area_error": 241.6,
+    "id": 201
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 5316.0,
+    "peak_area_error": 147.8,
+    "id": 202
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 8007.9,
+    "peak_area_error": 147.6,
+    "id": 203
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 2358.6,
+    "peak_area_error": 152.8,
+    "id": 204
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 331.3,
+    "peak_area_error": 127.5,
+    "id": 205
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 3331.4,
+    "peak_area_error": 132.2,
+    "id": 206
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 1044.3,
+    "peak_area_error": 113.4,
+    "id": 207
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 756.5,
+    "peak_area_error": 102.0,
+    "id": 208
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 1623.4,
+    "peak_area_error": 130.5,
+    "id": 209
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 4699.6,
+    "peak_area_error": 136.1,
+    "id": 210
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 9483.3,
+    "peak_area_error": 148.2,
+    "id": 211
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 1044.1,
+    "peak_area_error": 101.2,
+    "id": 212
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Ga",
+    "energy": 834.0,
+    "peak_area": 603.1,
+    "peak_area_error": 116.3,
+    "id": 213
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 2012.5,
+    "peak_area_error": 112.0,
+    "id": 214
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 6830.6,
+    "peak_area_error": 142.8,
+    "id": 215
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 1445.4,
+    "peak_area_error": 279.4,
+    "id": 216
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 2231.6,
+    "peak_area_error": 169.6,
+    "id": 217
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 5340.2,
+    "peak_area_error": 159.7,
+    "id": 218
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 1626.8,
+    "peak_area_error": 97.4,
+    "id": 219
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 3288.4,
+    "peak_area_error": 97.8,
+    "id": 220
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 1123.0,
+    "peak_area_error": 96.4,
+    "id": 221
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 136448.6,
+    "peak_area_error": 380.9,
+    "id": 222
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 509.6,
+    "peak_area_error": 59.5,
+    "id": 223
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 4865.6,
+    "peak_area_error": 91.5,
+    "id": 224
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 22825.6,
+    "peak_area_error": 160.8,
+    "id": 225
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 69807.3,
+    "peak_area_error": 266.1,
+    "id": 226
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ta",
+    "energy": 100.1,
+    "peak_area": 104157.4,
+    "peak_area_error": 1100.1,
+    "id": 227
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 1010708.1,
+    "peak_area_error": 1314.2,
+    "id": 228
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Lu",
+    "energy": 112.9,
+    "peak_area": 54962.0,
+    "peak_area_error": 1038.4,
+    "id": 229
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 30830.0,
+    "peak_area_error": 1220.2,
+    "id": 230
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 79046.4,
+    "peak_area_error": 563.1,
+    "id": 231
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 95335.2,
+    "peak_area_error": 515.2,
+    "id": 232
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 502499.8,
+    "peak_area_error": 832.8,
+    "id": 233
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Yb",
+    "energy": 177.2,
+    "peak_area": 9256.9,
+    "peak_area_error": 473.8,
+    "id": 234
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Fe",
+    "energy": 192.3,
+    "peak_area": 14520.3,
+    "peak_area_error": 406.7,
+    "id": 235
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Yb",
+    "energy": 198.0,
+    "peak_area": 12436.7,
+    "peak_area_error": 397.7,
+    "id": 236
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 32805.6,
+    "peak_area_error": 461.7,
+    "id": 237
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ba",
+    "energy": 216.1,
+    "peak_area": 8530.0,
+    "peak_area_error": 505.5,
+    "id": 238
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 4666.2,
+    "peak_area_error": 436.2,
+    "id": 239
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 13978.5,
+    "peak_area_error": 420.5,
+    "id": 240
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 244.7,
+    "peak_area": 9262.1,
+    "peak_area_error": 809.3,
+    "id": 241
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ba",
+    "energy": 249.4,
+    "peak_area": 2485.1,
+    "peak_area_error": 383.0,
+    "id": 242
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "U",
+    "energy": 277.6,
+    "peak_area": 11348.7,
+    "peak_area_error": 325.3,
+    "id": 243
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Yb",
+    "energy": 282.5,
+    "peak_area": 15510.2,
+    "peak_area_error": 316.6,
+    "id": 244
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ce",
+    "energy": 293.3,
+    "peak_area": 5573.1,
+    "peak_area_error": 311.1,
+    "id": 245
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Th",
+    "energy": 300.1,
+    "peak_area": 19457.9,
+    "peak_area_error": 419.5,
+    "id": 246
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "K",
+    "energy": 312.51,
+    "peak_area": 70383.9,
+    "peak_area_error": 403.8,
+    "id": 247
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 25114.5,
+    "peak_area_error": 379.5,
+    "id": 248
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 157975.4,
+    "peak_area_error": 494.9,
+    "id": 249
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Th",
+    "energy": 340.5,
+    "peak_area": 5533.8,
+    "peak_area_error": 229.1,
+    "id": 250
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 344.3,
+    "peak_area": 32319.8,
+    "peak_area_error": 412.2,
+    "id": 251
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ba",
+    "energy": 373.2,
+    "peak_area": 3572.2,
+    "peak_area_error": 357.5,
+    "id": 252
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 27350.9,
+    "peak_area_error": 341.9,
+    "id": 253
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 2578.7,
+    "peak_area_error": 234.1,
+    "id": 254
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 45025.1,
+    "peak_area_error": 3.0,
+    "id": 255
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 249117.2,
+    "peak_area_error": 6.4,
+    "id": 256
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ba",
+    "energy": 496.3,
+    "peak_area": 5739.6,
+    "peak_area_error": 1.1,
+    "id": 257
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Sr",
+    "energy": 514.0,
+    "peak_area": 12985.5,
+    "peak_area_error": 1.7,
+    "id": 258
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Nd",
+    "energy": 531.0,
+    "peak_area": 3347.5,
+    "peak_area_error": 0.9,
+    "id": 259
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 34171.9,
+    "peak_area_error": 531.2,
+    "id": 260
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 28904.9,
+    "peak_area_error": 372.1,
+    "id": 261
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 28063.5,
+    "peak_area_error": 416.8,
+    "id": 262
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 20469.7,
+    "peak_area_error": 593.0,
+    "id": 263
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 20526.9,
+    "peak_area_error": 392.6,
+    "id": 264
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 3539.6,
+    "peak_area_error": 226.2,
+    "id": 265
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 2312.6,
+    "peak_area_error": 260.7,
+    "id": 266
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Sb",
+    "energy": 692.7,
+    "peak_area": 1866.0,
+    "peak_area_error": 311.9,
+    "id": 267
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 10507.2,
+    "peak_area_error": 336.8,
+    "id": 268
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 723.3,
+    "peak_area": 2340.8,
+    "peak_area_error": 210.5,
+    "id": 269
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 756.9,
+    "peak_area": 2412.0,
+    "peak_area_error": 533.9,
+    "id": 270
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Zr",
+    "energy": 765.8,
+    "peak_area": 981.9,
+    "peak_area_error": 232.0,
+    "id": 271
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 32663.2,
+    "peak_area_error": 436.1,
+    "id": 272
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Cs",
+    "energy": 795.9,
+    "peak_area": 9103.6,
+    "peak_area_error": 241.6,
+    "id": 273
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Cs",
+    "energy": 802.0,
+    "peak_area": 920.9,
+    "peak_area_error": 197.0,
+    "id": 274
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ca",
+    "energy": 807.9,
+    "peak_area": 7595.5,
+    "peak_area_error": 221.7,
+    "id": 275
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 81850.2,
+    "peak_area_error": 442.0,
+    "id": 276
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 7836.7,
+    "peak_area_error": 271.0,
+    "id": 277
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 19002.2,
+    "peak_area_error": 303.9,
+    "id": 278
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Tb",
+    "energy": 879.4,
+    "peak_area": 2786.2,
+    "peak_area_error": 216.9,
+    "id": 279
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 192812.6,
+    "peak_area_error": 526.2,
+    "id": 280
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 964.1,
+    "peak_area": 5355.4,
+    "peak_area_error": 266.4,
+    "id": 281
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 7423.3,
+    "peak_area_error": 192.1,
+    "id": 282
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Rb",
+    "energy": 1077.0,
+    "peak_area": 5358.6,
+    "peak_area_error": 190.6,
+    "id": 283
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 1085.9,
+    "peak_area": 4266.2,
+    "peak_area_error": 240.7,
+    "id": 284
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 62312.5,
+    "peak_area_error": 342.0,
+    "id": 285
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 1112.1,
+    "peak_area": 1957.6,
+    "peak_area_error": 225.6,
+    "id": 286
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Zn",
+    "energy": 1115.5,
+    "peak_area": 2879.2,
+    "peak_area_error": 260.5,
+    "id": 287
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 158467.4,
+    "peak_area_error": 445.7,
+    "id": 288
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 10952.6,
+    "peak_area_error": 192.2,
+    "id": 289
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ta",
+    "energy": 1189.1,
+    "peak_area": 764.1,
+    "peak_area_error": 121.1,
+    "id": 290
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "As",
+    "energy": 1216.1,
+    "peak_area": 737.2,
+    "peak_area_error": 113.8,
+    "id": 291
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ta",
+    "energy": 1221.4,
+    "peak_area": 1041.7,
+    "peak_area_error": 120.2,
+    "id": 292
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ta",
+    "energy": 1231.0,
+    "peak_area": 774.2,
+    "peak_area_error": 208.7,
+    "id": 293
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 39426.9,
+    "peak_area_error": 264.3,
+    "id": 294
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 60994.8,
+    "peak_area_error": 330.2,
+    "id": 295
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 5467.2,
+    "peak_area_error": 152.8,
+    "id": 296
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 10144.3,
+    "peak_area_error": 174.7,
+    "id": 297
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Eu",
+    "energy": 1408.0,
+    "peak_area": 2565.3,
+    "peak_area_error": 132.8,
+    "id": 298
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 3307.6,
+    "peak_area_error": 123.7,
+    "id": 299
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 176240.3,
+    "peak_area_error": 426.9,
+    "id": 300
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214i-3b",
+    "element_name": "Sb",
+    "energy": 1691.0,
+    "peak_area": 808.6,
+    "peak_area_error": 65.2,
+    "id": 301
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Ta",
+    "energy": 100.1,
+    "peak_area": 6641.1,
+    "peak_area_error": 1778.6,
+    "id": 302
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 104451.4,
+    "peak_area_error": 618.0,
+    "id": 303
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Lu",
+    "energy": 112.9,
+    "peak_area": 1618.6,
+    "peak_area_error": 381.9,
+    "id": 304
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 4508.5,
+    "peak_area_error": 428.6,
+    "id": 305
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Hf",
+    "energy": 133.0,
+    "peak_area": 5500.7,
+    "peak_area_error": 503.5,
+    "id": 306
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 2178.3,
+    "peak_area_error": 312.0,
+    "id": 307
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 13741.4,
+    "peak_area_error": 359.0,
+    "id": 308
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 1211.1,
+    "peak_area_error": 236.1,
+    "id": 309
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 1336.6,
+    "peak_area_error": 173.9,
+    "id": 310
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 3164.0,
+    "peak_area_error": 224.6,
+    "id": 311
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 407.2,
+    "peak_area_error": 145.3,
+    "id": 312
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 21144.8,
+    "peak_area_error": 275.9,
+    "id": 313
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Eu",
+    "energy": 344.3,
+    "peak_area": 494.4,
+    "peak_area_error": 271.0,
+    "id": 314
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Hf",
+    "energy": 345.9,
+    "peak_area": 1868.0,
+    "peak_area_error": 360.9,
+    "id": 315
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 1870.1,
+    "peak_area_error": 255.1,
+    "id": 316
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 2170.9,
+    "peak_area_error": 466.6,
+    "id": 317
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 35653.7,
+    "peak_area_error": 301.6,
+    "id": 318
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 58372.7,
+    "peak_area_error": 420.0,
+    "id": 319
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 6970.3,
+    "peak_area_error": 178.5,
+    "id": 320
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 12013.0,
+    "peak_area_error": 261.8,
+    "id": 321
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 2213.5,
+    "peak_area_error": 246.5,
+    "id": 322
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 837.2,
+    "peak_area_error": 184.3,
+    "id": 323
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 4239.5,
+    "peak_area_error": 178.2,
+    "id": 324
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 1645.0,
+    "peak_area_error": 167.1,
+    "id": 325
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 849.1,
+    "peak_area_error": 156.7,
+    "id": 326
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 2386.0,
+    "peak_area_error": 183.0,
+    "id": 327
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 6188.2,
+    "peak_area_error": 190.1,
+    "id": 328
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 10811.6,
+    "peak_area_error": 187.3,
+    "id": 329
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 1285.7,
+    "peak_area_error": 155.5,
+    "id": 330
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Ga",
+    "energy": 834.0,
+    "peak_area": 847.6,
+    "peak_area_error": 140.2,
+    "id": 331
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 2545.7,
+    "peak_area_error": 154.7,
+    "id": 332
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 6401.9,
+    "peak_area_error": 179.5,
+    "id": 333
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 1543.8,
+    "peak_area_error": 188.1,
+    "id": 334
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 2786.4,
+    "peak_area_error": 412.3,
+    "id": 335
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 5394.9,
+    "peak_area_error": 339.0,
+    "id": 336
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 1424.5,
+    "peak_area_error": 280.4,
+    "id": 337
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 3647.9,
+    "peak_area_error": 209.5,
+    "id": 338
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 1220.3,
+    "peak_area_error": 137.0,
+    "id": 339
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 301524.4,
+    "peak_area_error": 564.8,
+    "id": 340
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 640.0,
+    "peak_area_error": 107.9,
+    "id": 341
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 12361.2,
+    "peak_area_error": 143.7,
+    "id": 342
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 25652.4,
+    "peak_area_error": 185.0,
+    "id": 343
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 154458.5,
+    "peak_area_error": 396.8,
+    "id": 344
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 688199.8,
+    "peak_area_error": 1029.1,
+    "id": 345
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 25299.5,
+    "peak_area_error": 1198.6,
+    "id": 346
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 52715.2,
+    "peak_area_error": 487.8,
+    "id": 347
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 67956.6,
+    "peak_area_error": 446.0,
+    "id": 348
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 370295.1,
+    "peak_area_error": 718.0,
+    "id": 349
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Yb",
+    "energy": 177.2,
+    "peak_area": 8253.2,
+    "peak_area_error": 418.0,
+    "id": 350
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Fe",
+    "energy": 192.3,
+    "peak_area": 11162.4,
+    "peak_area_error": 363.8,
+    "id": 351
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Yb",
+    "energy": 198.0,
+    "peak_area": 11360.2,
+    "peak_area_error": 338.5,
+    "id": 352
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 31943.4,
+    "peak_area_error": 403.4,
+    "id": 353
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ba",
+    "energy": 216.1,
+    "peak_area": 7023.7,
+    "peak_area_error": 426.8,
+    "id": 354
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 4760.6,
+    "peak_area_error": 384.4,
+    "id": 355
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 11927.5,
+    "peak_area_error": 366.4,
+    "id": 356
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 244.7,
+    "peak_area": 7928.8,
+    "peak_area_error": 856.6,
+    "id": 357
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 248.0,
+    "peak_area": 2671.7,
+    "peak_area_error": 962.5,
+    "id": 358
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "U",
+    "energy": 277.6,
+    "peak_area": 8972.1,
+    "peak_area_error": 277.1,
+    "id": 359
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Yb",
+    "energy": 282.5,
+    "peak_area": 15452.8,
+    "peak_area_error": 283.7,
+    "id": 360
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ce",
+    "energy": 293.3,
+    "peak_area": 3929.1,
+    "peak_area_error": 281.2,
+    "id": 361
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Th",
+    "energy": 300.1,
+    "peak_area": 13831.4,
+    "peak_area_error": 382.1,
+    "id": 362
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "K",
+    "energy": 312.47,
+    "peak_area": 43138.3,
+    "peak_area_error": 335.0,
+    "id": 363
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 18813.3,
+    "peak_area_error": 329.8,
+    "id": 364
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 115477.9,
+    "peak_area_error": 426.8,
+    "id": 365
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Th",
+    "energy": 340.5,
+    "peak_area": 3324.2,
+    "peak_area_error": 190.4,
+    "id": 366
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 344.3,
+    "peak_area": 22480.8,
+    "peak_area_error": 345.7,
+    "id": 367
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ba",
+    "energy": 373.2,
+    "peak_area": 2961.6,
+    "peak_area_error": 339.0,
+    "id": 368
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 25706.7,
+    "peak_area_error": 291.6,
+    "id": 369
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 2262.9,
+    "peak_area_error": 204.9,
+    "id": 370
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 30115.3,
+    "peak_area_error": 2.4,
+    "id": 371
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 180922.8,
+    "peak_area_error": 5.4,
+    "id": 372
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ba",
+    "energy": 496.3,
+    "peak_area": 4342.1,
+    "peak_area_error": 1.0,
+    "id": 373
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Sr",
+    "energy": 514.0,
+    "peak_area": 9503.5,
+    "peak_area_error": 1.4,
+    "id": 374
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Nd",
+    "energy": 531.0,
+    "peak_area": 1594.8,
+    "peak_area_error": 0.6,
+    "id": 375
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 26319.3,
+    "peak_area_error": 470.3,
+    "id": 376
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 23864.5,
+    "peak_area_error": 405.8,
+    "id": 377
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 21064.9,
+    "peak_area_error": 560.7,
+    "id": 378
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 14833.8,
+    "peak_area_error": 540.4,
+    "id": 379
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 15358.8,
+    "peak_area_error": 328.2,
+    "id": 380
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 2432.0,
+    "peak_area_error": 194.1,
+    "id": 381
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 1268.2,
+    "peak_area_error": 179.1,
+    "id": 382
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Sb",
+    "energy": 692.7,
+    "peak_area": 745.6,
+    "peak_area_error": 238.3,
+    "id": 383
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 7160.3,
+    "peak_area_error": 212.5,
+    "id": 384
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 723.3,
+    "peak_area": 2214.1,
+    "peak_area_error": 280.4,
+    "id": 385
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 756.9,
+    "peak_area": 2173.5,
+    "peak_area_error": 449.8,
+    "id": 386
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Zr",
+    "energy": 765.8,
+    "peak_area": 605.0,
+    "peak_area_error": 122.0,
+    "id": 387
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 24940.9,
+    "peak_area_error": 376.1,
+    "id": 388
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Cs",
+    "energy": 795.9,
+    "peak_area": 6502.3,
+    "peak_area_error": 214.6,
+    "id": 389
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Cs",
+    "energy": 802.0,
+    "peak_area": 579.2,
+    "peak_area_error": 189.8,
+    "id": 390
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ca",
+    "energy": 807.9,
+    "peak_area": 5449.6,
+    "peak_area_error": 201.7,
+    "id": 391
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 58578.0,
+    "peak_area_error": 373.9,
+    "id": 392
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 6230.4,
+    "peak_area_error": 397.3,
+    "id": 393
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 13673.4,
+    "peak_area_error": 273.0,
+    "id": 394
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Tb",
+    "energy": 879.4,
+    "peak_area": 1974.4,
+    "peak_area_error": 164.9,
+    "id": 395
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 140612.6,
+    "peak_area_error": 453.3,
+    "id": 396
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 964.1,
+    "peak_area": 4543.3,
+    "peak_area_error": 248.6,
+    "id": 397
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 5478.7,
+    "peak_area_error": 164.4,
+    "id": 398
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Rb",
+    "energy": 1077.0,
+    "peak_area": 4228.5,
+    "peak_area_error": 174.4,
+    "id": 399
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 1085.9,
+    "peak_area": 2668.8,
+    "peak_area_error": 235.5,
+    "id": 400
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 46998.4,
+    "peak_area_error": 307.4,
+    "id": 401
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 1112.1,
+    "peak_area": 1200.5,
+    "peak_area_error": 218.4,
+    "id": 402
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Zn",
+    "energy": 1115.5,
+    "peak_area": 1621.6,
+    "peak_area_error": 227.9,
+    "id": 403
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 116169.8,
+    "peak_area_error": 411.1,
+    "id": 404
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 7979.3,
+    "peak_area_error": 171.0,
+    "id": 405
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ta",
+    "energy": 1189.1,
+    "peak_area": 648.6,
+    "peak_area_error": 119.6,
+    "id": 406
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "As",
+    "energy": 1216.1,
+    "peak_area": 603.9,
+    "peak_area_error": 109.4,
+    "id": 407
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ta",
+    "energy": 1221.4,
+    "peak_area": 741.4,
+    "peak_area_error": 101.9,
+    "id": 408
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ta",
+    "energy": 1231.0,
+    "peak_area": 860.0,
+    "peak_area_error": 256.2,
+    "id": 409
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 29857.3,
+    "peak_area_error": 242.1,
+    "id": 410
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 44961.5,
+    "peak_area_error": 284.2,
+    "id": 411
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 4365.1,
+    "peak_area_error": 138.0,
+    "id": 412
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 7871.0,
+    "peak_area_error": 154.2,
+    "id": 413
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Eu",
+    "energy": 1408.0,
+    "peak_area": 1658.8,
+    "peak_area_error": 99.8,
+    "id": 414
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 2655.7,
+    "peak_area_error": 110.3,
+    "id": 415
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 127522.1,
+    "peak_area_error": 363.5,
+    "id": 416
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214h-3b",
+    "element_name": "Sb",
+    "energy": 1691.0,
+    "peak_area": 553.8,
+    "peak_area_error": 66.6,
+    "id": 417
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 679858.0,
+    "peak_area_error": 959.1,
+    "id": 418
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 25119.9,
+    "peak_area_error": 365.2,
+    "id": 419
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 63901.8,
+    "peak_area_error": 401.8,
+    "id": 420
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 62140.2,
+    "peak_area_error": 377.8,
+    "id": 421
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 377617.9,
+    "peak_area_error": 694.4,
+    "id": 422
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Yb",
+    "energy": 177.2,
+    "peak_area": 7397.6,
+    "peak_area_error": 298.9,
+    "id": 423
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Fe",
+    "energy": 192.3,
+    "peak_area": 11921.1,
+    "peak_area_error": 278.1,
+    "id": 424
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Yb",
+    "energy": 198.0,
+    "peak_area": 8690.8,
+    "peak_area_error": 255.8,
+    "id": 425
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 26715.6,
+    "peak_area_error": 310.2,
+    "id": 426
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ba",
+    "energy": 216.1,
+    "peak_area": 7026.4,
+    "peak_area_error": 304.4,
+    "id": 427
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 3724.6,
+    "peak_area_error": 269.8,
+    "id": 428
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 11927.8,
+    "peak_area_error": 283.7,
+    "id": 429
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 244.7,
+    "peak_area": 6080.6,
+    "peak_area_error": 461.3,
+    "id": 430
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 248.0,
+    "peak_area": 1197.3,
+    "peak_area_error": 400.6,
+    "id": 431
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "U",
+    "energy": 277.6,
+    "peak_area": 8919.0,
+    "peak_area_error": 225.9,
+    "id": 432
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Yb",
+    "energy": 282.5,
+    "peak_area": 12933.6,
+    "peak_area_error": 231.2,
+    "id": 433
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ce",
+    "energy": 293.3,
+    "peak_area": 5195.9,
+    "peak_area_error": 261.8,
+    "id": 434
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Th",
+    "energy": 300.1,
+    "peak_area": 13626.0,
+    "peak_area_error": 280.9,
+    "id": 435
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "K",
+    "energy": 312.47,
+    "peak_area": 45439.3,
+    "peak_area_error": 301.1,
+    "id": 436
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 18729.7,
+    "peak_area_error": 265.7,
+    "id": 437
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 108949.2,
+    "peak_area_error": 394.0,
+    "id": 438
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Th",
+    "energy": 340.5,
+    "peak_area": 3495.4,
+    "peak_area_error": 196.1,
+    "id": 439
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 344.3,
+    "peak_area": 24313.9,
+    "peak_area_error": 359.0,
+    "id": 440
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ba",
+    "energy": 373.2,
+    "peak_area": 3157.2,
+    "peak_area_error": 233.0,
+    "id": 441
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 21809.6,
+    "peak_area_error": 237.3,
+    "id": 442
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 2981.1,
+    "peak_area_error": 162.0,
+    "id": 443
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 36860.3,
+    "peak_area_error": 322.3,
+    "id": 444
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 182742.0,
+    "peak_area_error": 504.3,
+    "id": 445
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ba",
+    "energy": 496.3,
+    "peak_area": 5892.1,
+    "peak_area_error": 299.8,
+    "id": 446
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Sr",
+    "energy": 514.0,
+    "peak_area": 6300.0,
+    "peak_area_error": 947.2,
+    "id": 447
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Nd",
+    "energy": 531.0,
+    "peak_area": 2458.0,
+    "peak_area_error": 221.3,
+    "id": 448
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 27056.9,
+    "peak_area_error": 384.4,
+    "id": 449
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 26620.8,
+    "peak_area_error": 488.2,
+    "id": 450
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 21044.3,
+    "peak_area_error": 573.5,
+    "id": 451
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 15256.1,
+    "peak_area_error": 539.1,
+    "id": 452
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 16124.2,
+    "peak_area_error": 334.3,
+    "id": 453
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 2833.7,
+    "peak_area_error": 166.7,
+    "id": 454
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 1633.9,
+    "peak_area_error": 145.1,
+    "id": 455
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Sb",
+    "energy": 692.7,
+    "peak_area": 1060.6,
+    "peak_area_error": 177.1,
+    "id": 456
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 8174.4,
+    "peak_area_error": 169.1,
+    "id": 457
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 723.3,
+    "peak_area": 1957.4,
+    "peak_area_error": 151.1,
+    "id": 458
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 756.9,
+    "peak_area": 1893.6,
+    "peak_area_error": 350.5,
+    "id": 459
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Zr",
+    "energy": 765.8,
+    "peak_area": 621.2,
+    "peak_area_error": 99.6,
+    "id": 460
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 26092.0,
+    "peak_area_error": 361.2,
+    "id": 461
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Cs",
+    "energy": 795.9,
+    "peak_area": 6804.2,
+    "peak_area_error": 160.7,
+    "id": 462
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Cs",
+    "energy": 802.0,
+    "peak_area": 692.1,
+    "peak_area_error": 140.0,
+    "id": 463
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ca",
+    "energy": 807.9,
+    "peak_area": 5803.6,
+    "peak_area_error": 153.3,
+    "id": 464
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 56055.2,
+    "peak_area_error": 377.4,
+    "id": 465
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 6334.7,
+    "peak_area_error": 302.9,
+    "id": 466
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 12952.9,
+    "peak_area_error": 258.1,
+    "id": 467
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Tb",
+    "energy": 879.4,
+    "peak_area": 1631.5,
+    "peak_area_error": 127.6,
+    "id": 468
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 140483.4,
+    "peak_area_error": 460.2,
+    "id": 469
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 964.1,
+    "peak_area": 4010.5,
+    "peak_area_error": 181.6,
+    "id": 470
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 5994.5,
+    "peak_area_error": 140.7,
+    "id": 471
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Rb",
+    "energy": 1077.0,
+    "peak_area": 4283.2,
+    "peak_area_error": 139.9,
+    "id": 472
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 1085.9,
+    "peak_area": 2824.2,
+    "peak_area_error": 165.9,
+    "id": 473
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 48103.0,
+    "peak_area_error": 312.1,
+    "id": 474
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 1112.1,
+    "peak_area": 1285.3,
+    "peak_area_error": 204.6,
+    "id": 475
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Zn",
+    "energy": 1115.5,
+    "peak_area": 2134.7,
+    "peak_area_error": 218.9,
+    "id": 476
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 116077.8,
+    "peak_area_error": 398.4,
+    "id": 477
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 7777.5,
+    "peak_area_error": 140.0,
+    "id": 478
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ta",
+    "energy": 1189.1,
+    "peak_area": 650.4,
+    "peak_area_error": 94.7,
+    "id": 479
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "As",
+    "energy": 1216.1,
+    "peak_area": 935.3,
+    "peak_area_error": 96.7,
+    "id": 480
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ta",
+    "energy": 1221.4,
+    "peak_area": 966.2,
+    "peak_area_error": 92.4,
+    "id": 481
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ta",
+    "energy": 1231.0,
+    "peak_area": 711.4,
+    "peak_area_error": 128.7,
+    "id": 482
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 30187.3,
+    "peak_area_error": 235.0,
+    "id": 483
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 45988.7,
+    "peak_area_error": 290.1,
+    "id": 484
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 4522.7,
+    "peak_area_error": 114.6,
+    "id": 485
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 7324.0,
+    "peak_area_error": 128.2,
+    "id": 486
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Eu",
+    "energy": 1408.0,
+    "peak_area": 1761.5,
+    "peak_area_error": 85.1,
+    "id": 487
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 2683.4,
+    "peak_area_error": 85.2,
+    "id": 488
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 121224.9,
+    "peak_area_error": 355.2,
+    "id": 489
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "PT214g-3b",
+    "element_name": "Sb",
+    "energy": 1691.0,
+    "peak_area": 486.3,
+    "peak_area_error": 44.4,
+    "id": 490
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Hf",
+    "energy": 345.9,
+    "peak_area": 718.8,
+    "peak_area_error": 114.8,
+    "id": 491
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 29159.2,
+    "peak_area_error": 210.0,
+    "id": 492
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 8459.9,
+    "peak_area_error": 125.9,
+    "id": 493
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 4323.5,
+    "peak_area_error": 100.9,
+    "id": 494
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 2761.0,
+    "peak_area_error": 92.2,
+    "id": 495
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 6970.3,
+    "peak_area_error": 114.2,
+    "id": 496
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 1927.3,
+    "peak_area_error": 85.2,
+    "id": 497
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 1929.8,
+    "peak_area_error": 98.7,
+    "id": 498
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Zn",
+    "energy": 1115.5,
+    "peak_area": 754.9,
+    "peak_area_error": 96.0,
+    "id": 499
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 1410.6,
+    "peak_area_error": 62.7,
+    "id": 500
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 125293.3,
+    "peak_area_error": 361.3,
+    "id": 501
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 824.7,
+    "peak_area_error": 51.0,
+    "id": 502
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 3525.2,
+    "peak_area_error": 74.6,
+    "id": 503
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BL46g-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 64400.2,
+    "peak_area_error": 256.3,
+    "id": 504
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 453672.7,
+    "peak_area_error": 776.8,
+    "id": 505
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Lu",
+    "energy": 112.9,
+    "peak_area": 10207.1,
+    "peak_area_error": 340.4,
+    "id": 506
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 11912.6,
+    "peak_area_error": 337.3,
+    "id": 507
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Yb",
+    "energy": 130.5,
+    "peak_area": 7958.4,
+    "peak_area_error": 398.1,
+    "id": 508
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 2999.0,
+    "peak_area_error": 384.2,
+    "id": 509
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 15952.4,
+    "peak_area_error": 325.0,
+    "id": 510
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 3681.8,
+    "peak_area_error": 332.1,
+    "id": 511
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Fe",
+    "energy": 192.3,
+    "peak_area": 7861.8,
+    "peak_area_error": 300.1,
+    "id": 512
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Yb",
+    "energy": 198.0,
+    "peak_area": 1886.7,
+    "peak_area_error": 257.1,
+    "id": 513
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 7433.7,
+    "peak_area_error": 266.9,
+    "id": 514
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ba",
+    "energy": 216.1,
+    "peak_area": 1179.7,
+    "peak_area_error": 252.6,
+    "id": 515
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 3020.3,
+    "peak_area_error": 272.6,
+    "id": 516
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 244.7,
+    "peak_area": 1137.0,
+    "peak_area_error": 267.3,
+    "id": 517
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "U",
+    "energy": 277.6,
+    "peak_area": 2586.6,
+    "peak_area_error": 251.4,
+    "id": 518
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Yb",
+    "energy": 282.5,
+    "peak_area": 4660.9,
+    "peak_area_error": 237.6,
+    "id": 519
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ce",
+    "energy": 293.3,
+    "peak_area": 3951.9,
+    "peak_area_error": 237.0,
+    "id": 520
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Th",
+    "energy": 300.1,
+    "peak_area": 2907.0,
+    "peak_area_error": 306.3,
+    "id": 521
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 11144.1,
+    "peak_area_error": 248.6,
+    "id": 522
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 6562.8,
+    "peak_area_error": 251.4,
+    "id": 523
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 96798.1,
+    "peak_area_error": 388.8,
+    "id": 524
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 344.3,
+    "peak_area": 4069.1,
+    "peak_area_error": 286.8,
+    "id": 525
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ba",
+    "energy": 373.2,
+    "peak_area": 947.8,
+    "peak_area_error": 204.4,
+    "id": 526
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 8673.6,
+    "peak_area_error": 192.9,
+    "id": 527
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 863.1,
+    "peak_area_error": 174.2,
+    "id": 528
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 1340.7,
+    "peak_area_error": 185.7,
+    "id": 529
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 148487.9,
+    "peak_area_error": 449.2,
+    "id": 530
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ba",
+    "energy": 496.3,
+    "peak_area": 915.1,
+    "peak_area_error": 157.9,
+    "id": 531
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 36190.0,
+    "peak_area_error": 288.1,
+    "id": 532
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Nd",
+    "energy": 531.0,
+    "peak_area": 1207.5,
+    "peak_area_error": 176.9,
+    "id": 533
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 1333.6,
+    "peak_area_error": 182.0,
+    "id": 534
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 13434.7,
+    "peak_area_error": 235.9,
+    "id": 535
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 2902.4,
+    "peak_area_error": 180.0,
+    "id": 536
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 3150.4,
+    "peak_area_error": 167.1,
+    "id": 537
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 1207.8,
+    "peak_area_error": 155.8,
+    "id": 538
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 1700.8,
+    "peak_area_error": 154.1,
+    "id": 539
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 1755.2,
+    "peak_area_error": 162.1,
+    "id": 540
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 1304.1,
+    "peak_area_error": 127.1,
+    "id": 541
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 778.9,
+    "peak_area": 536.3,
+    "peak_area_error": 123.0,
+    "id": 542
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Cs",
+    "energy": 795.9,
+    "peak_area": 2188.8,
+    "peak_area_error": 149.7,
+    "id": 543
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 48282.7,
+    "peak_area_error": 263.8,
+    "id": 544
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ga",
+    "energy": 834.0,
+    "peak_area": 5917.3,
+    "peak_area_error": 159.1,
+    "id": 545
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 11204.8,
+    "peak_area_error": 176.2,
+    "id": 546
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 91890.6,
+    "peak_area_error": 344.6,
+    "id": 547
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 964.1,
+    "peak_area": 2324.7,
+    "peak_area_error": 150.2,
+    "id": 548
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Rb",
+    "energy": 1077.0,
+    "peak_area": 1933.9,
+    "peak_area_error": 133.6,
+    "id": 549
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 1085.9,
+    "peak_area": 1944.2,
+    "peak_area_error": 143.5,
+    "id": 550
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 35679.8,
+    "peak_area_error": 238.1,
+    "id": 551
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 76847.7,
+    "peak_area_error": 319.7,
+    "id": 552
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 4218.7,
+    "peak_area_error": 141.2,
+    "id": 553
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 23677.9,
+    "peak_area_error": 198.1,
+    "id": 554
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 3839.0,
+    "peak_area_error": 124.5,
+    "id": 555
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 148496.0,
+    "peak_area_error": 408.6,
+    "id": 556
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Eu",
+    "energy": 1408.0,
+    "peak_area": 789.2,
+    "peak_area_error": 100.3,
+    "id": 557
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 20908.3,
+    "peak_area_error": 162.2,
+    "id": 558
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Pr",
+    "energy": 1575.6,
+    "peak_area": 421.1,
+    "peak_area_error": 57.6,
+    "id": 559
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 113022.2,
+    "peak_area_error": 346.0,
+    "id": 560
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Ga",
+    "energy": 2201.7,
+    "peak_area": 665.4,
+    "peak_area_error": 65.0,
+    "id": 561
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73h-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 75985.3,
+    "peak_area_error": 280.1,
+    "id": 562
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 6357716.0,
+    "peak_area_error": 2975.2,
+    "id": 563
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Lu",
+    "energy": 112.9,
+    "peak_area": 135469.3,
+    "peak_area_error": 1316.5,
+    "id": 564
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 121.8,
+    "peak_area": 195323.9,
+    "peak_area_error": 1680.2,
+    "id": 565
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Yb",
+    "energy": 130.5,
+    "peak_area": 132901.5,
+    "peak_area_error": 1758.6,
+    "id": 566
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 47566.5,
+    "peak_area_error": 1673.0,
+    "id": 567
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ce",
+    "energy": 145.4,
+    "peak_area": 269160.1,
+    "peak_area_error": 1296.4,
+    "id": 568
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 56187.0,
+    "peak_area_error": 1194.2,
+    "id": 569
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Yb",
+    "energy": 177.2,
+    "peak_area": 44547.5,
+    "peak_area_error": 1264.6,
+    "id": 570
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Fe",
+    "energy": 192.3,
+    "peak_area": 129523.5,
+    "peak_area_error": 1182.8,
+    "id": 571
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Yb",
+    "energy": 198.0,
+    "peak_area": 31722.1,
+    "peak_area_error": 991.4,
+    "id": 572
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Lu",
+    "energy": 208.4,
+    "peak_area": 122825.7,
+    "peak_area_error": 1129.5,
+    "id": 573
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ba",
+    "energy": 216.1,
+    "peak_area": 20064.0,
+    "peak_area_error": 1205.9,
+    "id": 574
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 4127.9,
+    "peak_area_error": 1222.6,
+    "id": 575
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "U",
+    "energy": 228.2,
+    "peak_area": 53198.0,
+    "peak_area_error": 1223.2,
+    "id": 576
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 244.7,
+    "peak_area": 16581.8,
+    "peak_area_error": 968.3,
+    "id": 577
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "U",
+    "energy": 277.6,
+    "peak_area": 34755.8,
+    "peak_area_error": 961.3,
+    "id": 578
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Yb",
+    "energy": 282.5,
+    "peak_area": 76555.9,
+    "peak_area_error": 898.9,
+    "id": 579
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ce",
+    "energy": 293.3,
+    "peak_area": 63450.8,
+    "peak_area_error": 990.1,
+    "id": 580
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Th",
+    "energy": 300.1,
+    "peak_area": 42583.8,
+    "peak_area_error": 876.6,
+    "id": 581
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "K",
+    "energy": 312.7,
+    "peak_area": 177412.9,
+    "peak_area_error": 907.8,
+    "id": 582
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Cr",
+    "energy": 320.1,
+    "peak_area": 102279.6,
+    "peak_area_error": 879.4,
+    "id": 583
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "La",
+    "energy": 328.8,
+    "peak_area": 1362279.3,
+    "peak_area_error": 1459.5,
+    "id": 584
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 344.3,
+    "peak_area": 54288.7,
+    "peak_area_error": 1013.7,
+    "id": 585
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ba",
+    "energy": 373.2,
+    "peak_area": 9599.0,
+    "peak_area_error": 797.4,
+    "id": 586
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Yb",
+    "energy": 396.3,
+    "peak_area": 131853.7,
+    "peak_area_error": 757.7,
+    "id": 587
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 8854.6,
+    "peak_area_error": 603.9,
+    "id": 588
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 444.0,
+    "peak_area": 3607.0,
+    "peak_area_error": 621.5,
+    "id": 589
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Hf",
+    "energy": 482.2,
+    "peak_area": 36269.3,
+    "peak_area_error": 597.5,
+    "id": 590
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 2096017.8,
+    "peak_area_error": 1603.4,
+    "id": 591
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ba",
+    "energy": 496.3,
+    "peak_area": 17206.8,
+    "peak_area_error": 606.3,
+    "id": 592
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 420399.0,
+    "peak_area_error": 1013.8,
+    "id": 593
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Nd",
+    "energy": 531.0,
+    "peak_area": 14421.3,
+    "peak_area_error": 614.8,
+    "id": 594
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 15259.1,
+    "peak_area_error": 662.6,
+    "id": 595
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 171578.8,
+    "peak_area_error": 870.4,
+    "id": 596
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 43667.0,
+    "peak_area_error": 694.8,
+    "id": 597
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Cs",
+    "energy": 604.7,
+    "peak_area": 48944.1,
+    "peak_area_error": 618.1,
+    "id": 598
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 19418.6,
+    "peak_area_error": 610.2,
+    "id": 599
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 23660.1,
+    "peak_area_error": 614.3,
+    "id": 600
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ce",
+    "energy": 664.6,
+    "peak_area": 6768.4,
+    "peak_area_error": 565.8,
+    "id": 601
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 25243.3,
+    "peak_area_error": 690.5,
+    "id": 602
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 5296.7,
+    "peak_area_error": 511.7,
+    "id": 603
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 723.3,
+    "peak_area": 7680.2,
+    "peak_area_error": 679.3,
+    "id": 604
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 3824.6,
+    "peak_area_error": 681.2,
+    "id": 605
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 25246.3,
+    "peak_area_error": 674.3,
+    "id": 606
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Cs",
+    "energy": 795.9,
+    "peak_area": 31537.5,
+    "peak_area_error": 512.1,
+    "id": 607
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "La",
+    "energy": 815.8,
+    "peak_area": 685994.6,
+    "peak_area_error": 1000.0,
+    "id": 608
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 4157.8,
+    "peak_area_error": 540.2,
+    "id": 609
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ga",
+    "energy": 834.0,
+    "peak_area": 71123.1,
+    "peak_area_error": 647.7,
+    "id": 610
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 867.4,
+    "peak_area": 156543.8,
+    "peak_area_error": 658.2,
+    "id": 611
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Tb",
+    "energy": 879.4,
+    "peak_area": 8527.1,
+    "peak_area_error": 552.2,
+    "id": 612
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Sc",
+    "energy": 889.3,
+    "peak_area": 1494183.4,
+    "peak_area_error": 1371.1,
+    "id": 613
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 964.1,
+    "peak_area": 28638.0,
+    "peak_area_error": 557.7,
+    "id": 614
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 8056.3,
+    "peak_area_error": 716.7,
+    "id": 615
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ga",
+    "energy": 1050.7,
+    "peak_area": 4548.2,
+    "peak_area_error": 612.8,
+    "id": 616
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Rb",
+    "energy": 1077.0,
+    "peak_area": 31366.5,
+    "peak_area_error": 488.0,
+    "id": 617
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 1085.9,
+    "peak_area": 28401.3,
+    "peak_area_error": 553.2,
+    "id": 618
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Fe",
+    "energy": 1099.3,
+    "peak_area": 571116.2,
+    "peak_area_error": 920.3,
+    "id": 619
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Sc",
+    "energy": 1120.5,
+    "peak_area": 1233261.5,
+    "peak_area_error": 1252.3,
+    "id": 620
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Zr",
+    "energy": 1148.0,
+    "peak_area": 12900.3,
+    "peak_area_error": 1726.1,
+    "id": 621
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ir",
+    "energy": 1150.8,
+    "peak_area": 12789.5,
+    "peak_area_error": 1335.3,
+    "id": 622
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Co",
+    "energy": 1173.2,
+    "peak_area": 63884.3,
+    "peak_area_error": 507.0,
+    "id": 623
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ta",
+    "energy": 1189.1,
+    "peak_area": 2006.1,
+    "peak_area_error": 370.2,
+    "id": 624
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "As",
+    "energy": 1216.1,
+    "peak_area": 10741.9,
+    "peak_area_error": 682.4,
+    "id": 625
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ta",
+    "energy": 1221.4,
+    "peak_area": 5396.9,
+    "peak_area_error": 788.2,
+    "id": 626
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ta",
+    "energy": 1231.0,
+    "peak_area": 4703.7,
+    "peak_area_error": 650.7,
+    "id": 627
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Fe",
+    "energy": 1291.6,
+    "peak_area": 376962.9,
+    "peak_area_error": 751.3,
+    "id": 628
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 3678.4,
+    "peak_area_error": 383.3,
+    "id": 629
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Co",
+    "energy": 1332.5,
+    "peak_area": 59958.5,
+    "peak_area_error": 460.3,
+    "id": 630
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 1670089.7,
+    "peak_area_error": 1381.1,
+    "id": 631
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Eu",
+    "energy": 1408.0,
+    "peak_area": 11217.3,
+    "peak_area_error": 351.7,
+    "id": 632
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 1959.1,
+    "peak_area_error": 330.7,
+    "id": 633
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 223058.4,
+    "peak_area_error": 536.6,
+    "id": 634
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Pr",
+    "energy": 1575.6,
+    "peak_area": 3865.4,
+    "peak_area_error": 209.0,
+    "id": 635
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 1590875.0,
+    "peak_area_error": 1294.1,
+    "id": 636
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Sb",
+    "energy": 1691.0,
+    "peak_area": 976.5,
+    "peak_area_error": 163.5,
+    "id": 637
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ga",
+    "energy": 2201.7,
+    "peak_area": 5602.7,
+    "peak_area_error": 207.0,
+    "id": 638
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Ga",
+    "energy": 2507.9,
+    "peak_area": 6061.4,
+    "peak_area_error": 397.7,
+    "id": 639
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "BC73g-8a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 860582.2,
+    "peak_area_error": 941.5,
+    "id": 640
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 962.6,
+    "peak_area_error": 78.1,
+    "id": 641
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 1341.9,
+    "peak_area_error": 85.4,
+    "id": 642
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 428.5,
+    "peak_area_error": 54.4,
+    "id": 643
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 4964.1,
+    "peak_area_error": 93.6,
+    "id": 644
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 1759.6,
+    "peak_area_error": 63.5,
+    "id": 645
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 1037.0,
+    "peak_area_error": 55.4,
+    "id": 646
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 386.9,
+    "peak_area_error": 48.3,
+    "id": 647
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 451.4,
+    "peak_area_error": 44.6,
+    "id": 648
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 1659.2,
+    "peak_area_error": 61.7,
+    "id": 649
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 434.1,
+    "peak_area_error": 44.5,
+    "id": 650
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 471.5,
+    "peak_area_error": 66.4,
+    "id": 651
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 243.6,
+    "peak_area_error": 31.4,
+    "id": 652
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 284.7,
+    "peak_area_error": 33.7,
+    "id": 653
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 57994.6,
+    "peak_area_error": 244.9,
+    "id": 654
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66i-3a",
+    "element_name": "Br",
+    "energy": 1477.14,
+    "peak_area": 262.2,
+    "peak_area_error": 30.9,
+    "id": 655
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 987.9,
+    "peak_area_error": 79.5,
+    "id": 656
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 1080.3,
+    "peak_area_error": 75.0,
+    "id": 657
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Eu",
+    "energy": 344.3,
+    "peak_area": 315.3,
+    "peak_area_error": 56.4,
+    "id": 658
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 405.2,
+    "peak_area_error": 53.9,
+    "id": 659
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 4361.2,
+    "peak_area_error": 87.9,
+    "id": 660
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 1626.9,
+    "peak_area_error": 58.3,
+    "id": 661
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 886.2,
+    "peak_area_error": 49.6,
+    "id": 662
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 541.6,
+    "peak_area_error": 47.6,
+    "id": 663
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 1408.3,
+    "peak_area_error": 59.3,
+    "id": 664
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 352.8,
+    "peak_area_error": 42.5,
+    "id": 665
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 411.0,
+    "peak_area_error": 56.2,
+    "id": 666
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 171.0,
+    "peak_area_error": 29.4,
+    "id": 667
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 381.8,
+    "peak_area_error": 40.6,
+    "id": 668
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 47852.8,
+    "peak_area_error": 222.1,
+    "id": 669
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 138.0,
+    "peak_area_error": 22.1,
+    "id": 670
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66h-3a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 233.8,
+    "peak_area_error": 25.6,
+    "id": 671
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 930.7,
+    "peak_area_error": 78.0,
+    "id": 672
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 866.3,
+    "peak_area_error": 63.2,
+    "id": 673
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Ta",
+    "energy": 222.1,
+    "peak_area": 376.1,
+    "peak_area_error": 72.2,
+    "id": 674
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 331.0,
+    "peak_area_error": 45.0,
+    "id": 675
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 4386.8,
+    "peak_area_error": 86.2,
+    "id": 676
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 1677.3,
+    "peak_area_error": 60.1,
+    "id": 677
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 937.6,
+    "peak_area_error": 50.0,
+    "id": 678
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 494.5,
+    "peak_area_error": 43.1,
+    "id": 679
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 1371.6,
+    "peak_area_error": 55.7,
+    "id": 680
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 311.5,
+    "peak_area_error": 41.9,
+    "id": 681
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 299.4,
+    "peak_area_error": 43.3,
+    "id": 682
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Ca",
+    "energy": 1297.1,
+    "peak_area": 207.1,
+    "peak_area_error": 31.2,
+    "id": 683
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 302.3,
+    "peak_area_error": 34.2,
+    "id": 684
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 47433.6,
+    "peak_area_error": 221.4,
+    "id": 685
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 162.4,
+    "peak_area_error": 27.3,
+    "id": 686
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B66g-3a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 202.4,
+    "peak_area_error": 25.2,
+    "id": 687
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 627.9,
+    "peak_area_error": 55.5,
+    "id": 688
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 792.1,
+    "peak_area_error": 60.6,
+    "id": 689
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Fe",
+    "energy": 334.8,
+    "peak_area": 1356.7,
+    "peak_area_error": 53.9,
+    "id": 690
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 397.6,
+    "peak_area_error": 40.5,
+    "id": 691
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 3045.9,
+    "peak_area_error": 69.5,
+    "id": 692
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Cd",
+    "energy": 527.9,
+    "peak_area": 467.5,
+    "peak_area_error": 34.8,
+    "id": 693
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 545.1,
+    "peak_area_error": 36.8,
+    "id": 694
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 740.9,
+    "peak_area_error": 39.6,
+    "id": 695
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 669.4,
+    "peak_area_error": 37.9,
+    "id": 696
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 370.8,
+    "peak_area_error": 31.8,
+    "id": 697
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 492.5,
+    "peak_area_error": 37.1,
+    "id": 698
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 275.6,
+    "peak_area_error": 40.7,
+    "id": 699
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 456.9,
+    "peak_area_error": 33.8,
+    "id": 700
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 211.7,
+    "peak_area_error": 41.8,
+    "id": 701
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 18478.6,
+    "peak_area_error": 138.3,
+    "id": 702
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65i-3a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 130.2,
+    "peak_area_error": 19.8,
+    "id": 703
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 522.6,
+    "peak_area_error": 46.7,
+    "id": 704
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 610.2,
+    "peak_area_error": 56.8,
+    "id": 705
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 473.1,
+    "peak_area_error": 55.6,
+    "id": 706
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Fe",
+    "energy": 334.8,
+    "peak_area": 458.7,
+    "peak_area_error": 41.5,
+    "id": 707
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 208.9,
+    "peak_area_error": 27.4,
+    "id": 708
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 128.1,
+    "peak_area_error": 27.8,
+    "id": 709
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 2814.3,
+    "peak_area_error": 63.1,
+    "id": 710
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Cd",
+    "energy": 527.9,
+    "peak_area": 170.7,
+    "peak_area_error": 26.2,
+    "id": 711
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 497.2,
+    "peak_area_error": 33.3,
+    "id": 712
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 432.5,
+    "peak_area_error": 32.8,
+    "id": 713
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 350.3,
+    "peak_area_error": 31.5,
+    "id": 714
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 401.2,
+    "peak_area_error": 31.0,
+    "id": 715
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 286.5,
+    "peak_area_error": 28.2,
+    "id": 716
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 186.5,
+    "peak_area_error": 25.5,
+    "id": 717
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 392.3,
+    "peak_area_error": 30.3,
+    "id": 718
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 148.4,
+    "peak_area_error": 23.7,
+    "id": 719
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 11818.6,
+    "peak_area_error": 110.7,
+    "id": 720
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65h-3a",
+    "element_name": "Br",
+    "energy": 1477.36,
+    "peak_area": 59.4,
+    "peak_area_error": 12.1,
+    "id": 721
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Sm",
+    "energy": 103.2,
+    "peak_area": 3641.4,
+    "peak_area_error": 129.1,
+    "id": 722
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Hf",
+    "energy": 133.5,
+    "peak_area": 2098.3,
+    "peak_area_error": 118.9,
+    "id": 723
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Sn",
+    "energy": 158.6,
+    "peak_area": 1846.1,
+    "peak_area_error": 109.9,
+    "id": 724
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Fe",
+    "energy": 334.8,
+    "peak_area": 1213.9,
+    "peak_area_error": 109.6,
+    "id": 725
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Hf",
+    "energy": 345.9,
+    "peak_area": 472.3,
+    "peak_area_error": 84.1,
+    "id": 726
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Au",
+    "energy": 411.8,
+    "peak_area": 1558.9,
+    "peak_area_error": 75.3,
+    "id": 727
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "La",
+    "energy": 487.0,
+    "peak_area": 693.3,
+    "peak_area_error": 69.9,
+    "id": 728
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Cu",
+    "energy": 511.0,
+    "peak_area": 16619.2,
+    "peak_area_error": 157.5,
+    "id": 729
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Cd",
+    "energy": 527.9,
+    "peak_area": 420.3,
+    "peak_area_error": 57.3,
+    "id": 730
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 554.3,
+    "peak_area": 2930.9,
+    "peak_area_error": 96.7,
+    "id": 731
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "As",
+    "energy": 559.2,
+    "peak_area": 3606.5,
+    "peak_area_error": 94.6,
+    "id": 732
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "As",
+    "energy": 563.2,
+    "peak_area": 4313.7,
+    "peak_area_error": 101.7,
+    "id": 733
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Sb",
+    "energy": 602.7,
+    "peak_area": 263.2,
+    "peak_area_error": 46.0,
+    "id": 734
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 619.1,
+    "peak_area": 2005.7,
+    "peak_area_error": 74.6,
+    "id": 735
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "As",
+    "energy": 657.1,
+    "peak_area": 371.4,
+    "peak_area_error": 57.3,
+    "id": 736
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Ag",
+    "energy": 687.0,
+    "peak_area": 1216.6,
+    "peak_area_error": 62.3,
+    "id": 737
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 698.4,
+    "peak_area": 846.5,
+    "peak_area_error": 58.1,
+    "id": 738
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 776.5,
+    "peak_area": 2341.9,
+    "peak_area_error": 74.4,
+    "id": 739
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 827.8,
+    "peak_area": 727.3,
+    "peak_area_error": 66.5,
+    "id": 740
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 1044.0,
+    "peak_area": 529.6,
+    "peak_area_error": 62.4,
+    "id": 741
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Zn",
+    "energy": 1115.5,
+    "peak_area": 622.0,
+    "peak_area_error": 89.9,
+    "id": 742
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 1317.5,
+    "peak_area": 517.1,
+    "peak_area_error": 42.4,
+    "id": 743
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Na",
+    "energy": 1368.6,
+    "peak_area": 73896.5,
+    "peak_area_error": 276.7,
+    "id": 744
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Br",
+    "energy": 1474.9,
+    "peak_area": 293.3,
+    "peak_area_error": 35.3,
+    "id": 745
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "K",
+    "energy": 1524.7,
+    "peak_area": 541.4,
+    "peak_area_error": 42.9,
+    "id": 746
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "La",
+    "energy": 1596.2,
+    "peak_area": 633.4,
+    "peak_area_error": 45.1,
+    "id": 747
+  },
+  {
+    "container_name": "PT2025-MQ-T10",
+    "spectrum_name": "B65g-3a",
+    "element_name": "Na",
+    "energy": 2754.0,
+    "peak_area": 38298.8,
+    "peak_area_error": 196.9,
+    "id": 748
   }
 ]

@@ -4,12 +4,18 @@ let detectorParams = [];
 let nuclearData = [];
 let standardSampleData = [];
 let peakAreaData = [];
+let savedCalculationResults = [];
 let editingReactorId = null;
 let editingDetectorId = null;
 let editingPeakAreaId = null;
 let neutronFluxChart = null; // Chart instance for neutron flux regression
 let currentRegressionCoefficients = null; // Store regression coefficients (a, b) for Asp calculation
 let monitorSpectraData = null; // Store monitor spectra data (Qo(a) and epsilon_p_a) for concentration calculation
+let spectrumDecayCache = new Map(); // Cache thời gian chờ giữa kết thúc chiếu và bắt đầu đo cho từng phổ
+const CSV_ENERGY_PREF_STORAGE_KEY = 'csvEnergyElementPreferences';
+let csvEnergyElementPreferences = {};
+// Lưu snapshot kết quả tính toán hiện tại (để copy sang module "Lưu kết quả tính toán")
+let currentCalculationResultsForSaving = [];
 
 // Helper function to format datetime
 // Make sure it's defined in global scope
@@ -53,8 +59,129 @@ function formatDateTime(dateTimeStr) {
     return window.formatDateTime(dateTimeStr);
 }
 
+function loadCSVElementPreferences() {
+    try {
+        const data = localStorage.getItem(CSV_ENERGY_PREF_STORAGE_KEY);
+        if (data) {
+            const parsed = JSON.parse(data);
+            if (typeof parsed === 'object' && parsed !== null) {
+                return parsed;
+            }
+        }
+    } catch (error) {
+        console.warn('Unable to load CSV energy preferences:', error);
+    }
+    return {};
+}
+
+function saveCSVElementPreferences() {
+    try {
+        localStorage.setItem(CSV_ENERGY_PREF_STORAGE_KEY, JSON.stringify(csvEnergyElementPreferences));
+    } catch (error) {
+        console.warn('Unable to save CSV energy preferences:', error);
+    }
+}
+
+function getEnergyPreferenceKey(energy) {
+    if (typeof energy !== 'number' || isNaN(energy)) {
+        return null;
+    }
+    return Math.round(energy).toString();
+}
+
+function rememberEnergyPreference(energy, element) {
+    if (!element) return;
+    const key = getEnergyPreferenceKey(energy);
+    if (!key) return;
+    csvEnergyElementPreferences[key] = {
+        element: element,
+        updated_at: Date.now()
+    };
+    saveCSVElementPreferences();
+}
+
+function getPreferredElementForEnergy(energy) {
+    const key = getEnergyPreferenceKey(energy);
+    if (!key) return null;
+    const pref = csvEnergyElementPreferences[key];
+    return pref && pref.element ? pref.element : null;
+}
+
+function parseDateTimeToDate(dateTimeStr) {
+    if (!dateTimeStr) return null;
+    try {
+        const value = String(dateTimeStr).trim();
+        const viMatch = value.match(/^(\d{2})\/(\d{2})\/(\d{4})(?: (\d{2}):(\d{2})(?::(\d{2}))?)?$/);
+        if (viMatch) {
+            const [, day, month, year, hour = '00', minute = '00', second = '00'] = viMatch;
+            const formatted = `${year}-${month}-${day}T${hour}:${minute}:${second}`;
+            const dt = new Date(formatted);
+            return isNaN(dt.getTime()) ? null : dt;
+        }
+        
+        const isoMatch = value.match(/^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2})(?::(\d{2}))?/);
+        if (isoMatch) {
+            const [, year, month, day, hour, minute, second = '00'] = isoMatch;
+            const formatted = `${year}-${month}-${day}T${hour}:${minute}:${second}`;
+            const dt = new Date(formatted);
+            return isNaN(dt.getTime()) ? null : dt;
+        }
+        
+        const dt = new Date(value);
+        return isNaN(dt.getTime()) ? null : dt;
+    } catch (error) {
+        return null;
+    }
+}
+
+function getSpectrumDecayDurationSeconds(spectrumName) {
+    if (!spectrumName) return null;
+    try {
+        const key = spectrumName.trim().toLowerCase();
+        if (spectrumDecayCache.has(key)) {
+            return spectrumDecayCache.get(key);
+        }
+        
+        const sample = irradiatedSamples.find(s => (s.spectrum_name || '').trim().toLowerCase() === key);
+        if (!sample) {
+            spectrumDecayCache.set(key, null);
+            return null;
+        }
+        
+        const container = irradiatedContainers.find(c => c.container_name === sample.container_name);
+        if (!container || !container.end_time) {
+            spectrumDecayCache.set(key, null);
+            return null;
+        }
+        
+        const endTime = parseDateTimeToDate(container.end_time);
+        const measurementStart = parseDateTimeToDate(sample.measurement_start_time);
+        if (!endTime || !measurementStart) {
+            spectrumDecayCache.set(key, null);
+            return null;
+        }
+        
+        const diffMs = measurementStart.getTime() - endTime.getTime();
+        if (!isFinite(diffMs) || diffMs <= 0) {
+            spectrumDecayCache.set(key, 0);
+            return 0;
+        }
+        
+        const seconds = diffMs / 1000;
+        spectrumDecayCache.set(key, seconds);
+        return seconds;
+    } catch (error) {
+        return null;
+    }
+}
+
 // Initialize on page load
+// Flags to avoid attaching duplicate event listeners
+let irradiatedUploadInitialized = false;
+let irradiatedFormInitialized = false;
+
 document.addEventListener('DOMContentLoaded', function() {
+    csvEnergyElementPreferences = loadCSVElementPreferences();
     loadReactorParameters();
     loadDetectorParameters();
     loadNuclearData();
@@ -62,10 +189,13 @@ document.addEventListener('DOMContentLoaded', function() {
     loadIrradiatedData();
     loadPeakAreaData();
     loadCalculationContainers();
+    loadSavedCalculationResults();
     
     // Setup file upload areas
     setupFileUpload();
     setupStandardSampleFileUpload();
+    // Các hàm này đã được bảo vệ bằng cờ khởi tạo,
+    // nên có thể gọi nhiều lần mà không bị gắn listener trùng lặp
     setupIrradiatedFileUpload();
     setupIrradiatedFormSubmit();
     setupIrradiatedSampleFormSubmit();
@@ -78,12 +208,14 @@ document.addEventListener('DOMContentLoaded', function() {
         peakAreaForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            const peakAreaErrorValue = document.getElementById('peak-area-peak-area-error').value;
             const data = {
                 container_name: document.getElementById('peak-area-container-name').value,
                 spectrum_name: document.getElementById('peak-area-spectrum-name').value,
                 element_name: document.getElementById('peak-area-element-name').value,
                 energy: parseFloat(document.getElementById('peak-area-energy').value),
-                peak_area: parseFloat(document.getElementById('peak-area-peak-area').value)
+                peak_area: parseFloat(document.getElementById('peak-area-peak-area').value),
+                peak_area_error: peakAreaErrorValue ? parseFloat(peakAreaErrorValue) : null
             };
             
             try {
@@ -189,6 +321,11 @@ function switchTab(tab, event) {
     if (tab === 'calculation-sample') {
         switchSubTab('irradiated-sample');
     }
+
+    // Nếu chuyển sang tab lưu kết quả tính toán thì load lại danh sách
+    if (tab === 'saved-calculation') {
+        loadSavedCalculationResults();
+    }
 }
 
 // Sub-tab switching (within system-data tab)
@@ -255,8 +392,12 @@ async function loadIrradiationPositions() {
         const response = await fetch('/api/reactor/positions');
         const result = await response.json();
         if (result.success) {
-            const select = document.getElementById('irradiated-irradiation-position');
-            if (select) {
+            const selectIds = ['irradiated-irradiation-position', 'spe-irradiation-position'];
+            selectIds.forEach(selectId => {
+                const select = document.getElementById(selectId);
+                if (!select) {
+                    return;
+                }
                 const currentValue = select.value;
                 select.innerHTML = '<option value="">-- Chọn vị trí chiếu --</option>';
                 result.data.forEach(position => {
@@ -265,14 +406,13 @@ async function loadIrradiationPositions() {
                     option.textContent = position;
                     select.appendChild(option);
                 });
-                // Restore previous value if it still exists
                 if (currentValue) {
                     const optionExists = Array.from(select.options).some(opt => opt.value === currentValue);
                     if (optionExists) {
                         select.value = currentValue;
                     }
                 }
-            }
+            });
         }
     } catch (error) {
         console.error('Error loading irradiation positions:', error);
@@ -1558,6 +1698,8 @@ async function loadIrradiatedData() {
             document.getElementById('irradiated-sample-count').textContent = sampleResult.count || 0;
         }
         
+        spectrumDecayCache = new Map();
+        
         renderIrradiatedTable();
         loadContainerNames();
     } catch (error) {
@@ -1733,6 +1875,11 @@ function filterIrradiatedData() {
 }
 
 function setupIrradiatedFileUpload() {
+    // Tránh gắn listener nhiều lần
+    if (irradiatedUploadInitialized) {
+        return;
+    }
+
     const uploadArea = document.getElementById('irradiated-upload-area');
     const fileInput = document.getElementById('irradiated-csv-file');
     
@@ -1741,6 +1888,9 @@ function setupIrradiatedFileUpload() {
         setTimeout(setupIrradiatedFileUpload, 100);
         return;
     }
+
+    // Đánh dấu đã khởi tạo sau khi chắc chắn có đủ phần tử
+    irradiatedUploadInitialized = true;
     
     const fileLink = uploadArea.querySelector('.file-link');
 
@@ -1814,12 +1964,20 @@ function handleIrradiatedFileSelect(event) {
 
 // Setup form submit handler
 function setupIrradiatedFormSubmit() {
+    // Tránh gắn listener nhiều lần
+    if (irradiatedFormInitialized) {
+        return;
+    }
+
     const form = document.getElementById('irradiated-upload-form');
     if (!form) {
         // Form not found, try again later
         setTimeout(setupIrradiatedFormSubmit, 100);
         return;
     }
+
+    // Đánh dấu đã khởi tạo sau khi chắc chắn có form
+    irradiatedFormInitialized = true;
     
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -1903,6 +2061,30 @@ function setupSpeFormSubmit() {
         for (let i = 0; i < files.length; i++) {
             formData.append('files', files[i]);
         }
+        
+        const containerNameInput = document.getElementById('spe-container-name');
+        const irradiationPositionInput = document.getElementById('spe-irradiation-position');
+        const irradiationStartTimeInput = document.getElementById('spe-irradiation-start-time');
+        const irradiationEndTimeInput = document.getElementById('spe-irradiation-end-time');
+        
+        const containerNameValue = containerNameInput ? containerNameInput.value : '';
+        const irradiationPositionValue = irradiationPositionInput ? irradiationPositionInput.value : '';
+        const irradiationStartTimeValue = irradiationStartTimeInput ? irradiationStartTimeInput.value : '';
+        const irradiationEndTimeValue = irradiationEndTimeInput ? irradiationEndTimeInput.value : '';
+        
+        if (irradiationStartTimeValue && irradiationEndTimeValue) {
+            const start = new Date(irradiationStartTimeValue);
+            const end = new Date(irradiationEndTimeValue);
+            if (start > end) {
+                showToast('Thời gian bắt đầu chiếu phải nhỏ hơn hoặc bằng thời gian kết thúc chiếu', 'error');
+                return;
+            }
+        }
+        
+        formData.append('container_name', containerNameValue || '');
+        formData.append('irradiation_position', irradiationPositionValue || '');
+        formData.append('irradiation_start_time', irradiationStartTimeValue || '');
+        formData.append('irradiation_end_time', irradiationEndTimeValue || '');
         
         try {
             showToast('Đang xử lý file .Spe...', 'info');
@@ -2463,7 +2645,7 @@ function renderPeakAreaTable() {
     
     if (peakAreaData.length === 0) {
         const row = document.createElement('tr');
-        row.innerHTML = '<td colspan="7" style="text-align: center; padding: 40px; color: var(--text-secondary);">Chưa có dữ liệu</td>';
+        row.innerHTML = '<td colspan="8" style="text-align: center; padding: 40px; color: var(--text-secondary);">Chưa có dữ liệu</td>';
         tbody.appendChild(row);
         return;
     }
@@ -2503,7 +2685,12 @@ function renderPeakAreaTable() {
                     (${totalItems} bản ghi, ${spectrumNames.length} phổ)
                 </span>
             </td>
-            <td colspan="6" style="background: var(--bg-color);"></td>
+            <td colspan="4" style="background: var(--bg-color);"></td>
+            <td style="background: var(--bg-color); text-align: right; padding-right: 15px;">
+                <button class="btn btn-danger" onclick="event.stopPropagation(); deletePeakAreaContainer('${containerName.replace(/'/g, "\\'")}')" style="padding: 6px 12px; font-size: 0.85rem;">
+                    <i class="fas fa-trash"></i> Xóa container
+                </button>
+            </td>
         `;
         tbody.appendChild(mainRow);
         
@@ -2578,7 +2765,8 @@ function renderPeakAreaTable() {
                         <td style="padding: 12px;">${item.spectrum_name || '-'}</td>
                         <td style="padding: 12px;">${item.element_name || '-'}</td>
                         <td style="padding: 12px;">${item.energy !== null && item.energy !== undefined ? item.energy.toFixed(2) : '-'}</td>
-                        <td style="padding: 12px;">${item.peak_area !== null && item.peak_area !== undefined ? item.peak_area.toFixed(4) : '-'}</td>
+                        <td style="padding: 12px;">${item.peak_area !== null && item.peak_area !== undefined ? item.peak_area.toFixed(1) : '-'}</td>
+                        <td style="padding: 12px;">${item.peak_area_error !== null && item.peak_area_error !== undefined ? item.peak_area_error.toFixed(1) : '-'}</td>
                         <td style="padding: 12px;">
                             <div class="action-buttons">
                                 <button class="btn btn-edit" onclick="editPeakAreaData(${item.id})" style="padding: 6px 12px; font-size: 0.85rem;">
@@ -2980,6 +3168,7 @@ async function showPeakAreaModal(id = null) {
             await loadEnergies();
             document.getElementById('peak-area-energy').value = item.energy || '';
             document.getElementById('peak-area-peak-area').value = item.peak_area !== null && item.peak_area !== undefined ? item.peak_area : '';
+            document.getElementById('peak-area-peak-area-error').value = item.peak_area_error !== null && item.peak_area_error !== undefined ? item.peak_area_error : '';
         }
     } else {
         title.textContent = 'Thêm Dữ liệu Diện tích đỉnh';
@@ -3035,6 +3224,7 @@ async function showPeakAreaModal(id = null) {
         }
         
         document.getElementById('peak-area-peak-area').value = '';
+        document.getElementById('peak-area-peak-area-error').value = '';
     }
 }
 
@@ -3069,6 +3259,842 @@ async function deletePeakAreaData(id) {
     }
 }
 
+async function deletePeakAreaContainer(containerName) {
+    if (!confirm(`Bạn có chắc chắn muốn xóa toàn bộ dữ liệu của container "${containerName}"?\n\nHành động này sẽ xóa tất cả các bản ghi trong container này và không thể hoàn tác.`)) {
+        return;
+    }
+    
+    try {
+        const encodedContainerName = encodeURIComponent(containerName);
+        const response = await fetch(`/api/peak-area/container/${encodedContainerName}`, {
+            method: 'DELETE'
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            showToast(result.message);
+            loadPeakAreaData();
+        } else {
+            showToast('Lỗi: ' + result.error, 'error');
+        }
+    } catch (error) {
+        showToast('Lỗi kết nối: ' + error.message, 'error');
+    }
+}
+
+// ========== CSV Import Functions ==========
+
+let csvImportData = [];
+let csvImportDataOriginal = []; // Store original data before filtering
+let csvRowIdCounter = 0;
+
+async function showPeakAreaCSVImportModal() {
+    const modal = document.getElementById('peak-area-csv-modal');
+    if (modal) {
+        modal.classList.add('active');
+        // Reset form
+        document.getElementById('csv-file-input').value = '';
+        document.getElementById('csv-preview-section').style.display = 'none';
+        csvImportData = [];
+        csvImportDataOriginal = [];
+        csvRowIdCounter = 0;
+        updateCSVPreviewCount(0);
+        // Load containers
+        await loadCSVContainers();
+    }
+}
+
+async function handleToleranceChange() {
+    try {
+        if (csvImportDataOriginal.length > 0 || csvImportData.length > 0) {
+            // Sync slider and input
+            const slider = document.getElementById('csv-energy-tolerance-slider');
+            const input = document.getElementById('csv-energy-tolerance');
+            if (slider && input) {
+                slider.value = input.value;
+            }
+            
+            await renderCSVPreview();
+            const originalCount = csvImportDataOriginal.length > 0 ? csvImportDataOriginal.length : csvImportData.length;
+            const filteredCount = csvImportData.length;
+            const tolerance = document.getElementById('csv-energy-tolerance')?.value || '2';
+            
+            if (filteredCount === 0) {
+                showToast(`Không có đỉnh nào khớp với độ lệch ±${tolerance} keV`, 'warning');
+            } else {
+                const removedCount = originalCount - filteredCount;
+                showToast(`Lọc còn ${filteredCount} đỉnh${removedCount > 0 ? ` (đã loại bỏ ${removedCount} đỉnh không khớp)` : ''}`, 'success');
+            }
+        }
+    } catch (error) {
+        console.error('Error in handleToleranceChange:', error);
+    }
+}
+
+function closePeakAreaCSVImportModal() {
+    const modal = document.getElementById('peak-area-csv-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
+    // Reset form
+    document.getElementById('csv-file-input').value = '';
+    document.getElementById('csv-preview-section').style.display = 'none';
+    csvImportData = [];
+    updateCSVPreviewCount(0);
+}
+
+async function loadCSVContainers() {
+    try {
+        const response = await fetch('/api/irradiated/containers');
+        const result = await response.json();
+        if (result.success) {
+            const select = document.getElementById('csv-container-select');
+            if (select) {
+                select.innerHTML = '<option value="">-- Chọn container --</option>';
+                result.data.forEach(container => {
+                    const option = document.createElement('option');
+                    option.value = container.container_name;
+                    option.textContent = container.container_name;
+                    select.appendChild(option);
+                });
+            }
+        }
+    } catch (error) {
+        console.error('Error loading containers:', error);
+        showToast('Lỗi khi tải danh sách container: ' + error.message, 'error');
+    }
+}
+
+async function loadCSVSpectrumNames() {
+    const containerName = document.getElementById('csv-container-select').value;
+    if (!containerName) {
+        return;
+    }
+    
+    try {
+        const response = await fetch(`/api/irradiated/containers/${encodeURIComponent(containerName)}/spectra`);
+        const result = await response.json();
+        if (result.success && result.data) {
+            // Update spectrum names in preview table if needed
+            // The spectrum name is already set from file name, so we just validate
+        }
+    } catch (error) {
+        console.error('Error loading spectrum names:', error);
+    }
+}
+
+function handleCSVFileSelect(event) {
+    const files = event.target.files;
+    if (!files || files.length === 0) {
+        return;
+    }
+    
+    // Validate all files are CSV
+    const csvFiles = Array.from(files).filter(file => {
+        if (!file.name.toLowerCase().endsWith('.csv')) {
+            showToast(`File "${file.name}" không phải file CSV, bỏ qua`, 'warning');
+            return false;
+        }
+        return true;
+    });
+    
+    if (csvFiles.length === 0) {
+        showToast('Không có file CSV hợp lệ', 'error');
+        return;
+    }
+    
+    // Reset import data
+    csvImportData = [];
+    csvImportDataOriginal = [];
+    csvRowIdCounter = 0;
+    
+    // Process files sequentially
+    let processedCount = 0;
+    const totalFiles = csvFiles.length;
+    
+    csvFiles.forEach((file, fileIndex) => {
+        const spectrumName = file.name.replace(/\.csv$/i, '').trim();
+        const reader = new FileReader();
+        
+        reader.onload = async function(e) {
+            try {
+                const text = e.target.result;
+                parseCSVFile(text, spectrumName);
+                processedCount++;
+                
+                // When all files are processed, show preview
+                if (processedCount === totalFiles) {
+                    if (csvImportData.length === 0) {
+                        showToast('Không tìm thấy dữ liệu hợp lệ trong các file CSV', 'error');
+                        return;
+                    }
+                    
+                    // Save original data before filtering
+                    csvImportDataOriginal = JSON.parse(JSON.stringify(csvImportData));
+                    
+                    // Show preview section and filter data
+                    document.getElementById('csv-preview-section').style.display = 'block';
+                    const originalCount = csvImportData.length;
+                    await renderCSVPreview();
+                    const filteredCount = csvImportData.length;
+                    
+                    if (filteredCount === 0) {
+                        showToast(`Đã đọc ${originalCount} đỉnh từ ${totalFiles} file CSV, nhưng không có đỉnh nào khớp với độ lệch đã chọn`, 'warning');
+                    } else {
+                        const removedCount = originalCount - filteredCount;
+                        showToast(`Đã đọc ${originalCount} đỉnh từ ${totalFiles} file CSV, lọc còn ${filteredCount} đỉnh${removedCount > 0 ? ` (đã loại bỏ ${removedCount} đỉnh không khớp)` : ''}`, 'success');
+                    }
+                }
+            } catch (error) {
+                showToast(`Lỗi khi đọc file "${file.name}": ${error.message}`, 'error');
+                console.error('CSV parsing error:', error);
+                processedCount++;
+                
+                if (processedCount === totalFiles && csvImportData.length > 0) {
+                    document.getElementById('csv-preview-section').style.display = 'block';
+                    await renderCSVPreview();
+                }
+            }
+        };
+        
+        reader.onerror = async function() {
+            showToast(`Lỗi khi đọc file "${file.name}"`, 'error');
+            processedCount++;
+            
+            if (processedCount === totalFiles && csvImportData.length > 0) {
+                document.getElementById('csv-preview-section').style.display = 'block';
+                await renderCSVPreview();
+            }
+        };
+        
+        reader.readAsText(file, 'UTF-8');
+    });
+}
+
+function parseCSVFile(csvText, spectrumName) {
+    try {
+        // Parse CSV - handle both comma and semicolon separators
+        const lines = csvText.split(/\r?\n/).filter(line => line.trim());
+        if (lines.length === 0) {
+            return; // Skip empty files
+        }
+        
+        // Check if first line is a header (contains text keywords)
+        const headerKeywords = ['năng lượng', 'energy', 'diện tích', 'peak', 'sai số', 'error', 'uncertainty'];
+        let startIndex = 0;
+        if (lines.length > 0) {
+            const firstLine = lines[0].toLowerCase();
+            const isHeader = headerKeywords.some(keyword => firstLine.includes(keyword));
+            if (isHeader) {
+                startIndex = 1; // Skip header
+            }
+        }
+        
+        // Parse each line (skip header if exists)
+        for (let index = startIndex; index < lines.length; index++) {
+            const line = lines[index];
+            // Try comma first, then semicolon
+            let columns = line.split(',');
+            if (columns.length < 2) {
+                columns = line.split(';');
+            }
+            
+            // Remove quotes and trim
+            columns = columns.map(col => col.replace(/^["']|["']$/g, '').trim());
+            
+            // Skip empty lines
+            if (columns.length < 2 || (!columns[0] && !columns[1])) {
+                continue;
+            }
+            
+            const energy = parseFloat(columns[0]);
+            const peakArea = parseFloat(columns[1]);
+            const peakAreaError = columns.length >= 3 && columns[2] ? parseFloat(columns[2]) : null;
+            
+            // Validate data
+            if (isNaN(energy) || isNaN(peakArea)) {
+                console.warn(`Dòng ${index + 1}: Dữ liệu không hợp lệ, bỏ qua`);
+                continue;
+            }
+            
+            csvImportData.push({
+                id: csvRowIdCounter++,
+                spectrum_name: spectrumName,
+                energy: energy,
+                peak_area: peakArea,
+                peak_area_error: peakAreaError,
+                element_name: '', // Will be selected by user
+                matching_elements: [], // Will be populated during filtering
+                element_half_life_map: {},
+            element_energy_map: {},
+            energy_from_nuclear: null
+            });
+        }
+    } catch (error) {
+        console.error('CSV parsing error:', error);
+        throw error;
+    }
+}
+
+function applyElementSelection(row, element) {
+    row.element_name = element;
+    if (row.element_energy_map && Object.prototype.hasOwnProperty.call(row.element_energy_map, element)) {
+        row.energy_from_nuclear = row.element_energy_map[element];
+    } else {
+        row.energy_from_nuclear = row.energy;
+    }
+}
+
+function groupCSVRowsByEnergy(rows, threshold = 1) {
+    if (!Array.isArray(rows) || rows.length === 0) {
+        return [];
+    }
+    
+    const sortedRows = [...rows].sort((a, b) => a.energy - b.energy);
+    
+    const groups = [];
+    
+    sortedRows.forEach(row => {
+        let targetGroup = null;
+        if (groups.length > 0) {
+            const lastGroup = groups[groups.length - 1];
+            const withinThreshold = Math.abs(lastGroup.reference_energy - row.energy) <= threshold;
+            if (withinThreshold) {
+                targetGroup = lastGroup;
+            }
+        }
+        
+        if (!targetGroup) {
+            targetGroup = {
+                id: `group-${row.id}`,
+                spectrum_names: new Set(),
+                reference_energy: row.energy,
+                rows: [],
+                minEnergy: row.energy,
+                maxEnergy: row.energy,
+                matching_elements: new Set()
+            };
+            groups.push(targetGroup);
+        }
+        
+        targetGroup.rows.push(row);
+        targetGroup.minEnergy = Math.min(targetGroup.minEnergy, row.energy);
+        targetGroup.maxEnergy = Math.max(targetGroup.maxEnergy, row.energy);
+        if (row.spectrum_name) {
+            targetGroup.spectrum_names.add(row.spectrum_name);
+        }
+        if (Array.isArray(row.matching_elements)) {
+            row.matching_elements.forEach(element => {
+                targetGroup.matching_elements.add(element);
+            });
+        }
+    });
+    
+    return groups.map(group => {
+        let selectedElement = '';
+        if (group.rows.length > 0) {
+            const firstElement = group.rows[0].element_name || '';
+            const allSame = firstElement && group.rows.every(r => r.element_name === firstElement);
+            selectedElement = allSame ? firstElement : '';
+        }
+        const spectrumList = Array.from(group.spectrum_names);
+        const spectrumSummary = spectrumList.length === 0 
+            ? '-' 
+            : spectrumList.length === 1 
+                ? spectrumList[0]
+                : `${spectrumList.slice(0, 3).join(', ')}${spectrumList.length > 3 ? '…' : ''}`;
+        return {
+            ...group,
+            matching_elements: Array.from(group.matching_elements).filter(Boolean),
+            selectedElement,
+            spectrumSummary,
+            spectrumCount: spectrumList.length
+        };
+    });
+}
+
+function formatEnergySummary(group) {
+    if (!group || !group.rows || group.rows.length === 0) return '-';
+    if (group.rows.length === 1) {
+        return `${group.rows[0].energy.toFixed(2)}`;
+    }
+    const min = group.minEnergy.toFixed(2);
+    const max = group.maxEnergy.toFixed(2);
+    return `${min} - ${max}`;
+}
+
+function buildSpectrumDetails(group) {
+    if (!group || !group.rows || group.rows.length === 0) return '';
+    const spectrumMap = new Map();
+    group.rows.forEach(row => {
+        const name = row.spectrum_name || 'Không rõ phổ';
+        if (!spectrumMap.has(name)) {
+            spectrumMap.set(name, 1);
+        } else {
+            spectrumMap.set(name, spectrumMap.get(name) + 1);
+        }
+    });
+    const details = Array.from(spectrumMap.entries()).map(([name, count]) => {
+        return `${name}${count > 1 ? ` (${count})` : ''}`;
+    });
+    return details.join(', ');
+}
+
+function updateCSVPreviewCount(count) {
+    const badge = document.getElementById('csv-preview-count');
+    if (!badge) return;
+    const displayCount = typeof count === 'number' && count > 0 ? count : 0;
+    badge.textContent = `${displayCount} nhóm năng lượng`;
+}
+
+async function renderCSVPreview() {
+    try {
+        const tbody = document.getElementById('csv-preview-tbody');
+        if (!tbody) return;
+        const tableContainer = document.querySelector('.csv-table-large');
+        const previousScrollTop = tableContainer ? tableContainer.scrollTop : 0;
+        
+        tbody.innerHTML = '';
+        
+        // Use original data if available (for re-filtering when tolerance changes), otherwise use current data
+        const dataToFilter = csvImportDataOriginal.length > 0 ? csvImportDataOriginal : csvImportData;
+        
+        if (!dataToFilter || dataToFilter.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = '<td colspan="5" style="text-align: center; padding: 20px; color: var(--text-secondary); font-style: italic;">Không có dữ liệu để hiển thị</td>';
+            tbody.appendChild(emptyRow);
+            csvImportData = [];
+            updateCSVPreviewCount(0);
+            return;
+        }
+        
+        // Get energy tolerance from input
+        const toleranceInput = document.getElementById('csv-energy-tolerance');
+        const ENERGY_TOLERANCE = toleranceInput ? parseFloat(toleranceInput.value) || 2.0 : 2.0;
+        
+        // Load elements for validation (not for display)
+        let elements = [];
+        try {
+            const response = await fetch('/api/peak-area/elements');
+            const result = await response.json();
+            if (result.success && result.data) {
+                elements = result.data;
+            }
+        } catch (error) {
+            console.error('Error loading elements:', error);
+        }
+        
+        // Load nuclear data to filter peaks based on ±tolerance keV deviation
+        let nuclearData = [];
+        try {
+            const response = await fetch('/api/nuclear/data');
+            const result = await response.json();
+            if (result.success && result.data) {
+                nuclearData = result.data;
+            }
+        } catch (error) {
+            console.error('Error loading nuclear data:', error);
+        }
+        
+        // Filter peaks: only keep peaks with ±tolerance keV deviation from nuclear data
+        const filteredData = [];
+        let decayFilteredCount = 0;
+        
+        // Store selected elements before filtering (to preserve user selections)
+        const selectedElements = new Map();
+        csvImportData.forEach(row => {
+            if (row.element_name) {
+                selectedElements.set(`${row.spectrum_name}_${row.energy}`, row.element_name);
+            }
+        });
+        
+        dataToFilter.forEach((row) => {
+            if (typeof row.id !== 'number') {
+                row.id = csvRowIdCounter++;
+            }
+            
+            // Find all matching nuclear data entries within ±ENERGY_TOLERANCE keV
+            const matchingNucData = nuclearData.filter(nuc => {
+                const nucEnergy = parseFloat(nuc.E);
+                if (isNaN(nucEnergy)) return false;
+                return Math.abs(nucEnergy - row.energy) <= ENERGY_TOLERANCE;
+            });
+
+            // Only include this peak if it has at least one match (peaks without matches are removed)
+            if (matchingNucData.length > 0) {
+                // Collect all unique elements that match and map to the closest nuclear energy
+                const matchingElements = new Set();
+                const elementBestMatches = new Map();
+                const elementHalfLifeValues = new Map();
+                const decaySeconds = getSpectrumDecayDurationSeconds(row.spectrum_name);
+                matchingNucData.forEach(nuc => {
+                    if (!nuc.element) {
+                        return;
+                    }
+                    const nucEnergy = parseFloat(nuc.E);
+                    if (isNaN(nucEnergy)) {
+                        return;
+                    }
+                    
+                    const halfLifeValue = typeof nuc.T_half === 'number'
+                        ? nuc.T_half
+                        : parseFloat(nuc.T_half);
+                    const hasHalfLife = halfLifeValue !== null && halfLifeValue !== undefined && !isNaN(halfLifeValue) && halfLifeValue > 0;
+                    if (decaySeconds !== null && hasHalfLife) {
+                        const threshold = halfLifeValue * 10;
+                        if (threshold < decaySeconds) {
+                            return;
+                        }
+                    }
+                    
+                    matchingElements.add(nuc.element);
+                    if (hasHalfLife && !elementHalfLifeValues.has(nuc.element)) {
+                        elementHalfLifeValues.set(nuc.element, halfLifeValue);
+                    }
+                    const diff = Math.abs(nucEnergy - row.energy);
+                    const currentBest = elementBestMatches.get(nuc.element);
+                    if (!currentBest || diff < currentBest.diff) {
+                        elementBestMatches.set(nuc.element, { energy: nucEnergy, diff });
+                    }
+                });
+                
+                row.matching_elements = Array.from(matchingElements);
+                row.element_energy_map = {};
+                row.element_half_life_map = {};
+                elementBestMatches.forEach((value, element) => {
+                    row.element_energy_map[element] = value.energy;
+                    if (elementHalfLifeValues.has(element)) {
+                        row.element_half_life_map[element] = elementHalfLifeValues.get(element);
+                    }
+                });
+                
+                if (row.matching_elements.length === 0) {
+                    if (decaySeconds !== null && matchingNucData.length > 0) {
+                        decayFilteredCount++;
+                    }
+                    return;
+                }
+                
+                if (row.element_name && !row.matching_elements.includes(row.element_name)) {
+                    row.element_name = '';
+                    row.energy_from_nuclear = null;
+                }
+                
+                // Restore selected element if it was previously selected
+                const key = `${row.spectrum_name}_${row.energy}`;
+                if (selectedElements.has(key)) {
+                    const selectedElement = selectedElements.get(key);
+                    // Only restore if the selected element is still in matching elements or is valid
+                    if (matchingElements.has(selectedElement) || elements.includes(selectedElement)) {
+                        applyElementSelection(row, selectedElement);
+                    }
+                }
+                
+                row.__matching_nuc_count = matchingNucData.length;
+                row.__decay_seconds = decaySeconds;
+                filteredData.push(row);
+            }
+        });
+        
+        if (filteredData.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = '<td colspan="5" style="text-align: center; padding: 20px; color: var(--text-secondary); font-style: italic;">Không có dữ liệu phù hợp với độ lệch đã chọn</td>';
+            tbody.appendChild(emptyRow);
+            csvImportData = [];
+            updateCSVPreviewCount(0);
+            return;
+        }
+        
+        // Render filtered data
+        const groupedData = groupCSVRowsByEnergy(filteredData, 1);
+        
+        if (decayFilteredCount > 0) {
+            showToast(`Đã bỏ ${decayFilteredCount} nhóm năng lượng do vượt quá 10 chu kỳ bán rã`, 'warning');
+        }
+        updateCSVPreviewCount(groupedData.length);
+        
+        groupedData.forEach((group, index) => {
+            const tr = document.createElement('tr');
+            
+            // STT
+            const tdSTT = document.createElement('td');
+            tdSTT.textContent = index + 1;
+            tr.appendChild(tdSTT);
+            
+            // Tổng hợp phổ
+            const tdSpectrum = document.createElement('td');
+            const spectrumDetails = buildSpectrumDetails(group);
+            tdSpectrum.innerHTML = `
+                <div style="font-weight: 600;">${group.spectrumSummary || '-'}</div>
+                <small style="color: var(--text-secondary); display: block; margin-top: 4px;">
+                    ${group.rows.length > 1 ? `Lấy ${group.rows.length} đỉnh` : '1 đỉnh'}
+                    ${spectrumDetails ? ` • ${spectrumDetails}` : ''}
+                </small>
+            `;
+            tr.appendChild(tdSpectrum);
+            
+            // Năng lượng
+            const tdEnergy = document.createElement('td');
+            const energySummary = formatEnergySummary(group);
+            const energyDetails = group.rows.length > 1 
+                ? `<small style="display:block; color: var(--text-secondary); margin-top: 4px;">${group.rows.map(r => r.energy.toFixed(2)).join(', ')}</small>`
+                : '';
+            tdEnergy.innerHTML = `<div>${energySummary}</div>${energyDetails}`;
+            tr.appendChild(tdEnergy);
+            
+            // Nguyên tố - Show matching elements as buttons, others in dropdown
+            const tdElement = document.createElement('td');
+            tdElement.style.padding = '12px';
+            
+            const elementContainer = document.createElement('div');
+            elementContainer.style.display = 'flex';
+            elementContainer.style.flexDirection = 'column';
+            elementContainer.style.gap = '8px';
+            
+            const decayFiltered = group.rows.some(r => {
+                const rowMatches = Array.isArray(r.matching_elements) ? r.matching_elements.length : 0;
+                return r.__matching_nuc_count > 0 && rowMatches === 0 && r.__decay_seconds !== null;
+            });
+            
+            let currentSelection = group.selectedElement || '';
+            if (!currentSelection) {
+                const preferredElement = getPreferredElementForEnergy(group.reference_energy);
+                if (preferredElement && group.matching_elements.includes(preferredElement)) {
+                    currentSelection = preferredElement;
+                    group.rows.forEach(row => applyElementSelection(row, preferredElement));
+                }
+            }
+            if (!currentSelection && group.matching_elements.length === 1) {
+                currentSelection = group.matching_elements[0];
+                group.rows.forEach(row => applyElementSelection(row, currentSelection));
+            }
+            
+            // Show matching elements as buttons
+            if (group.matching_elements && group.matching_elements.length > 0) {
+                const matchingContainer = document.createElement('div');
+                matchingContainer.style.display = 'flex';
+                matchingContainer.style.flexWrap = 'wrap';
+                matchingContainer.style.gap = '6px';
+                matchingContainer.style.marginBottom = '4px';
+                
+                group.matching_elements.forEach(element => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'btn';
+                btn.textContent = element;
+                btn.style.cssText = 'padding: 6px 12px; font-size: 0.85rem; border-radius: 4px; cursor: pointer; transition: all 0.2s;';
+                
+                // Check if this element is selected
+                const isSelected = currentSelection === element;
+                if (isSelected) {
+                    btn.classList.add('btn-primary');
+                    btn.style.backgroundColor = 'var(--primary-color)';
+                    btn.style.color = 'white';
+                    btn.style.border = '1px solid var(--primary-color)';
+                } else {
+                    btn.classList.add('btn-secondary');
+                    btn.style.backgroundColor = '#fff3cd';
+                    btn.style.color = '#856404';
+                    btn.style.border = '1px solid #ffc107';
+                    btn.style.fontWeight = '500';
+                }
+                
+                btn.onclick = function() {
+                    // Update all buttons in this row
+                    matchingContainer.querySelectorAll('button').forEach(b => {
+                        b.classList.remove('btn-primary');
+                        b.classList.add('btn-secondary');
+                        b.style.backgroundColor = '#fff3cd';
+                        b.style.color = '#856404';
+                        b.style.border = '1px solid #ffc107';
+                    });
+                    
+                    // Update clicked button
+                    btn.classList.remove('btn-secondary');
+                    btn.classList.add('btn-primary');
+                    btn.style.backgroundColor = 'var(--primary-color)';
+                    btn.style.color = 'white';
+                    btn.style.border = '1px solid var(--primary-color)';
+                    
+                    // Update data
+                    group.rows.forEach(row => {
+                        applyElementSelection(row, element);
+                        rememberEnergyPreference(row.energy, element);
+                    });
+                    rememberEnergyPreference(group.reference_energy, element);
+                    currentSelection = element;
+                };
+                
+                    matchingContainer.appendChild(btn);
+                });
+                
+                elementContainer.appendChild(matchingContainer);
+                
+                // Auto-select if only one match
+                if (currentSelection) {
+                    const firstBtn = Array.from(matchingContainer.querySelectorAll('button')).find(btn => btn.textContent === currentSelection);
+                    if (firstBtn) {
+                        matchingContainer.querySelectorAll('button').forEach(b => {
+                            if (b === firstBtn) {
+                                b.classList.remove('btn-secondary');
+                                b.classList.add('btn-primary');
+                                b.style.backgroundColor = 'var(--primary-color)';
+                                b.style.color = 'white';
+                                b.style.border = '1px solid var(--primary-color)';
+                            } else {
+                                b.classList.remove('btn-primary');
+                                b.classList.add('btn-secondary');
+                                b.style.backgroundColor = '#fff3cd';
+                                b.style.color = '#856404';
+                                b.style.border = '1px solid #ffc107';
+                            }
+                        });
+                    }
+                }
+            } else {
+                // No matching elements - show message
+                const noMatchMsg = document.createElement('div');
+                noMatchMsg.textContent = decayFiltered
+                    ? 'Không có nguyên tố gợi ý (đã quá 10 chu kỳ bán rã)'
+                    : 'Không có nguyên tố gợi ý';
+                noMatchMsg.style.color = 'var(--text-secondary)';
+                noMatchMsg.style.fontStyle = 'italic';
+                noMatchMsg.style.fontSize = '0.85rem';
+                noMatchMsg.style.padding = '8px';
+                elementContainer.appendChild(noMatchMsg);
+            }
+            
+            tdElement.appendChild(elementContainer);
+            tr.appendChild(tdElement);
+            
+            // Actions (Delete)
+            const tdActions = document.createElement('td');
+            tdActions.style.textAlign = 'center';
+            tdActions.style.verticalAlign = 'middle';
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.type = 'button';
+            deleteBtn.className = 'btn btn-danger';
+            deleteBtn.style.cssText = 'padding: 6px 12px; font-size: 0.85rem; width: 100%;';
+            deleteBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+            deleteBtn.title = 'Loại bỏ năng lượng này khỏi danh sách';
+            deleteBtn.onclick = function() {
+                const rowIds = group.rows.map(r => r.id);
+                removeCSVRowsByIds(rowIds);
+            };
+            
+            tdActions.appendChild(deleteBtn);
+            tr.appendChild(tdActions);
+            
+            tbody.appendChild(tr);
+        });
+        
+        // Update csvImportData to only include filtered data
+        csvImportData = filteredData;
+        
+        if (tableContainer) {
+            tableContainer.scrollTop = previousScrollTop;
+        }
+    } catch (error) {
+        console.error('Error in renderCSVPreview:', error);
+        if (typeof showToast === 'function') {
+            showToast('Lỗi khi hiển thị dữ liệu: ' + error.message, 'error');
+        }
+    }
+}
+
+async function removeCSVRowsByIds(rowIds) {
+    if (!Array.isArray(rowIds) || rowIds.length === 0) {
+        return;
+    }
+    
+    const idSet = new Set(rowIds);
+    const beforeCount = csvImportData.length;
+    csvImportData = csvImportData.filter(row => !idSet.has(row.id));
+    
+    if (csvImportDataOriginal.length > 0) {
+        csvImportDataOriginal = csvImportDataOriginal.filter(row => !idSet.has(row.id));
+    }
+    
+    if (beforeCount === csvImportData.length) {
+        showToast('Không tìm thấy dòng cần xóa', 'error');
+        return;
+    }
+    
+    await renderCSVPreview();
+    
+    if (csvImportData.length === 0) {
+        showToast('Đã loại bỏ tất cả năng lượng khỏi danh sách', 'warning');
+    } else {
+        showToast('Đã loại bỏ năng lượng khỏi danh sách', 'success');
+    }
+}
+
+async function saveCSVData() {
+    const containerName = document.getElementById('csv-container-select').value;
+    if (!containerName) {
+        showToast('Vui lòng chọn container', 'error');
+        return;
+    }
+    
+    if (!csvImportData || csvImportData.length === 0) {
+        showToast('Không có dữ liệu để lưu', 'warning');
+        return;
+    }
+    
+    // Validate all rows have element selected
+    const invalidRows = csvImportData.filter(row => !row.element_name || row.element_name.trim() === '');
+    if (invalidRows.length > 0) {
+        showToast(`Vui lòng chọn nguyên tố cho tất cả các dòng (còn ${invalidRows.length} dòng chưa chọn)`, 'error');
+        return;
+    }
+    
+    // Save all rows
+    let successCount = 0;
+    let errorCount = 0;
+    
+    for (const row of csvImportData) {
+        try {
+            const energyToSave = (row.energy_from_nuclear !== null && row.energy_from_nuclear !== undefined)
+                ? row.energy_from_nuclear
+                : row.energy;
+            const response = await fetch('/api/peak-area/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    container_name: containerName,
+                    spectrum_name: row.spectrum_name,
+                    element_name: row.element_name,
+                    energy: energyToSave,
+                    peak_area: row.peak_area,
+                    peak_area_error: row.peak_area_error
+                })
+            });
+            
+            const result = await response.json();
+            if (result.success) {
+                successCount++;
+            } else {
+                errorCount++;
+                console.error('Error saving row:', result.error);
+            }
+        } catch (error) {
+            errorCount++;
+            console.error('Error saving row:', error);
+        }
+    }
+    
+    if (successCount > 0) {
+        showToast(`Đã lưu thành công ${successCount} dòng dữ liệu${errorCount > 0 ? `, ${errorCount} dòng lỗi` : ''}`, 'success');
+        loadPeakAreaData();
+        closePeakAreaCSVImportModal();
+    } else {
+        showToast(`Lỗi: Không thể lưu dữ liệu. ${errorCount} dòng lỗi`, 'error');
+    }
+}
+
 // ========== Calculation Result Functions ==========
 
 let calculationContainers = [];
@@ -3093,6 +4119,19 @@ async function loadCalculationContainers() {
     } catch (error) {
         console.error('Error loading calculation containers:', error);
     }
+}
+
+function onCalcContainerChanged() {
+    const select = document.getElementById('calc-container-select');
+    const saveBtn = document.getElementById('calc-save-result-btn');
+    const containerName = select ? select.value : '';
+
+    if (saveBtn) {
+        // Hiển thị nút khi đã chọn container, ẩn khi chưa chọn
+        saveBtn.style.display = containerName ? 'inline-flex' : 'none';
+    }
+
+    loadCalculationParameters();
 }
 
 async function loadCalculationParameters() {
@@ -3157,6 +4196,199 @@ async function loadCalculationParameters() {
     
     // Load monitor spectra
     await loadMonitorSpectra(containerName);
+}
+
+// ========== Saved Calculation Result Functions ==========
+
+async function loadSavedCalculationResults() {
+    try {
+        const response = await fetch('/api/calculation/results');
+        const result = await response.json();
+        if (result.success) {
+            savedCalculationResults = result.data || [];
+            renderSavedCalculationResultsTable();
+        }
+    } catch (error) {
+        console.error('Error loading saved calculation results:', error);
+    }
+}
+
+function renderSavedCalculationResultsTable() {
+    const tbody = document.getElementById('saved-calculation-tbody');
+    const countEl = document.getElementById('saved-calculation-count');
+
+    if (!tbody) {
+        return;
+    }
+
+    tbody.innerHTML = '';
+
+    if (Array.isArray(savedCalculationResults) && savedCalculationResults.length > 0) {
+        savedCalculationResults.forEach(result => {
+            const row = document.createElement('tr');
+            const formattedTime = window.formatDateTime
+                ? window.formatDateTime(result.saved_at)
+                : (result.saved_at || '-');
+
+            const containerName = result.container_name || '-';
+
+            row.innerHTML = `
+                <td>${result.id}</td>
+                <td>
+                    <button type="button"
+                            class="link-button"
+                            onclick="showSavedCalculationDetails(${result.id})"
+                            title="Xem kết quả tính toán đã lưu cho container này">
+                        <strong>${containerName}</strong>
+                    </button>
+                </td>
+                <td>${formattedTime}</td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary" onclick="downloadSavedCalculationResult(${result.id})">
+                            <i class="fas fa-file-download"></i> Tải Excel
+                        </button>
+                        <button class="btn btn-danger" onclick="deleteSavedCalculationResult(${result.id})">
+                            <i class="fas fa-trash"></i> Xóa
+                        </button>
+                    </div>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+    } else {
+        const row = document.createElement('tr');
+        row.innerHTML = '<td colspan="4" style="text-align: center; padding: 40px; color: var(--text-secondary);">Chưa có kết quả tính toán nào được lưu.</td>';
+        tbody.appendChild(row);
+    }
+
+    if (countEl) {
+        countEl.textContent = Array.isArray(savedCalculationResults) ? savedCalculationResults.length : 0;
+    }
+}
+
+async function saveCalculationResult() {
+    const select = document.getElementById('calc-container-select');
+    const containerName = select ? select.value : '';
+    const saveBtn = document.getElementById('calc-save-result-btn');
+
+    if (!containerName) {
+        showToast('Vui lòng chọn container trước khi lưu kết quả.', 'error');
+        return;
+    }
+
+    try {
+        if (saveBtn) {
+            saveBtn.disabled = true;
+        }
+
+        const payload = {
+            container_name: containerName,
+            details: Array.isArray(currentCalculationResultsForSaving) ? currentCalculationResultsForSaving : []
+        };
+
+        const response = await fetch('/api/calculation/results', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+        if (result.success) {
+            showToast(result.message || 'Đã lưu kết quả tính toán.');
+            await loadSavedCalculationResults();
+        } else {
+            showToast('Lỗi khi lưu kết quả: ' + (result.error || ''), 'error');
+        }
+    } catch (error) {
+        showToast('Lỗi kết nối khi lưu kết quả: ' + error.message, 'error');
+    } finally {
+        if (saveBtn) {
+            saveBtn.disabled = false;
+        }
+    }
+}
+
+async function deleteSavedCalculationResult(id) {
+    if (!confirm('Bạn có chắc chắn muốn xóa kết quả tính toán này?')) {
+        return;
+    }
+
+    try {
+        const response = await fetch(`/api/calculation/results/${id}`, {
+            method: 'DELETE'
+        });
+        const result = await response.json();
+        if (result.success) {
+            showToast(result.message || 'Đã xóa kết quả tính toán.');
+            await loadSavedCalculationResults();
+        } else {
+            showToast('Lỗi khi xóa kết quả: ' + (result.error || ''), 'error');
+        }
+    } catch (error) {
+        showToast('Lỗi kết nối khi xóa kết quả: ' + error.message, 'error');
+    }
+}
+
+function showSavedCalculationDetails(resultId) {
+    const detailsWrapper = document.getElementById('saved-calculation-details');
+    const nameEl = document.getElementById('saved-calculation-details-container-name');
+    const tbody = document.getElementById('saved-calculation-details-tbody');
+
+    if (!detailsWrapper || !nameEl || !tbody) return;
+
+    const record = savedCalculationResults.find(r => r.id === resultId);
+    if (!record) {
+        showToast('Không tìm thấy kết quả đã lưu.', 'error');
+        detailsWrapper.style.display = 'none';
+        return;
+    }
+
+    const containerName = record.container_name || '-';
+    const details = Array.isArray(record.details) ? record.details : [];
+
+    nameEl.textContent = containerName;
+    tbody.innerHTML = '';
+
+    if (!details.length) {
+        const row = document.createElement('tr');
+        row.innerHTML = '<td colspan="7" style="text-align: center; padding: 20px; color: var(--text-secondary);">Không có dữ liệu chi tiết được lưu cho container này.</td>';
+        tbody.appendChild(row);
+    } else {
+        details.forEach(item => {
+            const row = document.createElement('tr');
+            const k0 = (typeof item.k0_concentration === 'number' && !isNaN(item.k0_concentration))
+                ? item.k0_concentration.toFixed(2)
+                : '-';
+            const rel = (typeof item.relative_concentration === 'number' && !isNaN(item.relative_concentration))
+                ? item.relative_concentration.toFixed(2)
+                : '-';
+            const energy = (typeof item.energy === 'number' && !isNaN(item.energy))
+                ? item.energy.toFixed(2)
+                : '-';
+
+            row.innerHTML = `
+                <td>${item.sample_name || ''}</td>
+                <td>${item.spectrum_name || ''}</td>
+                <td>${item.element_name || ''}</td>
+                <td style="text-align: right;">${energy}</td>
+                <td style="text-align: right;">${k0}</td>
+                <td style="text-align: right;">${rel}</td>
+                <td>${item.relative_standard_name || ''}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    detailsWrapper.style.display = 'block';
+}
+
+function downloadSavedCalculationResult(resultId) {
+    if (typeof resultId !== 'number') return;
+    // Gọi trực tiếp endpoint tải file; trình duyệt sẽ tải file CSV (mở được bằng Excel)
+    window.location.href = `/api/calculation/results/${resultId}/download`;
 }
 
 // Function to calculate Qo(a) for a single spectrum
@@ -3950,6 +5182,9 @@ async function loadNonMonitorSpectra(containerName) {
     const section = document.getElementById('calc-non-monitor-spectra-section');
     const container = document.getElementById('calc-non-monitor-spectra-container');
     
+    // Reset snapshot kết quả tính toán hiện tại
+    currentCalculationResultsForSaving = [];
+    
     if (!containerName) {
         section.style.display = 'none';
         return;
@@ -4205,6 +5440,19 @@ async function loadNonMonitorSpectra(containerName) {
                                 relativeDisplay,
                                 aspValue
                             };
+                            
+                            // Lưu snapshot dòng kết quả để có thể copy sang module "Lưu kết quả tính toán"
+                            currentCalculationResultsForSaving.push({
+                                sample_name: spectrum.sample_name || '',
+                                spectrum_name: spectrum.spectrum_name || '',
+                                element_name: element.element_name || '',
+                                energy: element.energy ?? null,
+                                k0_concentration: concentration,
+                                relative_concentration: (relativeResult && typeof relativeResult.value === 'number' && !isNaN(relativeResult.value))
+                                    ? relativeResult.value
+                                    : null,
+                                relative_standard_name: match ? (match.standard_sample_name || '') : ''
+                            });
                             
                             // Luôn hiển thị dòng cho mỗi nguyên tố
                             // Nếu có concentration thì hiển thị giá trị, nếu không thì hiển thị '-'

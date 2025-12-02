@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAA K0 - Quản lý Thông số Lò và Detector</title>
+    <title>PHÒNG NGHIÊN CỨU ỨNG DỤNG KỸ THUẬT HẠT NHÂN VÀ ĐỒNG VỊ - NAA-Phương pháp K0 và phương pháp tương đối</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -11,8 +11,8 @@
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-atom"></i> NAA K0 - Phân tích Kích hoạt Neutron</h1>
-            <p class="subtitle">Quản lý Thông số Lò phản ứng và Detector</p>
+            <h1><i class="fas fa-atom"></i> PHÒNG NGHIÊN CỨU ỨNG DỤNG KỸ THUẬT HẠT NHÂN VÀ ĐỒNG VỊ</h1>
+            <p class="subtitle">NAA-Phương pháp K0 và phương pháp tương đối</p>
         </header>
 
         <div class="tabs">
@@ -21,6 +21,9 @@
             </button>
             <button class="tab-btn" onclick="switchTab('calculation-sample', event)">
                 <i class="fas fa-calculator"></i> Dữ liệu mẫu tính toán
+            </button>
+            <button class="tab-btn" onclick="switchTab('saved-calculation', event)">
+                <i class="fas fa-save"></i> Lưu kết quả tính toán
             </button>
         </div>
 
@@ -327,7 +330,34 @@
                                 <li>Chọn một hoặc nhiều file .Spe để trích xuất thông tin "Tên phổ", "Thời gian bắt đầu đo", "Thời gian đo"</li>
                                 <li>Hệ thống sẽ tự động tạo file CSV với các thông tin đã điền sẵn</li>
                                 <li>Bạn chỉ cần điền thêm các thông tin khác (Tên cont chiếu, Tên mẫu, Khối lượng mẫu, ...) và import vào hệ thống</li>
+                                <li>Tùy chọn: Chọn sẵn Vị trí chiếu và thời gian chiếu để hệ thống tự động điền cho tất cả các mẫu được tạo</li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="form-row" style="gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <div class="form-group" style="flex: 1 1 220px; min-width: 200px;">
+                            <label for="spe-container-name" style="font-weight: 600; display: block; margin-bottom: 6px;">Tên container</label>
+                            <input type="text" id="spe-container-name" class="form-control" style="width: 100%;" placeholder="VD: CONT-001">
+                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 5px;">
+                                Tên này sẽ được điền vào cột "Tên cont chiếu" trong file CSV
+                            </small>
+                        </div>
+                        <div class="form-group" style="flex: 1 1 240px; min-width: 220px;">
+                            <label for="spe-irradiation-position" style="font-weight: 600; display: block; margin-bottom: 6px;">Vị trí chiếu trong lò</label>
+                            <select id="spe-irradiation-position" class="form-control" style="width: 100%;">
+                                <option value="">-- Chọn vị trí chiếu --</option>
+                            </select>
+                            <small style="color: var(--text-secondary); font-size: 0.85rem; display: block; margin-top: 5px;">
+                                Dữ liệu lấy từ mục "Quản lý Thông số Lò phản ứng"
+                            </small>
+                        </div>
+                        <div class="form-group" style="flex: 1 1 220px; min-width: 200px;">
+                            <label for="spe-irradiation-start-time" style="font-weight: 600; display: block; margin-bottom: 6px;">Thời gian bắt đầu chiếu</label>
+                            <input type="datetime-local" id="spe-irradiation-start-time" class="form-control" style="width: 100%;" step="1">
+                        </div>
+                        <div class="form-group" style="flex: 1 1 220px; min-width: 200px;">
+                            <label for="spe-irradiation-end-time" style="font-weight: 600; display: block; margin-bottom: 6px;">Thời gian kết thúc chiếu</label>
+                            <input type="datetime-local" id="spe-irradiation-end-time" class="form-control" style="width: 100%;" step="1">
                         </div>
                     </div>
                     <form id="spe-process-form" enctype="multipart/form-data">
@@ -397,6 +427,9 @@
                         <button class="btn btn-primary" onclick="showPeakAreaModal()">
                             <i class="fas fa-plus"></i> Thêm mới
                         </button>
+                        <button class="btn btn-success" onclick="showPeakAreaCSVImportModal()" style="margin-left: 10px;">
+                            <i class="fas fa-file-csv"></i> Nhập từ CSV
+                        </button>
                     </div>
                 </div>
 
@@ -422,6 +455,7 @@
                                 <th>Nguyên tố</th>
                                 <th>Năng lượng (keV)</th>
                                 <th>Diện tích đỉnh</th>
+                                <th>Sai số</th>
                                 <th>Thao tác</th>
                             </tr>
                         </thead>
@@ -443,9 +477,14 @@
                     <label for="calc-container-select" style="font-weight: 600; margin-bottom: 8px; display: block;">
                         <i class="fas fa-box"></i> Chọn Container cần tính toán <span class="required">*</span>
                     </label>
-                    <select id="calc-container-select" class="form-control" style="max-width: 400px;" onchange="loadCalculationParameters()">
-                        <option value="">-- Chọn container --</option>
-                    </select>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+                        <select id="calc-container-select" class="form-control" style="max-width: 320px; min-width: 240px;" onchange="onCalcContainerChanged()">
+                            <option value="">-- Chọn container --</option>
+                        </select>
+                        <button id="calc-save-result-btn" class="btn btn-success" type="button" style="display: none;" onclick="saveCalculationResult()">
+                            <i class="fas fa-save"></i> Lưu kết quả container này
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Calculation Parameters Display -->
@@ -592,6 +631,60 @@
                             <!-- Data will be loaded here -->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Saved Calculation Results Tab -->
+        <div id="saved-calculation-tab" class="tab-content">
+            <div class="section-header">
+                <h2><i class="fas fa-save"></i> Lưu kết quả tính toán</h2>
+            </div>
+
+            <div class="data-info">
+                <p>
+                    <strong>Tổng số kết quả đã lưu:</strong>
+                    <span id="saved-calculation-count">0</span>
+                </p>
+            </div>
+
+            <div class="table-container">
+                <table id="saved-calculation-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 60px;">ID</th>
+                            <th>Tên Container</th>
+                            <th>Thời gian lưu</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="saved-calculation-tbody">
+                        <!-- Data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="saved-calculation-details" style="margin-top: 25px; display: none;">
+                <h3 style="margin-bottom: 15px; color: var(--text-color);">
+                    <i class="fas fa-list"></i> Kết quả tính toán đã lưu cho container: <span id="saved-calculation-details-container-name"></span>
+                </h3>
+                <div class="table-container">
+                    <table id="saved-calculation-details-table">
+                        <thead>
+                            <tr>
+                                <th>Tên mẫu</th>
+                                <th>Tên phổ</th>
+                                <th>Nguyên tố</th>
+                                <th>Năng lượng (keV)</th>
+                                <th>Hàm lượng K<sub>0</sub> (ppm)</th>
+                                <th>Hàm lượng tương đối (ppm)</th>
+                                <th>Tên mẫu chuẩn (tương đối)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="saved-calculation-details-tbody">
+                            <!-- Details will be loaded here -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -823,11 +916,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="irradiated-start-time">Thời gian bắt đầu chiếu</label>
-                            <input type="datetime-local" id="irradiated-start-time">
+                            <input type="datetime-local" id="irradiated-start-time" step="1">
                         </div>
                         <div class="form-group">
                             <label for="irradiated-end-time">Thời gian kết thúc chiếu</label>
-                            <input type="datetime-local" id="irradiated-end-time">
+                            <input type="datetime-local" id="irradiated-end-time" step="1">
                         </div>
                     </div>
                     <div class="form-group">
@@ -882,16 +975,16 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="irradiated-measurement-start-time">Thời gian bắt đầu đo</label>
-                            <input type="datetime-local" id="irradiated-measurement-start-time">
+                            <input type="datetime-local" id="irradiated-measurement-start-time" step="1">
                         </div>
                         <div class="form-group">
                             <label for="irradiated-measurement-duration">Thời gian đo (giây)</label>
-                            <input type="number" id="irradiated-measurement-duration" step="0.01">
+                            <input type="number" id="irradiated-measurement-duration" step="0.00001">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="irradiated-sample-mass">Khối lượng mẫu (g)</label>
-                        <input type="number" id="irradiated-sample-mass" step="0.0001">
+                        <input type="number" id="irradiated-sample-mass" step="0.00001">
                     </div>
                     <div class="form-group">
                         <label>
@@ -946,11 +1039,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="irradiated-start-time">Thời gian bắt đầu chiếu</label>
-                            <input type="datetime-local" id="irradiated-start-time">
+                            <input type="datetime-local" id="irradiated-start-time" step="1">
                         </div>
                         <div class="form-group">
                             <label for="irradiated-end-time">Thời gian kết thúc chiếu</label>
-                            <input type="datetime-local" id="irradiated-end-time">
+                            <input type="datetime-local" id="irradiated-end-time" step="1">
                         </div>
                     </div>
                     <div class="form-group">
@@ -1002,7 +1095,11 @@
                     </div>
                     <div class="form-group">
                         <label for="peak-area-peak-area">Diện tích đỉnh <span class="required">*</span></label>
-                        <input type="number" id="peak-area-peak-area" step="0.0001" required>
+                        <input type="number" id="peak-area-peak-area" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="peak-area-peak-area-error">Sai số diện tích đỉnh</label>
+                        <input type="number" id="peak-area-peak-area-error" step="0.1">
                     </div>
                     <div class="form-group" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
                         <small style="color: var(--text-secondary); display: block; margin-bottom: 8px;">
@@ -1017,6 +1114,86 @@
                         <button type="submit" class="btn btn-primary">Lưu và tiếp tục</button>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Peak Area CSV Import Modal -->
+    <div id="peak-area-csv-modal" class="modal">
+        <div class="modal-content" style="max-width: 90%; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h3>Nhập dữ liệu từ file CSV</h3>
+                <span class="close" onclick="closePeakAreaCSVImportModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="csv-upload-section">
+                    <div class="form-group csv-upload-item">
+                        <label for="csv-file-input">Chọn file CSV (có thể chọn nhiều file) <span class="required">*</span></label>
+                        <input type="file" id="csv-file-input" accept=".csv" multiple onchange="handleCSVFileSelect(event)">
+                        <small class="field-hint">
+                            <i class="fas fa-info-circle"></i> Tên file CSV sẽ được dùng làm "Tên phổ". File CSV cần có: Cột A (Năng lượng), Cột B (Diện tích đỉnh), Cột C (Sai số diện tích đỉnh).
+                        </small>
+                    </div>
+                    <div class="form-group csv-upload-item csv-tolerance-item">
+                        <label for="csv-energy-tolerance">Độ lệch năng lượng (keV) <span class="required">*</span></label>
+                        <div class="csv-tolerance-control">
+                            <input type="range" id="csv-energy-tolerance-slider" value="2" min="0.1" max="10" step="0.1" 
+                                   oninput="try { const input = document.getElementById('csv-energy-tolerance'); if(input) input.value = this.value; if(typeof handleToleranceChange === 'function') handleToleranceChange(); } catch(e) { console.error(e); }">
+                            <div class="csv-tolerance-input">
+                                <input type="number" id="csv-energy-tolerance" value="2" min="0.1" max="10" step="0.1" 
+                                       onchange="try { const slider = document.getElementById('csv-energy-tolerance-slider'); if(slider) slider.value = this.value; if(typeof handleToleranceChange === 'function') handleToleranceChange(); } catch(e) { console.error(e); }">
+                                <span>keV</span>
+                            </div>
+                        </div>
+                        <small class="field-hint">
+                            <i class="fas fa-info-circle"></i> Chỉ các đỉnh có độ lệch trong khoảng ±[giá trị này] keV so với năng lượng trong dữ liệu hạt nhân sẽ được hiển thị. Các đỉnh không khớp sẽ bị loại bỏ.
+                        </small>
+                    </div>
+                </div>
+                
+                <div id="csv-preview-section" style="display: none; margin-top: 20px;">
+                    <div class="form-group">
+                        <label for="csv-container-select">Chọn Container cho tất cả dòng <span class="required">*</span></label>
+                        <select id="csv-container-select" required onchange="loadCSVSpectrumNames()">
+                            <option value="">-- Chọn container --</option>
+                        </select>
+                    </div>
+                    
+                    <div class="csv-preview-wrapper">
+                        <div class="csv-preview-header">
+                            <div>
+                                <h4>Dữ liệu đã đọc từ file CSV</h4>
+                                <p>Danh sách năng lượng đã gộp theo khoảng ±1 keV để bạn lựa chọn nhanh hơn.</p>
+                            </div>
+                            <div class="csv-preview-actions">
+                                <span class="csv-preview-badge" id="csv-preview-count">0 nhóm năng lượng</span>
+                            </div>
+                        </div>
+                        <div class="table-container csv-table-large">
+                            <table id="csv-preview-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;">STT</th>
+                                        <th>Tổng hợp phổ</th>
+                                        <th>Năng lượng (keV)</th>
+                                        <th>Nguyên tố <span class="required">*</span></th>
+                                        <th style="width: 110px;">Loại bỏ</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="csv-preview-tbody">
+                                    <!-- Data will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer" style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e0e0e0;">
+                        <button type="button" class="btn btn-secondary" onclick="closePeakAreaCSVImportModal()">Đóng</button>
+                        <button type="button" class="btn btn-primary" onclick="saveCSVData()">
+                            <i class="fas fa-save"></i> Lưu tất cả dữ liệu
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
