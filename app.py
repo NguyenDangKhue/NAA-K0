@@ -1156,6 +1156,13 @@ def download_calculation_result(result_id):
         for item in details:
             if not isinstance(item, dict):
                 continue
+            relative_standard_name = (item.get('relative_standard_name') or '').strip()
+            relative_standard_spectrum = (item.get('relative_standard_spectrum_name') or '').strip()
+            if relative_standard_name and relative_standard_spectrum:
+                relative_standard_display = f"{relative_standard_name} ({relative_standard_spectrum})"
+            else:
+                relative_standard_display = relative_standard_name
+
             rows.append({
                 'Tên mẫu': (item.get('sample_name') or '').strip(),
                 'Tên phổ': (item.get('spectrum_name') or '').strip(),
@@ -1163,7 +1170,7 @@ def download_calculation_result(result_id):
                 'Năng lượng (keV)': item.get('energy'),
                 'Hàm lượng K0 (ppm)': item.get('k0_concentration'),
                 'Hàm lượng tương đối (ppm)': item.get('relative_concentration'),
-                'Tên mẫu chuẩn (tương đối)': (item.get('relative_standard_name') or '').strip()
+                'Tên mẫu chuẩn (tương đối)': relative_standard_display
             })
 
         df = pd.DataFrame(rows, columns=[

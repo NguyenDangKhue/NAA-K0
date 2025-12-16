@@ -358,6 +358,20 @@ function switchSubTab(subTab) {
             setupIrradiatedFormSubmit();
         }, 100);
     }
+    
+    // Load calculation containers when switching to calculation-result subtab
+    if (subTab === 'calculation-result') {
+        loadCalculationContainers();
+    }
+    
+    // Render MathJax when switching to formulas subtab
+    if (subTab === 'formulas' && window.MathJax) {
+        setTimeout(() => {
+            MathJax.typesetPromise().catch(function (err) {
+                console.error('MathJax rendering error:', err);
+            });
+        }, 100);
+    }
 }
 
 // ========== Reactor Parameter Functions ==========
@@ -4368,6 +4382,11 @@ function showSavedCalculationDetails(resultId) {
             const energy = (typeof item.energy === 'number' && !isNaN(item.energy))
                 ? item.energy.toFixed(2)
                 : '-';
+            const relativeStandardName = (item.relative_standard_name || '').trim();
+            const relativeStandardSpectrum = (item.relative_standard_spectrum_name || '').trim();
+            const relativeStandardDisplay = relativeStandardName
+                ? (relativeStandardSpectrum ? `${relativeStandardName} (${relativeStandardSpectrum})` : relativeStandardName)
+                : '';
 
             row.innerHTML = `
                 <td>${item.sample_name || ''}</td>
@@ -4376,7 +4395,7 @@ function showSavedCalculationDetails(resultId) {
                 <td style="text-align: right;">${energy}</td>
                 <td style="text-align: right;">${k0}</td>
                 <td style="text-align: right;">${rel}</td>
-                <td>${item.relative_standard_name || ''}</td>
+                <td>${relativeStandardDisplay}</td>
             `;
             tbody.appendChild(row);
         });
@@ -5085,7 +5104,7 @@ function drawNeutronFluxRegressionChart(spectra) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             aspectRatio: 2,
             plugins: {
                 legend: {
@@ -5451,7 +5470,9 @@ async function loadNonMonitorSpectra(containerName) {
                                 relative_concentration: (relativeResult && typeof relativeResult.value === 'number' && !isNaN(relativeResult.value))
                                     ? relativeResult.value
                                     : null,
-                                relative_standard_name: match ? (match.standard_sample_name || '') : ''
+                                relative_standard_name: match ? (match.standard_sample_name || '') : '',
+                                // Lưu thêm tên phổ chuẩn để hiển thị rõ trong module "Lưu kết quả tính toán"
+                                relative_standard_spectrum_name: match ? (match.spectrum_name || '') : ''
                             });
                             
                             // Luôn hiển thị dòng cho mỗi nguyên tố
@@ -5469,7 +5490,17 @@ async function loadNonMonitorSpectra(containerName) {
                                 <td style="padding: 12px; border: 1px solid #e8ecef; font-weight: 600; color: #2c3e50;">${element.element_name || '-'}</td>
                                 <td style="padding: 12px; border: 1px solid #e8ecef; text-align: center;">${formatValue(element.energy, v => v.toFixed(2))}</td>
                                 <td style="padding: 12px; border: 1px solid #e8ecef; text-align: right; font-weight: 600; color: #c62828;">${concentrationDisplayWithUnit}</td>
-                                <td style="padding: 12px; border: 1px solid #e8ecef;">${match ? (match.standard_sample_name || '-') : '<span style="color: var(--text-secondary); font-style: italic;">Không có</span>'}</td>
+                                <td style="padding: 12px; border: 1px solid #e8ecef;">
+                                    ${
+                                        match
+                                            ? (match.standard_sample_name
+                                                ? (match.spectrum_name
+                                                    ? `${match.standard_sample_name} (${match.spectrum_name})`
+                                                    : match.standard_sample_name)
+                                                : '-')
+                                            : '<span style="color: var(--text-secondary); font-style: italic;">Không có</span>'
+                                    }
+                                </td>
                                 <td style="padding: 12px; border: 1px solid #e8ecef; text-align: right; font-weight: 600; color: #c62828;">${relativeDisplayWithUnit}</td>
                                 <td style="padding: 12px; border: 1px solid #e8ecef; text-align: center;">
                                     <button onclick="showElementDetails('${detailsId}')" style="background: var(--primary-color); color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 0.9em; transition: all 0.3s; box-shadow: 0 2px 6px rgba(198, 40, 40, 0.3);" onmouseover="this.style.background='#b71c1c'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(198, 40, 40, 0.4)'" onmouseout="this.style.background='var(--primary-color)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 6px rgba(198, 40, 40, 0.3)'">

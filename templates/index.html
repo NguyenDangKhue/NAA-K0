@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- MathJax for rendering mathematical formulas -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
 </head>
 <body>
     <div class="container">
@@ -41,6 +57,9 @@
                 </button>
                 <button class="sub-tab-btn" onclick="switchSubTab('standard-sample', event)">
                     <i class="fas fa-flask"></i> Dữ liệu Mẫu chuẩn
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('formulas', event)">
+                    <i class="fas fa-calculator"></i> Công thức tính toán
                 </button>
             </div>
 
@@ -288,6 +307,307 @@
                     </tbody>
                 </table>
             </div>
+            </div>
+
+            <!-- Formulas Sub-Tab -->
+            <div id="formulas-subtab" class="sub-tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-calculator"></i> Tổng hợp Công thức Tính toán</h2>
+                </div>
+
+                <div class="formulas-container">
+                    <!-- Formula Card 1: Hiệu suất Detector -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>1. Công thức Tính Hiệu suất Detector (ε)</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <h4>Đường hiệu suất bậc 4:</h4>
+                                <div class="formula-box">
+                                    $$\varepsilon(E) = a_0 + a_1 \cdot \ln(E) + a_2 \cdot \ln(E)^2 + a_3 \cdot \ln(E)^3 + a_4 \cdot \ln(E)^4$$
+                                </div>
+                                <h4>Đường hiệu suất bậc 5:</h4>
+                                <div class="formula-box">
+                                    $$\varepsilon(E) = a_0 + a_1 \cdot \ln(E) + a_2 \cdot \ln(E)^2 + a_3 \cdot \ln(E)^3 + a_4 \cdot \ln(E)^4 + a_5 \cdot \ln(E)^5$$
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>ε(E)</strong>: Hiệu suất detector tại năng lượng E</div>
+                                <div class="symbol-item"><strong>E</strong>: Năng lượng gamma (keV)</div>
+                                <div class="symbol-item"><strong>a₀, a₁, a₂, a₃, a₄, a₅</strong>: Các hệ số của đường hiệu suất</div>
+                                <div class="symbol-item"><strong>ln(E)</strong>: Logarit tự nhiên của năng lượng E</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Card 2: Q₀(a) -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-atom"></i>
+                            <h3>2. Công thức Tính Q₀(a)</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <div class="formula-box highlight">
+                                    $$Q_0(a) = \frac{Q_0 - 0.429}{Er(a)^{\alpha}} + \frac{0.429}{Ecd(a)^{\alpha} \cdot (2\alpha + 1)}$$
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>Q₀(a)</strong>: Hệ số Q₀ tại năng lượng a</div>
+                                <div class="symbol-item"><strong>Q₀</strong>: Hệ số Q₀ của nguyên tố (mặc định: 15.7 cho Au)</div>
+                                <div class="symbol-item"><strong>Er(a)</strong>: Năng lượng tham chiếu tại năng lượng a (keV, mặc định: 5.65 cho Au)</div>
+                                <div class="symbol-item"><strong>Ecd(a)</strong>: Năng lượng cắt dưới tại năng lượng a (keV, mặc định: 0.55)</div>
+                                <div class="symbol-item"><strong>α</strong>: Hệ số alpha (tham số phụ thuộc vào vị trí chiếu trong lò)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Card 3: S(m), D(m), C(m) -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-hourglass-half"></i>
+                            <h3>3. Công thức Tính S(m), D(m), C(m)</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <h4>S(m) - Hệ số bão hòa:</h4>
+                                <div class="formula-box">
+                                    $$S(m) = 1 - e^{-\frac{\ln(2)}{T_{1/2}} \cdot t_{irradiation}}$$
+                                </div>
+                                <h4>D(m) - Hệ số phân rã:</h4>
+                                <div class="formula-box">
+                                    $$D(m) = e^{-\frac{\ln(2)}{T_{1/2}} \cdot t_{decay}}$$
+                                </div>
+                                <h4>C(m) - Hệ số đo:</h4>
+                                <div class="formula-box">
+                                    $$C(m) = \frac{1 - e^{-\frac{\ln(2)}{T_{1/2}} \cdot t_{measurement}}}{\frac{\ln(2)}{T_{1/2}} \cdot t_{measurement}}$$
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>S(m)</strong>: Hệ số bão hòa (không thứ nguyên)</div>
+                                <div class="symbol-item"><strong>D(m)</strong>: Hệ số phân rã (không thứ nguyên)</div>
+                                <div class="symbol-item"><strong>C(m)</strong>: Hệ số đo (không thứ nguyên)</div>
+                                <div class="symbol-item"><strong>T₁/₂</strong>: Chu kỳ bán rã của đồng vị (giây)</div>
+                                <div class="symbol-item"><strong>t_irradiation</strong>: Tổng thời gian chiếu xạ (giây)</div>
+                                <div class="symbol-item"><strong>t_decay</strong>: Thời gian rã (giây)</div>
+                                <div class="symbol-item"><strong>t_measurement</strong>: Thời gian đo phổ (giây)</div>
+                                <div class="symbol-item"><strong>ln(2)</strong>: Logarit tự nhiên của 2 (≈ 0.693)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Card 4: Aₛₚ -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-radiation"></i>
+                            <h3>4. Công thức Tính Aₛₚ (Lá dò)</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <div class="formula-box highlight">
+                                    $$A_{sp} = \frac{\frac{Diện\_tích\_đỉnh}{Thời\_gian\_đo}}{S(m) \cdot D(m) \cdot C(m) \cdot (Khối\_lượng \cdot 0.001)}$$
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>Aₛₚ</strong>: Hoạt độ chuẩn hóa của lá dò (counts·s⁻¹·g⁻¹)</div>
+                                <div class="symbol-item"><strong>Diện_tích_đỉnh</strong>: Diện tích đỉnh phổ của lá dò (counts)</div>
+                                <div class="symbol-item"><strong>Thời_gian_đo</strong>: Thời gian đo phổ (giây)</div>
+                                <div class="symbol-item"><strong>S(m), D(m), C(m)</strong>: Các hệ số đã tính ở trên</div>
+                                <div class="symbol-item"><strong>Khối_lượng</strong>: Khối lượng mẫu lá dò (gram)</div>
+                                <div class="symbol-item"><strong>0.001</strong>: Hệ số chuyển đổi từ gram sang kilogram</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Card 5: Thông lượng Neutron -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>5. Công thức Tính Thông lượng Neutron</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <div class="formula-box highlight">
+                                    $$\Phi = \frac{A_{sp} \cdot Constant \cdot f}{(f + Q_0(a)) \cdot \varepsilon_{p,(a)}}$$
+                                </div>
+                                <div class="formula-box">
+                                    $$Constant = \frac{197}{6.023 \times 10^{23} \times 98.65 \times 10^{-24} \times 1 \times 0.955}$$
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>Φ</strong>: Thông lượng neutron (n·cm⁻²·s⁻¹)</div>
+                                <div class="symbol-item"><strong>Aₛₚ</strong>: Hoạt độ chuẩn hóa của lá dò</div>
+                                <div class="symbol-item"><strong>Constant</strong>: Hằng số tính toán (≈ 3.45×10⁻²¹)</div>
+                                <div class="symbol-item"><strong>f</strong>: Tỷ số thông lượng epithermal/thermal</div>
+                                <div class="symbol-item"><strong>Q₀(a)</strong>: Hệ số Q₀(a) của lá dò</div>
+                                <div class="symbol-item"><strong>εp,(a)</strong>: Hiệu suất đỉnh tại năng lượng a của lá dò</div>
+                                <div class="symbol-item"><strong>197</strong>: Khối lượng nguyên tử của Au (amu)</div>
+                                <div class="symbol-item"><strong>6.023×10²³</strong>: Số Avogadro (mol⁻¹)</div>
+                                <div class="symbol-item"><strong>98.65×10⁻²⁴</strong>: Tiết diện bắt neutron của Au (cm²)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Card 6: Hồi quy tuyến tính -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-chart-area"></i>
+                            <h3>6. Công thức Hồi quy Tuyến tính</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <h4>Phương trình hồi quy:</h4>
+                                <div class="formula-box">
+                                    $$y = a \cdot x + b$$
+                                </div>
+                                <div class="formula-box">
+                                    $$a = \frac{\sum(xy) - n \cdot \bar{x} \cdot \bar{y}}{\sum(x^2) - n \cdot \bar{x}^2}$$
+                                </div>
+                                <div class="formula-box">
+                                    $$b = \bar{y} - a \cdot \bar{x}$$
+                                </div>
+                                <h4>Hệ số xác định R²:</h4>
+                                <div class="formula-box">
+                                    $$R^2 = 1 - \frac{SS_{res}}{SS_{tot}}$$
+                                </div>
+                                <h4>Tính Aₛₚ từ vị trí:</h4>
+                                <div class="formula-box highlight">
+                                    $$A_{sp} = a \cdot position + b$$
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>y</strong>: Biến phụ thuộc (ví dụ: Aₛₚ hoặc thông lượng neutron)</div>
+                                <div class="symbol-item"><strong>x</strong>: Biến độc lập (ví dụ: vị trí trong container)</div>
+                                <div class="symbol-item"><strong>a</strong>: Hệ số góc (slope)</div>
+                                <div class="symbol-item"><strong>b</strong>: Hệ số chặn (intercept)</div>
+                                <div class="symbol-item"><strong>R²</strong>: Hệ số xác định (0 ≤ R² ≤ 1)</div>
+                                <div class="symbol-item"><strong>position</strong>: Vị trí trong container</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Card 7: Nồng độ nguyên tố (K₀) -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-flask"></i>
+                            <h3>7. Công thức Tính Nồng độ Nguyên tố (Phương pháp K₀)</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <div class="formula-box highlight large">
+                                    $$C = \frac{\frac{\frac{Diện\_tích\_đỉnh}{Thời\_gian\_đo}}{S(m) \cdot D(m) \cdot C(m) \cdot Khối\_lượng}}{A_{sp}} \cdot \frac{1}{K_0} \cdot Ratio \times 10^6$$
+                                </div>
+                                <div class="formula-box">
+                                    $$Ratio = \frac{(G_{th,(m)} \cdot f + G_{e,(m)} \cdot Q_{0,M}(a)) \cdot \varepsilon_{p,M}(a)}{(G_{th,(m)} \cdot f + G_{e,(m)} \cdot Q_{0,E}(a)) \cdot \varepsilon_{p,E}(a)}$$
+                                </div>
+                                <div style="margin-top: 10px; font-size: 0.9em; color: var(--text-secondary); padding: 10px; background: #f8f9fa; border-radius: 6px;">
+                                    <strong>Ghi chú:</strong> M = lá dò (monitor), E = nguyên tố (element)
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>C</strong>: Nồng độ nguyên tố trong mẫu (ppm hoặc µg/g)</div>
+                                <div class="symbol-item"><strong>Diện_tích_đỉnh</strong>: Diện tích đỉnh phổ của nguyên tố (counts)</div>
+                                <div class="symbol-item"><strong>Thời_gian_đo</strong>: Thời gian đo phổ (giây)</div>
+                                <div class="symbol-item"><strong>S(m), D(m), C(m)</strong>: Các hệ số của nguyên tố</div>
+                                <div class="symbol-item"><strong>Khối_lượng</strong>: Khối lượng mẫu (gram)</div>
+                                <div class="symbol-item"><strong>Aₛₚ</strong>: Hoạt độ chuẩn hóa của lá dò tại vị trí mẫu</div>
+                                <div class="symbol-item"><strong>K₀</strong>: Hằng số K₀ của nguyên tố (từ dữ liệu hạt nhân)</div>
+                                <div class="symbol-item"><strong>Gth,(m)</strong>: Hệ số hình học thermal (mặc định: 1)</div>
+                                <div class="symbol-item"><strong>Ge,(m)</strong>: Hệ số hình học epithermal (mặc định: 1)</div>
+                                <div class="symbol-item"><strong>f</strong>: Tỷ số thông lượng epithermal/thermal</div>
+                                <div class="symbol-item"><strong>Q₀(a)_lá_dò</strong>: Hệ số Q₀(a) của lá dò</div>
+                                <div class="symbol-item"><strong>Q₀(a)_nguyên_tố</strong>: Hệ số Q₀(a) của nguyên tố</div>
+                                <div class="symbol-item"><strong>εp,(a)_lá_dò</strong>: Hiệu suất đỉnh tại năng lượng a của lá dò</div>
+                                <div class="symbol-item"><strong>εp,(a)_nguyên_tố</strong>: Hiệu suất đỉnh tại năng lượng a của nguyên tố</div>
+                                <div class="symbol-item"><strong>10⁶</strong>: Hệ số chuyển đổi sang đơn vị ppm</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formula Card 8: Nồng độ tương đối -->
+                    <div class="formula-card">
+                        <div class="formula-header">
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>8. Công thức Tính Nồng độ Tương đối</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="formula-section">
+                                <div class="formula-box highlight">
+                                    $$C_{relative} = \frac{Term_{mẫu}}{Term_{chuẩn}} \cdot \frac{A_{sp\_chuẩn}}{A_{sp\_mẫu}}$$
+                                </div>
+                                <div class="formula-box">
+                                    $$Term_{mẫu} = \frac{\frac{Diện\_tích\_đỉnh_{mẫu}}{Thời\_gian\_đo_{mẫu}}}{D(m)_{mẫu} \cdot C(m)_{mẫu} \cdot Khối\_lượng_{mẫu} \cdot 1000}$$
+                                </div>
+                                <div class="formula-box">
+                                    $$Term_{chuẩn} = \frac{\frac{Diện\_tích\_đỉnh_{chuẩn}}{Thời\_gian\_đo_{chuẩn}}}{D(m)_{chuẩn} \cdot C(m)_{chuẩn} \cdot Khối\_lượng_{chuẩn} \cdot 1000 \cdot Nồng\_độ_{chuẩn}}$$
+                                </div>
+                            </div>
+                            <div class="symbols-list">
+                                <div class="symbol-item"><strong>C_relative</strong>: Nồng độ tương đối của nguyên tố trong mẫu (ppm)</div>
+                                <div class="symbol-item"><strong>Term_mẫu</strong>: Số hạng tính toán cho mẫu</div>
+                                <div class="symbol-item"><strong>Term_chuẩn</strong>: Số hạng tính toán cho mẫu chuẩn</div>
+                                <div class="symbol-item"><strong>Diện_tích_đỉnh_mẫu/chuẩn</strong>: Diện tích đỉnh phổ của nguyên tố (counts)</div>
+                                <div class="symbol-item"><strong>Thời_gian_đo_mẫu/chuẩn</strong>: Thời gian đo phổ (giây)</div>
+                                <div class="symbol-item"><strong>D(m), C(m)</strong>: Các hệ số phân rã và đo</div>
+                                <div class="symbol-item"><strong>Khối_lượng_mẫu/chuẩn</strong>: Khối lượng mẫu (gram)</div>
+                                <div class="symbol-item"><strong>Nồng_độ_chuẩn</strong>: Nồng độ đã biết của nguyên tố trong mẫu chuẩn (ppm)</div>
+                                <div class="symbol-item"><strong>Aₛₚ_mẫu/chuẩn</strong>: Hoạt độ chuẩn hóa của lá dò tại vị trí mẫu/chuẩn</div>
+                                <div class="symbol-item"><strong>1000</strong>: Hệ số chuyển đổi đơn vị</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Constants Card -->
+                    <div class="formula-card constants-card">
+                        <div class="formula-header">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>9. Các Hằng số và Giá trị Mặc định</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="constants-grid">
+                                <div class="constant-group">
+                                    <h4>Hằng số vật lý:</h4>
+                                    <div class="constant-item">ln(2) ≈ 0.693147</div>
+                                    <div class="constant-item">Số Avogadro: 6.023×10²³ mol⁻¹</div>
+                                    <div class="constant-item">Khối lượng nguyên tử Au: 197 amu</div>
+                                    <div class="constant-item">Tiết diện bắt neutron của Au: 98.65×10⁻²⁴ cm²</div>
+                                </div>
+                                <div class="constant-group">
+                                    <h4>Giá trị mặc định cho lá dò (Au):</h4>
+                                    <div class="constant-item">Q₀ (Au): 15.7</div>
+                                    <div class="constant-item">Er(a) (Au): 5.65 keV</div>
+                                    <div class="constant-item">Ecd(a): 0.55 keV</div>
+                                </div>
+                                <div class="constant-group">
+                                    <h4>Hệ số mặc định:</h4>
+                                    <div class="constant-item">Gth,(m): 1 (hệ số hình học thermal)</div>
+                                    <div class="constant-item">Ge,(m): 1 (hệ số hình học epithermal)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Units Card -->
+                    <div class="formula-card units-card">
+                        <div class="formula-header">
+                            <i class="fas fa-ruler"></i>
+                            <h3>10. Các Đơn vị Sử dụng</h3>
+                        </div>
+                        <div class="formula-content">
+                            <div class="units-grid">
+                                <div class="unit-item"><strong>Năng lượng:</strong> keV (kiloelectronvolt)</div>
+                                <div class="unit-item"><strong>Thời gian:</strong> giây (s)</div>
+                                <div class="unit-item"><strong>Khối lượng:</strong> gram (g)</div>
+                                <div class="unit-item"><strong>Nồng độ:</strong> ppm (parts per million) hoặc µg/g</div>
+                                <div class="unit-item"><strong>Thông lượng neutron:</strong> n·cm⁻²·s⁻¹</div>
+                                <div class="unit-item"><strong>Diện tích đỉnh:</strong> counts (số đếm)</div>
+                                <div class="unit-item"><strong>Hiệu suất:</strong> không thứ nguyên</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -606,7 +926,7 @@
                         </h3>
                         <div style="background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
                             <div style="margin-bottom: 20px;">
-                                <canvas id="neutron-flux-chart" style="max-height: 400px;"></canvas>
+                                <canvas id="neutron-flux-chart" style="width: 100%; height: 400px;"></canvas>
                             </div>
                             <div id="regression-equation" style="background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid var(--primary-color);">
                                 <h4 style="margin: 0 0 10px 0; color: var(--text-color); font-size: 1.1em;">

@@ -1136,3 +1136,218 @@ input[type="range"]::-moz-range-thumb:hover {
 .csv-table-large table {
     width: 100%;
 }
+
+/* ========== Formulas Section Styles ========== */
+.formulas-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.formula-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.formula-card:hover {
+    box-shadow: 0 8px 24px rgba(198, 40, 40, 0.15);
+    transform: translateY(-2px);
+}
+
+.formula-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.formula-header i {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+.formula-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.formula-content {
+    padding: 25px;
+}
+
+.formula-section {
+    margin-bottom: 25px;
+}
+
+.formula-section h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin: 20px 0 15px 0;
+    font-weight: 600;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 12px;
+}
+
+.formula-section h4:first-child {
+    margin-top: 0;
+}
+
+.formula-box {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    text-align: center;
+    overflow-x: auto;
+    transition: all 0.3s ease;
+}
+
+.formula-box:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(198, 40, 40, 0.1);
+}
+
+.formula-box.highlight {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    border-color: var(--primary-light);
+    border-width: 3px;
+}
+
+.formula-box.large {
+    padding: 25px;
+    font-size: 1.1em;
+}
+
+/* MathJax styling */
+.formula-box .MathJax {
+    font-size: 1.2em !important;
+}
+
+.formula-box.highlight .MathJax {
+    font-size: 1.3em !important;
+    color: var(--primary-color);
+}
+
+.symbols-list {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.symbol-item {
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.symbol-item:hover {
+    background: #fff5f5;
+    border-color: var(--primary-light);
+    transform: translateX(5px);
+}
+
+.symbol-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* Constants and Units Cards */
+.constants-card .formula-header {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.units-card .formula-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.constants-grid,
+.units-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.constant-group {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.constant-group h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-light);
+    font-weight: 600;
+}
+
+.constant-item,
+.unit-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f3f5;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.constant-item:last-child,
+.unit-item:last-child {
+    border-bottom: none;
+}
+
+.constant-item strong,
+.unit-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .formulas-container {
+        gap: 20px;
+        padding: 15px 0;
+    }
+    
+    .formula-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .formula-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .formula-content {
+        padding: 20px;
+    }
+    
+    .formula-box {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+    
+    .constants-grid,
+    .units-grid {
+        grid-template-columns: 1fr;
+    }
+}
